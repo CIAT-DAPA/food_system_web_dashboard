@@ -1,0 +1,8 @@
+# Data
+/data/inputs/*.csv
+/data/inputs/*.xls
+/data/inputs/*.xlsx
+
+/data/workspace/*.csv
+/data/workspace/*.xls
+/data/workspace/*.xlsx
