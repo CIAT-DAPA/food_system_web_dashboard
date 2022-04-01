@@ -19,7 +19,7 @@ import Chart from 'react-apexcharts';
 
 // PRIMERA TORTA
 // 2.5 RURAL, 97.5 URBANA
-class ApexChart extends React.Component {
+class PoblacionMunicipal extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -66,7 +66,7 @@ class ApexChart extends React.Component {
 
 // SEGUNDA TORTA
 // 47% Masculino, 53% Femenino
-class ApexChart extends React.Component {
+class GenerosPoblacion extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -102,5 +102,5 @@ class ApexChart extends React.Component {
     }
 }
 
-const domContainer = document.querySelector('#app');
-ReactDOM.render(React.createElement(ApexChart), domContainer);
+//const domContainer = document.querySelector('#app');
+//ReactDOM.render(React.createElement(ApexChart), domContainer);

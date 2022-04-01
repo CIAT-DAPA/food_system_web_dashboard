@@ -27,7 +27,7 @@ import Chart from 'react-apexcharts';
 
 // PRIMERA TORTA
 // 79 RURAL, 21 URBANA
-class ApexChart extends React.Component {
+class TerritoriosMunicipales extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -76,7 +76,7 @@ class ApexChart extends React.Component {
 // SEGUNDA TORTA
 // Del 72 de areas protegidas,
 // 41 Parque Nacional Farallones, 31 Reserva Forestal
-class ApexChart extends React.Component {
+class AreasProtegidas extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -113,5 +113,5 @@ class ApexChart extends React.Component {
     }
 }
 
-const domContainer = document.querySelector('#app');
-ReactDOM.render(React.createElement(ApexChart), domContainer);
+//const domContainer = document.querySelector('#app');
+//ReactDOM.render(React.createElement(ApexChart), domContainer);
