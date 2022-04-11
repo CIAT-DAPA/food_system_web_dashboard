@@ -102,5 +102,9 @@ class GenerosPoblacion extends React.Component {
     }
 }
 
-//const domContainer = document.querySelector('#app');
-//ReactDOM.render(React.createElement(ApexChart), domContainer);
+// Construir las graficas en index.html
+(function () {
+  const domContainer = document.querySelector('#app');
+  ReactDOM.render(React.createElement(GenerosPoblacion), domContainer);
+  ReactDOM.render(React.createElement(PoblacionMunicipal), domContainer);
+})()

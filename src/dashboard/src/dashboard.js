@@ -1,4 +1,6 @@
 /* globals Chart:false, feather:false */
+// Grafica que aparecera al comienzo del sitio
+// Placeholder para "Resumen" que pondre mas tarde
 
 (function () {
   'use strict'
