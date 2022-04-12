@@ -23,10 +23,11 @@
 //   de Gestión Integral de Ecosistemas y UMATA.
 //   Cali. 
 
-import Chart from 'react-apexcharts';
+//import Chart from 'react-apexcharts';
 
 // PRIMERA TORTA
 // 79 RURAL, 21 URBANA
+/*
 class TerritoriosMunicipales extends React.Component {
     constructor(props) {
       super(props);
@@ -51,7 +52,7 @@ class TerritoriosMunicipales extends React.Component {
           }]
         },   
       };
-    }
+    };
 
     render() {
       return (
@@ -62,6 +63,27 @@ class TerritoriosMunicipales extends React.Component {
       );
     }
 }
+*/
+
+var aValues = ['Rural', 'Urbana'];
+var bValues = [79, 21];
+var pieColors1 = ["green", "gray"];
+var TerritorioMunicipal = new Chart("Territorio Municipal, Rural o Urbana", {
+  type: "pie",
+  data: {
+    labels: aValues,
+    datasets: [{
+      backgroundColor: pieColors1,
+      data: bValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Territorio Municipal, Rural vs Urbana"
+    }
+  }
+});
 
 
 
@@ -76,6 +98,7 @@ class TerritoriosMunicipales extends React.Component {
 // SEGUNDA TORTA
 // Del 72 de areas protegidas,
 // 41 Parque Nacional Farallones, 31 Reserva Forestal
+/*
 class AreasProtegidas extends React.Component {
     constructor(props) {
       super(props);
@@ -112,6 +135,27 @@ class AreasProtegidas extends React.Component {
       );
     }
 }
+*/
+var xValues = ['Parque Nacional Natural de los Farallones',
+'Zonas de Reserva Forestal'];
+var yValues = [41, 31];
+var pieColors2 = ["blue", "green"];
+var AreasProtegidas = new Chart("Areas Protegidas", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: pieColors2,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Areas Protegidas"
+    }
+  }
+});
 
 //const domContainer = document.querySelector('#app');
 //ReactDOM.render(React.createElement(ApexChart), domContainer);

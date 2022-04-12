@@ -15,10 +15,11 @@
 // en la bilbiografia. Preguntar a Sara sobre esto? Solo existen
 // DANEs hasta 2020 en las citas! 
 
-import Chart from 'react-apexcharts';
+//import Chart from 'react-apexcharts';
 
 // PRIMERA TORTA
 // 2.5 RURAL, 97.5 URBANA
+/*
 class PoblacionMunicipal extends React.Component {
     constructor(props) {
       super(props);
@@ -43,7 +44,7 @@ class PoblacionMunicipal extends React.Component {
           }]
         },   
       };
-    }
+    };
 
     render() {
       return (
@@ -54,7 +55,27 @@ class PoblacionMunicipal extends React.Component {
       );
     }
 }
+*/
 
+var xValues = ['Rural','Urbana'];
+var yValues = [2.5, 97.5];
+var pieColors1 = ["green", "gray"];
+var PoblacionMunicipal = new Chart("Poblacion Municipal Rural o Urbana", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: pieColors1,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Poblacion Municipal Rural vs Urbana"
+    }
+  }
+});
 
 
 //
@@ -66,6 +87,7 @@ class PoblacionMunicipal extends React.Component {
 
 // SEGUNDA TORTA
 // 47% Masculino, 53% Femenino
+/*
 class GenerosPoblacion extends React.Component {
     constructor(props) {
       super(props);
@@ -90,7 +112,7 @@ class GenerosPoblacion extends React.Component {
           }]
         },   
       };
-    }
+    };
 
     render() {
       return (
@@ -101,10 +123,33 @@ class GenerosPoblacion extends React.Component {
       );
     }
 }
+*/
 
+var aValues = ['Masculino','Femenino'];
+var bValues = [47, 53];
+var pieColors2 = ["blue", "pink"];
+var PoblacionGenero = new Chart("Poblacion, Masculino o Femenino", {
+  type: "pie",
+  data: {
+    labels: aValues,
+    datasets: [{
+      backgroundColor: pieColors2,
+      data: bValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Poblacion, Masculino vs Femenino"
+    }
+  }
+});
+
+/*
 // Construir las graficas en index.html
 (function () {
   const domContainer = document.querySelector('#app');
   ReactDOM.render(React.createElement(GenerosPoblacion), domContainer);
   ReactDOM.render(React.createElement(PoblacionMunicipal), domContainer);
 })()
+*/

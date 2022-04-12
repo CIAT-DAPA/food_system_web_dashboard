@@ -11,10 +11,11 @@
 //
 // Datos tomados de DANE, 2020
 
-import React, { Component } from "react";
-import Chart from "react-apexcharts";
+//import React, { Component } from "react";
+//import Chart from "react-apexcharts";
 
-class App extends Component {
+/*
+class CoberturaServicios extends Component {
   constructor(props) {
     super(props);
 
@@ -37,24 +38,37 @@ class App extends Component {
         }
       ]
     };
-  }
+  };
+*/
 
-  render() {
-    return (
-      <div className="app">
-        <div className="row">
-          <div className="mixed-chart">
-            <Chart
-              options={this.state.options}
-              series={this.state.series}
-              type="bar"
-              width="500"
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+//(function () {
+//  'use strict'
 
-export default App;
+var xValues = ['Energia electrica','Acueducto',
+'Alcantarillado',
+'Gas','Recoleccion basuras',
+'Internet'];
+var yValues = [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
+var barColors = ["red", "green","blue","orange","brown", "black"];
+
+const ctx = document.getElementById('CoberturaServicios');
+var CoberturaServicios = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: true},
+    title: {
+      display: true,
+      text: "Cobertura de Servicios Publicos"
+    }
+  }
+});
+//})
+
+//export default CoberturaServicios;
