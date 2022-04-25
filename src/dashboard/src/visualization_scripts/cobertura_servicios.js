@@ -14,43 +14,25 @@
 //import React, { Component } from "react";
 //import Chart from "react-apexcharts";
 
-/*
-class CoberturaServicios extends Component {
-  constructor(props) {
-    super(props);
+// Importando jquery
+var csvreq = require('jquery-csv');
 
-    this.state = {
-      options: {
-        chart: {
-          id: "cobertura-servicios-publicos"
-        },
-        xaxis: {
-          categories: ['Energia electrica','Acueducto',
-          'Alcantarillado',
-          'Gas','Recoleccion basuras',
-          'Internet']
-        }
-      },
-      series: [
-        {
-          name: "porcentajes",
-          data: [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
-        }
-      ]
-    };
-  };
-*/
+// Leyendo archivo CSV
+// PATH ..\..\..\..\data\final\row.csv
+var csv = "..\..\..\..\data\final\row.csv";
+var data = $.csv.toArrays(csv);
 
-//(function () {
-//  'use strict'
+// Parsing archivo CSV
+var xValues = data[0];
+var yValues = data[1];
+//var xValues = ['Energia electrica','Acueducto',
+//'Alcantarillado',
+//'Gas','Recoleccion basuras',
+//'Internet'];
+//var yValues = [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
 
-var xValues = ['Energia electrica','Acueducto',
-'Alcantarillado',
-'Gas','Recoleccion basuras',
-'Internet'];
-var yValues = [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
-var barColors = ["red", "green","blue","orange","brown", "black"];
-
+// Construyendo grafica
+var barColors = ["red","green","blue","orange","brown","black"];
 const ctx = document.getElementById('CoberturaServicios');
 var CoberturaServicios = new Chart(ctx, {
   type: "bar",
@@ -69,6 +51,3 @@ var CoberturaServicios = new Chart(ctx, {
     }
   }
 });
-//})
-
-//export default CoberturaServicios;

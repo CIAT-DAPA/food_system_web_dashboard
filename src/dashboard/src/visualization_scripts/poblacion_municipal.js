@@ -19,46 +19,25 @@
 
 // PRIMERA TORTA
 // 2.5 RURAL, 97.5 URBANA
-/*
-class PoblacionMunicipal extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        series: [2.5,97.5],
-        options: {
-          chart: {
-            width: 380,
-            type: 'pie',
-          },
-          labels: ['Rural','Urbana'],
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },   
-      };
-    };
 
-    render() {
-      return (
-        <div id="chart">
-        <ReactApexChart options={this.state.options}
-        series={this.state.series} type="pie" width={380} />
-        </div>
-      );
-    }
-}
-*/
+// Importando jquery
+var csvreq = require('jquery-csv');
 
-var xValues = ['Rural','Urbana'];
-var yValues = [2.5, 97.5];
+// Leyendo archivo CSV
+// PATH ..\..\..\..\data\final\rur_urb.csv
+var csv = "..\..\..\..\data\final\rur_urb.csv";
+var data = $.csv.toArrays(csv);
+
+// Parsing archivo CSV
+var nombres = [ data[1][0], data[2][0] ];
+var numeros = [ data[1][1], data[2][1] ];
+
+var xValues = nombres;
+var yValues = numeros;
+//var xValues = ['Rural','Urbana'];
+//var yValues = [2.5, 97.5];
+
+// Construyendo grafica
 var pieColors1 = ["green", "gray"];
 var PoblacionMunicipal = new Chart("Poblacion Municipal Rural o Urbana", {
   type: "pie",
@@ -87,46 +66,22 @@ var PoblacionMunicipal = new Chart("Poblacion Municipal Rural o Urbana", {
 
 // SEGUNDA TORTA
 // 47% Masculino, 53% Femenino
-/*
-class GenerosPoblacion extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        series: [47,53],
-        options: {
-          chart: {
-            width: 380,
-            type: 'pie',
-          },
-          labels: ['Masculino','Femenino'],
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },   
-      };
-    };
 
-    render() {
-      return (
-        <div id="chart">
-        <ReactApexChart options={this.state.options}
-        series={this.state.series} type="pie" width={380} />
-        </div>
-      );
-    }
-}
-*/
+// Leyendo archivo CSV
+// PATH ..\..\..\..\data\final\rur_urb.csv
+var csv = "..\..\..\..\data\final\rur_urb.csv";
+var data = $.csv.toArrays(csv);
 
-var aValues = ['Masculino','Femenino'];
-var bValues = [47, 53];
+// Parsing archivo CSV
+var nombres = [ data[1][0], data[2][0] ];
+var numeros = [ data[1][1], data[2][1] ];
+
+var aValues = nombres;
+var bValues = numeros;
+//var aValues = ['Masculino','Femenino'];
+//var bValues = [47, 53];
+
+// Construyendo grafica
 var pieColors2 = ["blue", "pink"];
 var PoblacionGenero = new Chart("Poblacion, Masculino o Femenino", {
   type: "pie",
@@ -144,12 +99,3 @@ var PoblacionGenero = new Chart("Poblacion, Masculino o Femenino", {
     }
   }
 });
-
-/*
-// Construir las graficas en index.html
-(function () {
-  const domContainer = document.querySelector('#app');
-  ReactDOM.render(React.createElement(GenerosPoblacion), domContainer);
-  ReactDOM.render(React.createElement(PoblacionMunicipal), domContainer);
-})()
-*/

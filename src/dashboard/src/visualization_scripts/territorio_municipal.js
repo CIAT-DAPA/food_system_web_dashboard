@@ -27,43 +27,6 @@
 
 // PRIMERA TORTA
 // 79 RURAL, 21 URBANA
-/*
-class TerritoriosMunicipales extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        series: [79,21],
-        options: {
-          chart: {
-            width: 380,
-            type: 'pie',
-          },
-          labels: ['Rural','Urbana'],
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },   
-      };
-    };
-
-    render() {
-      return (
-        <div id="chart">
-        <ReactApexChart options={this.state.options}
-        series={this.state.series} type="pie" width={380} />
-        </div>
-      );
-    }
-}
-*/
 
 var aValues = ['Rural', 'Urbana'];
 var bValues = [79, 21];
@@ -98,44 +61,7 @@ var TerritorioMunicipal = new Chart("Territorio Municipal, Rural o Urbana", {
 // SEGUNDA TORTA
 // Del 72 de areas protegidas,
 // 41 Parque Nacional Farallones, 31 Reserva Forestal
-/*
-class AreasProtegidas extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        series: [41,31],
-        options: {
-          chart: {
-            width: 380,
-            type: 'pie',
-          },
-          labels: ['Parque Nacional Natural de los Farallones',
-          'Zonas de Reserva Forestal'],
-          responsive: [{
-            breakpoint: 480,
-            options: {
-              chart: {
-                width: 200
-              },
-              legend: {
-                position: 'bottom'
-              }
-            }
-          }]
-        },   
-      };
-    }
 
-    render() {
-      return (
-        <div id="chart">
-        <ReactApexChart options={this.state.options}
-        series={this.state.series} type="pie" width={380} />
-        </div>
-      );
-    }
-}
-*/
 var xValues = ['Parque Nacional Natural de los Farallones',
 'Zonas de Reserva Forestal'];
 var yValues = [41, 31];
@@ -156,6 +82,3 @@ var AreasProtegidas = new Chart("Areas Protegidas", {
     }
   }
 });
-
-//const domContainer = document.querySelector('#app');
-//ReactDOM.render(React.createElement(ApexChart), domContainer);
