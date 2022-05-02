@@ -1,8 +1,36 @@
 import React from 'react';
+//import './determinantes.css';
 
 // Graficas
 //import {Bar, Pie} from 'react-chartjs-2';
 import Chart from "react-apexcharts";
+//import { FormText } from 'react-bootstrap';
+
+// Importando jquery y archivos CSV
+//var csv = require('jquery-csv');
+//import * as csv from 'jquery-csv';
+//import raw1 from '../../final_assets/row.csv';
+//import raw2 from '../../final_assets/porcentajes.csv';
+//import raw3 from '../../final_assets/rur_urb.csv';
+//console.log(raw1);
+// Imprimiendo contenido del archivo y guardandolo
+// en un string
+//https://stackoverflow.com/questions/65821206/
+//how-to-read-txt-file-and-save-it-in-array-in-javascript-in-html
+
+/*
+let text1 = 'x';
+async function gettext1() {
+  await fetch(raw1)
+    .then(res => res.text())
+    .then(data => text1 = data)
+    .then(() => console.log(text1))
+  ;
+}
+gettext1();
+console.log(text1);
+*/
+
 
 // Definiendo colores para facilitar su uso en Apex Charts
 // que requiere codigos de color hexadecimales
@@ -18,6 +46,7 @@ const teal  = "#008080";
 //////////////////////////
 var aValues = ['Rural', 'Urbana'];
 var bValues = [79, 21];
+
 //var pieColors = ["green", "gray"];
 
 const TerritorioMunicipal = {
@@ -119,11 +148,21 @@ const PoblacionGenero = {
 //////////////////////////
 // COBERTURA SERVICIOS  //
 //////////////////////////
+
+///*
 var fValues = ['Energia electrica','Acueducto',
 'Alcantarillado',
 'Gas','Recoleccion basuras',
 'Internet'];
 var gValues = [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
+//*/
+
+/*
+var file1 = csv.ToArrays(text1);
+var fValues = file1[0];
+var gValues = file1[1];
+*/
+
 var CSseries = [{
   data: [
     {
