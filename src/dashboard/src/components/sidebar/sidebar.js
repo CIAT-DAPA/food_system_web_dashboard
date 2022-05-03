@@ -27,7 +27,7 @@ function Sidebar() {
       <ul className="nav flex-column">
         <div className="nav-link" aria-current="page">
           <a className="nav-link active" aria-current="page" href='/'>
-            Tablero
+            Introduccion
           </a>
         </div>
 
@@ -39,7 +39,7 @@ function Sidebar() {
 
         <div className="nav-link" aria-current="page">
           <a className="nav-link active" aria-current="page" href='/ssa'>
-            SSA
+            Sistema de Suministro de Alimentos
           </a>
         </div>
 
@@ -57,7 +57,7 @@ function Sidebar() {
 
         <div className="nav-link" aria-current="page">
           <a className="nav-link active" aria-current="page" href='/entorno'>
-          Entorno
+          Entorno Alimentario
           </a>
         </div>
 
@@ -74,47 +74,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
-/*
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href='#'>
-                Tablero
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Determinantes
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                SSA
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Entorno
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Consumidor
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Dietas
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Resultados
-              </a>
-            </li>
-          </ul>
-        </div>
-        </nav>
-*/

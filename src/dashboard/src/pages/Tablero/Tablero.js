@@ -1,12 +1,14 @@
 import React from 'react';
 
-//import sidebar from '../../../components/sidebar/sidebar.js';
-//import topbar from 'src\dashboard\src\components\topbar\topbar';
+// Importando Imagenes
+import Image1 from '../../final_assets/infografia_tablero.png';
 
 function tablero() {
     return (
         <div>
-            Hola, Tablero!
+            <div>
+                <img src={Image1} alt="Infografia Introductoria del Tablero"/>
+            </div>
         </div>
     );
 }

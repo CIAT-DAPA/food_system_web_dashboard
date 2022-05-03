@@ -1,35 +1,53 @@
 import React from 'react';
 //import './determinantes.css';
 
+
+
 // Graficas
 //import {Bar, Pie} from 'react-chartjs-2';
 import Chart from "react-apexcharts";
-//import { FormText } from 'react-bootstrap';
 
-// Importando jquery y archivos CSV
-//var csv = require('jquery-csv');
-//import * as csv from 'jquery-csv';
-//import raw1 from '../../final_assets/row.csv';
-//import raw2 from '../../final_assets/porcentajes.csv';
-//import raw3 from '../../final_assets/rur_urb.csv';
-//console.log(raw1);
-// Imprimiendo contenido del archivo y guardandolo
-// en un string
-//https://stackoverflow.com/questions/65821206/
-//how-to-read-txt-file-and-save-it-in-array-in-javascript-in-html
 
-/*
-let text1 = 'x';
-async function gettext1() {
-  await fetch(raw1)
-    .then(res => res.text())
-    .then(data => text1 = data)
-    .then(() => console.log(text1))
-  ;
+
+// Importando Imagenes
+import Image1 from '../../final_assets/infografia_determinantes.png';
+
+
+
+// Importando JSON y guardando sus datos en arreglos para Apex Charts
+var rururb = require('../../final_assets/rur_urb.json');
+//var rururb_tipos = [ rururb[0].Tipo, rururb[1].Tipo ];
+//var rururb_pobla = [ rururb[0].Poblacion, rururb[1].Poblacion ];
+var rururb_tipos = [];
+var rururb_pobla = [];
+for (let i = 0; i < rururb.length; i++) {
+  rururb_tipos[i] = rururb[i].Tipo;
+  rururb_pobla[i] = rururb[i].Poblacion;
 }
-gettext1();
-console.log(text1);
-*/
+//console.log(rururb_tipos, 'rururb_tipos');
+//console.log(rururb_pobla, 'rururb_pobla');
+
+var row = require('../../final_assets/row.json');
+var row_servi = [];
+var row_cober = [];
+for (let i = 0; i < row.length; i++) {
+  row_servi[i] = row[i][0];
+  row_cober[i] = row[i][1];
+}
+//console.log(row_servi, 'row_servi');
+//console.log(row_cober, 'row_cober');
+
+var porcentajes = require('../../final_assets/porcentajes.json');
+//console.log(porcentajes, 'porcentajes');
+var porcentajes_genero = [];
+var porcentajes_numero = [];
+for (let i = 0; i < porcentajes.length; i++) {
+  porcentajes_genero[i] = porcentajes[i]["INDICADORES DEMOGRAFICOS"];
+  porcentajes_numero[i] = porcentajes[i]["Cali CNPV 2018"];
+}
+//console.log(porcentajes_genero, 'porcentajes_genero');
+//console.log(porcentajes_numero, 'porcentajes_numero');
+
 
 
 // Definiendo colores para facilitar su uso en Apex Charts
@@ -41,11 +59,25 @@ const gray  = "#808080";
 const teal  = "#008080";
 //const lime  = "#00FF00";
 
+
+
 //////////////////////////
 // TERRITORIO MUNICIPAL //
 //////////////////////////
 var aValues = ['Rural', 'Urbana'];
 var bValues = [79, 21];
+//var aValues = rururb_tipos;
+//var bValues = rururb_pobla;
+// Estos datos vienen de una entrevista, y no tienen datos
+// en algun estudio o base de datos que puedo operar
+// Datos tomados de DOGMA, 2020. Fueron entrevistas. La cita dice:
+//   DAGMA (Departamento Administrativo de Gestión del
+//   Medio Ambiente). 2020. Comunicación personal
+//   con Piedad Holguín M. y Teresa Vásquez A.,
+//   representantes de la Unidad Municipal de
+//   Asistencia Técnica (UMATA), de la Subdirección
+//   de Gestión Integral de Ecosistemas y UMATA.
+//   Cali. 
 
 //var pieColors = ["green", "gray"];
 
@@ -68,7 +100,7 @@ const TerritorioMunicipal = {
 
 
 //////////////////////////
-// AREAS PROTEGIDAS     //
+// AREAS     PROTEGIDAS //
 //////////////////////////
 var cValues = ['Parque Nacional Natural de los Farallones',
 'Zonas de Reserva Forestal'];
@@ -76,6 +108,15 @@ var cValues = ['Parque Nacional Natural de los Farallones',
 //'Zonas de Reserva Forestal'];
 var dValues = [41, 31];
 //var pieColors = ["blue", "green"];
+// Estos datos TAMPOCO tienen una base de datos o estudio
+// Datos tomados de DOGMA, 2020. Fueron entrevistas. La cita dice:
+//   DAGMA (Departamento Administrativo de Gestión del
+//   Medio Ambiente). 2020. Comunicación personal
+//   con Piedad Holguín M. y Teresa Vásquez A.,
+//   representantes de la Unidad Municipal de
+//   Asistencia Técnica (UMATA), de la Subdirección
+//   de Gestión Integral de Ecosistemas y UMATA.
+//   Cali. 
 
 const AreasProtegidas = {
   type: "pie",
@@ -98,8 +139,10 @@ const AreasProtegidas = {
 //////////////////////////
 // POBLACION  MUNICIPAL //
 //////////////////////////
-var xValues = ['Rural','Urbana'];
-var yValues = [2.5, 97.5];
+//var xValues = ['Rural','Urbana'];
+//var yValues = [2.5, 97.5];
+var xValues = rururb_tipos;
+var yValues = rururb_pobla;
 //var pieColors = ["green", "gray"];
 
 const PoblacionMunicipal = {
@@ -110,7 +153,7 @@ const PoblacionMunicipal = {
     legend: {
       show: true
     },
-    colors: [green, gray],
+    colors: [gray, green],
     title: {
       display: true,
       text: "Poblacion Municipal"
@@ -121,11 +164,13 @@ const PoblacionMunicipal = {
 
 
 //////////////////////////
-// POBLACION  GENERO    //
+// POBLACION     GENERO //
 //////////////////////////
-var mValues = ['Masculino','Femenino'];
-var nValues = [47, 53];
+//var mValues = ['Masculino','Femenino'];
+//var nValues = [47, 53];
 //var pieColors2 = ["blue", "pink"];
+var mValues = porcentajes_genero;
+var nValues = porcentajes_numero;
 
 const PoblacionGenero = {
   type: "pie",
@@ -146,22 +191,18 @@ const PoblacionGenero = {
 
 
 //////////////////////////
-// COBERTURA SERVICIOS  //
+// COBERTURA  SERVICIOS //
 //////////////////////////
 
-///*
+/*
 var fValues = ['Energia electrica','Acueducto',
 'Alcantarillado',
 'Gas','Recoleccion basuras',
 'Internet'];
 var gValues = [99.7, 99.0, 97.8, 89.6, 99.1, 72.0]
-//*/
-
-/*
-var file1 = csv.ToArrays(text1);
-var fValues = file1[0];
-var gValues = file1[1];
 */
+var fValues = row_servi;
+var gValues = row_cober;
 
 var CSseries = [{
   data: [
@@ -260,6 +301,10 @@ const CoberturaServicios = {
 function determinantes() {
   return (
     <div>
+      <h2>Resumen</h2>
+        <div>
+          <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+        </div>
       <h2>Ambientales</h2>
         <Chart
           options={TerritorioMunicipal.options}
