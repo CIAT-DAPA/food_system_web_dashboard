@@ -26,43 +26,43 @@ function Sidebar() {
       <div className="position-sticky pt-3">
       <ul className="nav flex-column">
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/'>
+          <a className="nav-link active" aria-current="page" href='#/'>
             Introduccion
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/determinantes'>
+          <a className="nav-link active" aria-current="page" href='#/determinantes'>
             Determinantes
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/ssa'>
+          <a className="nav-link active" aria-current="page" href='#/ssa'>
             Sistema de Suministro de Alimentos
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/consumidor'>
+          <a className="nav-link active" aria-current="page" href='#/consumidor'>
           Consumidor
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/dietas'>
+          <a className="nav-link active" aria-current="page" href='#/dietas'>
           Dietas
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/entorno'>
+          <a className="nav-link active" aria-current="page" href='#/entorno'>
           Entorno Alimentario
           </a>
         </div>
 
         <div className="nav-link" aria-current="page">
-          <a className="nav-link active" aria-current="page" href='/resultados'>
+          <a className="nav-link active" aria-current="page" href='#/resultados'>
           Resultados
           </a>
         </div>

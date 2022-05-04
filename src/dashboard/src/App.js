@@ -1,20 +1,21 @@
 // Importando React
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // Importando componentes
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
+import Sidebar   from "./components/sidebar/Sidebar";
+import Topbar    from "./components/topbar/Topbar";
 import Compartir from "./components/compartir/Compartir";
 
 // Importando paginas
-import Tablero from './pages/tablero/tablero';
+import Tablero       from './pages/tablero/tablero';
 import Determinantes from './pages/determinantes/determinantes';
-import SSA from './pages/ssa/ssa';
-import Entorno from './pages/entorno/entorno';
-import Consumidor from './pages/consumidor/consumidor';
-import Dietas from './pages/dietas/dietas';
-import Resultados from './pages/resultados/resultados';
+import SSA           from './pages/ssa/ssa';
+import Entorno       from './pages/entorno/entorno';
+import Consumidor    from './pages/consumidor/consumidor';
+import Dietas        from './pages/dietas/dietas';
+import Resultados    from './pages/resultados/resultados';
 
 // CSS
 import './App.css';
@@ -37,7 +38,7 @@ class App extends Component {
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
               <Sidebar />
               <Compartir />
-              <Router>
+              <HashRouter>
                 <Routes>
                   <Route exact path='/' element={<Tablero />} />
                   <Route path='/determinantes' element={<Determinantes />} />
@@ -47,7 +48,7 @@ class App extends Component {
                   <Route path='/dietas' element={<Dietas />} />
                   <Route path='/resultados' element={<Resultados />} />
                 </Routes>
-              </Router>
+              </HashRouter>
             </main>
           </div>
         </div>
