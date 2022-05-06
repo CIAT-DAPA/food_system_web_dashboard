@@ -300,10 +300,18 @@ function determinantes() {
 
       <h2>Resumen</h2>
       <div className="landscape">
-        <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+        <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
       
       <h2>Determinantes Ambientales</h2>
+
+      El 70% del territorio municipal de Cali (56.400 ha) es
+      zona rural, constituida esencialmente por laderas
+      ubicadas entre los 1.200 y los 1.800 m s. n. m. La
+      mayor parte de estas laderas corresponden al Parque
+      Nacional Natural Farallones de Cali y a zona de reserva
+      forestal.
+
       <div className="flex-container">
         <div>
           <Chart
@@ -324,6 +332,26 @@ function determinantes() {
       </div>
 
         <h2>Determinantes Demograficos</h2>
+
+        Entre 2005 y 2018, la población en la ciudad de Cali
+        ha aumentado en un 7,3%, según los censos del
+        Departamento Administrativo Nacional de Estadística
+        (DANE). La población del área rural presentó una
+        disminución del 27,7%. Las principales comunas
+        de la cabecera municipal de la ciudad donde se ha
+        presentado un aumento del número de personas son la
+        17, 21 y 22 (estrato 5, 1 y 6, respectivamente), aunque se
+        presenta mayor densidad poblacional en las comunas 6,
+        13, 14 y 15 (principalmente estratos 1, 2 y 3, al oriente de
+        la ciudad).
+        Los estratos 1, 2 y 3 concentran aproximadamente
+        al 80% de la población de la ciudad. Cali ha sido
+        históricamente receptora de migrantes, muchos de
+        ellos desplazados por la violencia y provenientes
+        principalmente del suroccidente del país y del litoral
+        Pacífico. En los últimos años, a estos flujos migratorios
+        internos se sumó la llegada de población venezolana.
+
           <Chart
             options={PoblacionMunicipal.options}
             series={PoblacionMunicipal.series}
@@ -338,6 +366,17 @@ function determinantes() {
           />
 
         <h2>Determinantes Tecnologicos</h2>
+
+        El acceso a tecnología e infraestructura para cubrir las
+        necesidades básicas creció fuertemente en la ciudad
+        durante la última década. La cobertura de servicios
+        básicos como energía, gas y agua potable, que son
+        fundamentales para la preparación, conservación e
+        inocuidad de los alimentos, es casi completa. Los
+        servicios de recolección de basuras e internet
+        tenían en 2018 una cobertura del 99,1% y del 72%,
+        respectivamente.
+
           <Chart
             options={CoberturaServicios.options}
             series={CoberturaServicios.series}

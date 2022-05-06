@@ -1,22 +1,25 @@
 {
   "files": {
-    "main.css": "./static/css/main.cede28b3.css",
-    "main.js": "./static/js/main.0db6554d.js",
+    "main.css": "./static/css/main.1f229371.css",
+    "main.js": "./static/js/main.92e4aaad.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/mapa_centrales_plazas.png": "./static/media/mapa_centrales_plazas.c747806ead8da05537b0.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
     "static/media/infografia_ssa.png": "./static/media/infografia_ssa.59a8e12bfb60920681de.png",
+    "static/media/infografia_consumidor.png": "./static/media/infografia_consumidor.4f5a40b613d4cd890798.png",
     "static/media/infografia_determinantes.png": "./static/media/infografia_determinantes.c659dde56616f43cbb33.png",
+    "static/media/infografia_entorno.png": "./static/media/infografia_entorno.e6ab1f6f62b104c73b41.png",
     "static/media/mapas_procedencia.png": "./static/media/mapas_procedencia.6eaa26be9f54328a88b6.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
+    "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
     "static/media/infografia_tablero.png": "./static/media/infografia_tablero.ed921c9c158add6db543.png",
     "index.html": "./index.html",
-    "main.cede28b3.css.map": "./static/css/main.cede28b3.css.map",
-    "main.0db6554d.js.map": "./static/js/main.0db6554d.js.map",
+    "main.1f229371.css.map": "./static/css/main.1f229371.css.map",
+    "main.92e4aaad.js.map": "./static/js/main.92e4aaad.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cede28b3.css",
-    "static/js/main.0db6554d.js"
+    "static/css/main.1f229371.css",
+    "static/js/main.92e4aaad.js"
   ]
 }
