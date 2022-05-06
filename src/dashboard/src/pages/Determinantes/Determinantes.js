@@ -1,13 +1,9 @@
 import React from 'react';
 //import './determinantes.css';
 
-
-
 // Graficas
 //import {Bar, Pie} from 'react-chartjs-2';
 import Chart from "react-apexcharts";
-
-
 
 // Importando Imagenes
 import Image1 from '../../final_assets/infografia_determinantes.png';
@@ -301,44 +297,55 @@ const CoberturaServicios = {
 function determinantes() {
   return (
     <div>
+
       <h2>Resumen</h2>
+      <div className="landscape">
+        <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+      </div>
+      
+      <h2>Determinantes Ambientales</h2>
+      <div className="flex-container">
         <div>
-          <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+          <Chart
+            options={TerritorioMunicipal.options}
+            series={TerritorioMunicipal.series}
+            type="pie"
+            width="400"
+          />
         </div>
-      <h2>Ambientales</h2>
-        <Chart
-          options={TerritorioMunicipal.options}
-          series={TerritorioMunicipal.series}
-          type="pie"
-          width="400"
-        />
-        <Chart
-          options={AreasProtegidas.options}
-          series={AreasProtegidas.series}
-          type="pie"
-          width="400"
-        />
-      <h2>Demograficos</h2>
-        <Chart
-          options={PoblacionMunicipal.options}
-          series={PoblacionMunicipal.series}
-          type="pie"
-          width="400"
-        />
-        <Chart
-          options={PoblacionGenero.options}
-          series={PoblacionGenero.series}
-          type="pie"
-          width="400"
-        />
-      <h2>Tecnologicos</h2>
-        <Chart
-          options={CoberturaServicios.options}
-          series={CoberturaServicios.series}
-          type="bar"
-          width="100%"
-          height="350"
-        />
+        <div>
+          <Chart
+            options={AreasProtegidas.options}
+            series={AreasProtegidas.series}
+            type="pie"
+            width="400"
+          />
+        </div>
+      </div>
+
+        <h2>Determinantes Demograficos</h2>
+          <Chart
+            options={PoblacionMunicipal.options}
+            series={PoblacionMunicipal.series}
+            type="pie"
+            width="400"
+          />
+          <Chart
+            options={PoblacionGenero.options}
+            series={PoblacionGenero.series}
+            type="pie"
+            width="400"
+          />
+
+        <h2>Determinantes Tecnologicos</h2>
+          <Chart
+            options={CoberturaServicios.options}
+            series={CoberturaServicios.series}
+            type="bar"
+            width="100%"
+            height="350"
+          />
+
     </div>
   );
 }

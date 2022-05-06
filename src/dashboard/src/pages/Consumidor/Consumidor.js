@@ -1,12 +1,18 @@
 import React from 'react';
 
-//import sidebar from 'src\dashboard\src\components\sidebar\sidebar';
-//import topbar from 'src\dashboard\src\components\topbar\topbar';
+// CSS
+import "./consumidor.module.css";
+
+// Importando Imagenes
+import Image1 from '../../final_assets/infografia_consumidor.png';
 
 function consumidor() {
     return (
         <div>
-            Hola, Consumidor!
+            <h2>Resumen</h2>
+            <div className="landscape">
+                <img src={Image1} alt="Infografia Resumen SSA"/>
+            </div>
         </div>
     );
 }

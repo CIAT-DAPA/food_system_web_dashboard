@@ -6,10 +6,10 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 // Importando componentes
 import Sidebar   from "./components/sidebar/Sidebar";
 import Topbar    from "./components/topbar/Topbar";
-import Compartir from "./components/compartir/Compartir";
+//import Compartir from "./components/compartir/Compartir";
 
 // Importando paginas
-import Tablero       from './pages/tablero/tablero';
+import Introduccion  from './pages/introduccion/introduccion';
 import Determinantes from './pages/determinantes/determinantes';
 import SSA           from './pages/ssa/ssa';
 import Entorno       from './pages/entorno/entorno';
@@ -37,10 +37,9 @@ class App extends Component {
           <div className="row">
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
               <Sidebar />
-              <Compartir />
               <HashRouter>
                 <Routes>
-                  <Route exact path='/' element={<Tablero />} />
+                  <Route exact path='/' element={<Introduccion />} />
                   <Route path='/determinantes' element={<Determinantes />} />
                   <Route path='/ssa' element={<SSA />} />
                   <Route path='/entorno' element={<Entorno />} />
