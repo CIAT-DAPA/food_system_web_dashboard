@@ -6,12 +6,12 @@ import React from 'react';
 import Chart from "react-apexcharts";
 
 // Importando Imagenes
-import Image1 from '../../final_assets/infografia_determinantes.png';
+import Image1 from '../../final_assets/images/infografia_determinantes.png';
 
 
 
 // Importando JSON y guardando sus datos en arreglos para Apex Charts
-var rururb = require('../../final_assets/rur_urb.json');
+var rururb = require('../../final_assets/final_data/rur_urb_poblacion.json');
 //var rururb_tipos = [ rururb[0].Tipo, rururb[1].Tipo ];
 //var rururb_pobla = [ rururb[0].Poblacion, rururb[1].Poblacion ];
 var rururb_tipos = [];
@@ -23,7 +23,7 @@ for (let i = 0; i < rururb.length; i++) {
 //console.log(rururb_tipos, 'rururb_tipos');
 //console.log(rururb_pobla, 'rururb_pobla');
 
-var row = require('../../final_assets/row.json');
+var row = require('../../final_assets/final_data/servicios.json');
 var row_servi = [];
 var row_cober = [];
 for (let i = 0; i < row.length; i++) {
@@ -33,7 +33,7 @@ for (let i = 0; i < row.length; i++) {
 //console.log(row_servi, 'row_servi');
 //console.log(row_cober, 'row_cober');
 
-var porcentajes = require('../../final_assets/porcentajes.json');
+var porcentajes = require('../../final_assets/final_data/genero_poblacion.json');
 //console.log(porcentajes, 'porcentajes');
 var porcentajes_genero = [];
 var porcentajes_numero = [];

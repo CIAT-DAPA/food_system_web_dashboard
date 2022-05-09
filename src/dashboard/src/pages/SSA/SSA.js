@@ -4,9 +4,9 @@ import React from 'react';
 import "./ssa.module.css";
 
 // Importando Imagenes
-import Image1 from '../../final_assets/mapa_centrales_plazas.png';
-import Image2 from '../../final_assets/mapas_procedencia.png';
-import Image3 from '../../final_assets/infografia_ssa.png';
+import Image1 from '../../final_assets/images/mapa_centrales_plazas.png';
+import Image2 from '../../final_assets/images/mapas_procedencia.png';
+import Image3 from '../../final_assets/images/infografia_ssa.png';
 
 function ssa() {
     return (

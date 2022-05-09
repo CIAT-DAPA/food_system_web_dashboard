@@ -4,7 +4,7 @@ import React from 'react';
 import "./consumidor.module.css";
 
 // Importando Imagenes
-import Image1 from '../../final_assets/infografia_consumidor.png';
+import Image1 from '../../final_assets/images/infografia_consumidor.png';
 
 function consumidor() {
     return (

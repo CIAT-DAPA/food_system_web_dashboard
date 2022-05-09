@@ -5,8 +5,8 @@ import "./introduccion.module.css";
 //import styles from './introduccion.module.css';
 
 // Importando Imagenes
-import Image1 from '../../final_assets/infografia_tablero.png';
-import Image2 from '../../final_assets/perfil_intro.png';
+import Image1 from '../../final_assets/images/infografia_tablero.png';
+import Image2 from '../../final_assets/images/perfil_intro.png';
 
 function introduccion() {
     return (
