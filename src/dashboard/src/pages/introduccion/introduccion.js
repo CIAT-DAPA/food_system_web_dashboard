@@ -8,6 +8,18 @@ import "./introduccion.module.css";
 import Image1 from '../../final_assets/images/infografia_tablero.png';
 import Image2 from '../../final_assets/images/perfil_intro.png';
 
+// Marcador para Mapas
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import {Icon} from 'leaflet';
+
+// Importando Mapas
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
+
+var attr=
+'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+var ubicacion_cali = [3.359889, -76.638565]; // Latitud y Longitud
+
 function introduccion() {
     return (
         <div>
@@ -75,9 +87,38 @@ function introduccion() {
             </div>
             
             Este tablero muestra datos clave del Sistema Alimentario en Cali
-            de acuerdo a un Marco de Analisis. Este Marco consiste en 5 Categorias
-            y una Conclusion donde mostramos los Resultados del Sistema y el
-            analisis, y cada parte tiene sus propias sub-categorias. Son:
+            de acuerdo a un Marco de Analisis.
+
+            A continuacion puedes encontrar un mapa de Cali:
+
+            <MapContainer 
+            center={ubicacion_cali} 
+            zoom={5} 
+            style={{ height: '40vh', width: '20wh' }}
+            scrollWheelZoom={false}
+            >
+                <TileLayer
+                    attribution={attr}
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker 
+                position={ubicacion_cali}
+                icon={new Icon({
+                    iconUrl: markerIconPng, 
+                    iconSize: [25, 41], 
+                    iconAnchor: [12, 41]
+                })}
+                >
+                    <Popup>
+                        <span>Valle del Cauca,<br />Santiago de Cali
+                        </span>
+                    </Popup>
+                </Marker>
+            </MapContainer>
+            
+            Este Marco consiste en 5 Categorias y una Conclusion donde mostramos los 
+            Resultados del Sistema y el analisis, y cada parte tiene sus propias 
+            sub-categorias. Son:
 
                 <ul>
                     <li>Determinantes</li>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.1f229371.css",
-    "main.js": "./static/js/main.92e4aaad.js",
+    "main.css": "./static/css/main.99f5dc50.css",
+    "main.js": "./static/js/main.d64f4679.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/mapa_centrales_plazas.png": "./static/media/mapa_centrales_plazas.c747806ead8da05537b0.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
@@ -14,12 +14,12 @@
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
     "static/media/infografia_tablero.png": "./static/media/infografia_tablero.ed921c9c158add6db543.png",
     "index.html": "./index.html",
-    "main.1f229371.css.map": "./static/css/main.1f229371.css.map",
-    "main.92e4aaad.js.map": "./static/js/main.92e4aaad.js.map",
+    "main.99f5dc50.css.map": "./static/css/main.99f5dc50.css.map",
+    "main.d64f4679.js.map": "./static/js/main.d64f4679.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f229371.css",
-    "static/js/main.92e4aaad.js"
+    "static/css/main.99f5dc50.css",
+    "static/js/main.d64f4679.js"
   ]
 }

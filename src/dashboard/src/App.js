@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // Importando componentes
-import Sidebar   from "./components/sidebar/Sidebar";
-import Topbar    from "./components/topbar/Topbar";
+import Navbar   from "./components/navbar/Navbar";
+import Topbar   from "./components/topbar/Topbar";
 //import Compartir from "./components/compartir/Compartir";
 
 // Importando paginas
@@ -36,7 +36,7 @@ class App extends Component {
         <div className="container-fluid">
           <div className="row">
             <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-              <Sidebar />
+              <Navbar />
               <HashRouter>
                 <Routes>
                   <Route exact path='/' element={<Introduccion />} />

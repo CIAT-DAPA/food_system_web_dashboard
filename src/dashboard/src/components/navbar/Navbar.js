@@ -19,7 +19,7 @@ import React from 'react';
 //</div>
 
 //function sidebar(props) {
-function Sidebar() {
+function Navbar() {
   return(
     <nav id="sidebarMenu" 
     className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -73,4 +73,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default Navbar;
