@@ -48,12 +48,50 @@ for (let i = 0; i < porcentajes.length; i++) {
 
 // Definiendo colores para facilitar su uso en Apex Charts
 // que requiere codigos de color hexadecimales
-const blue  = "#0000FF";
-const pink  = "#FF00FF";
+const blue  = "#6495ED";
+const pink  = "#EB69A6";
 const green = "#008000";
 const gray  = "#808080";
 const teal  = "#008080";
 //const lime  = "#00FF00";
+
+
+
+// Habilitando opcion de DESCARGA para cada grafica
+var chartvar = {
+  toolbar: {
+    show: true,
+    offsetX: 0,
+    offsetY: 0,
+    tools: {
+      download: true,
+      //selection: true,
+      //zoom: true,
+      //zoomin: true,
+      //zoomout: true,
+      //pan: true,
+      //reset: true | '<img src="/static/icons/reset.png" width="20">',
+      //customIcons: []
+    },
+    export: {
+      csv: {
+        filename: undefined,
+        columnDelimiter: ',',
+        headerCategory: 'Categoria',
+        headerValue: 'Valor',
+        dateFormatter(timestamp) {
+          return new Date(timestamp).toDateString()
+        }
+      },
+      svg: {
+        filename: undefined,
+      },
+      png: {
+        filename: undefined,
+      }
+    },
+  },
+}
 
 
 
@@ -79,11 +117,12 @@ var bValues = [79, 21];
 
 const TerritorioMunicipal = {
   type: "pie",
+  chart : chartvar,
   series: bValues,
   options: {
     labels: aValues,
     legend: {
-      show: true
+      show: false
     },
     colors: [green, gray],
     title: {
@@ -147,7 +186,7 @@ const PoblacionMunicipal = {
   options: {
     labels: xValues,
     legend: {
-      show: true
+      show: false
     },
     colors: [gray, green],
     title: {
@@ -174,7 +213,7 @@ const PoblacionGenero = {
   options: {
     labels: mValues,
     legend: {
-      show: true
+      show: false
     },
     colors: [blue, pink],
     title: {
@@ -205,56 +244,22 @@ var CSseries = [{
     {
       x: fValues[0],
       y: gValues[0],
-      goals: [
-        {
-          name: 'Limite',
-          value: 100.0,
-          strokeColor: '#775DD0'
-        }
-      ]
     }, {
       x: fValues[1],
       y: gValues[1],
-      goals: [
-        {
-          name: 'Limite',
-          value: 100.0,
-          strokeColor: '#775DD0'
-        }
-      ]
     }, {
       x: fValues[2],
       y: gValues[2],
-      goals: [
-        {
-          name: 'Limite',
-          value: 100.0,
-          strokeColor: '#775DD0'
-        }
-      ]
     }, {
       x: fValues[3],
       y: gValues[3],
-      goals: [
-        {
-          name: 'Limite',
-          value: 100.0,
-          strokeColor: '#775DD0'
-        }
-      ]
     }, {
       x: fValues[4],
       y: gValues[4],
-      goals: [
-        {
-          name: 'Limite',
-          value: 100.0,
-          strokeColor: '#775DD0'
-        }
-      ]
     }, {
       x: fValues[5],
       y: gValues[5],
+      /*
       goals: [
         {
           name: 'Limite',
@@ -262,6 +267,7 @@ var CSseries = [{
           strokeColor: '#775DD0'
         }
       ]
+      */
     }
   ]
 }]
@@ -288,11 +294,28 @@ const CoberturaServicios = {
     title: {
       display: true,
       text: "Cobertura de Servicios Publicos"
+    },
+    //maintainAspectRatio: false, // para altura definida
+    yaxis: {
+      tickAmount: 10, // eje y incrementa en 10
+      categories: [0,10,20,30,40,50,60,70,80,90,100],
     }
   }
 };
 
 
+
+//////////////////////////
+// COBERTURA  SERVICIOS //
+//////////////////////////
+
+//
+
+
+
+/////////////////
+// CODIGO HTML //
+/////////////////
 
 function determinantes() {
   return (
@@ -302,18 +325,62 @@ function determinantes() {
       <div className="landscape">
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
+
+      La migracion nacional y extranjera hacia Cali aumenta el numero
+      de consumidores vulnerables y determina habitos de consumo<br />
+
+      147.908 personas desplazadas internamente entraran a Cali
+        62.414 migrantes venezolanos en 2019
+        71% dedicados al comerico informal<br />
+
+      En 2019, 37% de las personas desplazadas eran ninos y jovenes
+      Viven en las zonas con mayor densidad de poblacion (estratos 1-3)<br />
+
+      Ciudad multicultural con diversa demanda de alimentos y habitos de consumo<br />
+      
+      Composicion Etnica en Cali
+        0.5% indigenas
+        26% afrodescendientes
+        73% mestizos<br />
+
+      Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
+      compra de alimentos (cifras aumentaron en 2020 debido a COVID-19)
+        45.8% Tasa de informalidad laboral (febrero-abril 2019)
+        21.9% incidencia de pobreza monetaria en 2019
+        12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)<br />
+
+      Cali es sede regional de gremios, actores publicos, bancos, universidades,
+      una unidad de planeacion estrategica inter-departamental y centros de
+      investigacion y desarrollo relacionados con actividades productivas.
+        7 clusteres productivos especializados
+        2 de la indsutria de alimentos<br />
+
+      Fuentes: Migración nacional 
+      (Unidad para la Atención y la Reparación Integral a las Víctimas, 2019); 
+      Migrantes venezolanos (Ministerio de Relaciones Exteriores, 2020); 
+      Composición étnica (Duque et al., 2019); 
+      Informalidad laboral (Cámara de Comercio de Cali, 2019a); 
+      Pobreza monetaria (Cámara de Comercio de Cali, 2020a); 
+      Desempleo (Cámara de Comercio de Cali, 2019b); 
+      Definición de factores determinantes (HLPE, 2017).
+
+
+
+      <hr className="featurette-divider" />
       
       <h2>Determinantes Ambientales</h2>
 
+      <p align="justify">
       El 70% del territorio municipal de Cali (56.400 ha) es
       zona rural, constituida esencialmente por laderas
       ubicadas entre los 1.200 y los 1.800 m s. n. m. La
       mayor parte de estas laderas corresponden al Parque
       Nacional Natural Farallones de Cali y a zona de reserva
       forestal.
+      </p>
 
-      <div className="flex-container">
-        <div>
+      <div className="d-flex flex-row">
+        <div className="p-2">
           <Chart
             options={TerritorioMunicipal.options}
             series={TerritorioMunicipal.series}
@@ -321,7 +388,7 @@ function determinantes() {
             width="400"
           />
         </div>
-        <div>
+        <div className="p-2">
           <Chart
             options={AreasProtegidas.options}
             series={AreasProtegidas.series}
@@ -331,8 +398,13 @@ function determinantes() {
         </div>
       </div>
 
-        <h2>Determinantes Demograficos</h2>
 
+
+      <hr className="featurette-divider" />
+
+      <h2>Determinantes Demograficos</h2>
+
+        <p align="justify">
         Entre 2005 y 2018, la población en la ciudad de Cali
         ha aumentado en un 7,3%, según los censos del
         Departamento Administrativo Nacional de Estadística
@@ -351,22 +423,34 @@ function determinantes() {
         principalmente del suroccidente del país y del litoral
         Pacífico. En los últimos años, a estos flujos migratorios
         internos se sumó la llegada de población venezolana.
+        </p>
 
-          <Chart
-            options={PoblacionMunicipal.options}
-            series={PoblacionMunicipal.series}
-            type="pie"
-            width="400"
-          />
-          <Chart
-            options={PoblacionGenero.options}
-            series={PoblacionGenero.series}
-            type="pie"
-            width="400"
-          />
+        <div className="d-flex flex-row">
+          <div className="p-2">
+            <Chart
+              options={PoblacionMunicipal.options}
+              series={PoblacionMunicipal.series}
+              type="pie"
+              width="400"
+            />
+          </div>
+          <div className="p-2">
+            <Chart
+              options={PoblacionGenero.options}
+              series={PoblacionGenero.series}
+              type="pie"
+              width="400"
+            />
+          </div>
+        </div>
 
-        <h2>Determinantes Tecnologicos</h2>
 
+
+      <hr className="featurette-divider" />
+
+      <h2>Determinantes Tecnologicos</h2>
+
+        <p align="justify">
         El acceso a tecnología e infraestructura para cubrir las
         necesidades básicas creció fuertemente en la ciudad
         durante la última década. La cobertura de servicios
@@ -376,13 +460,14 @@ function determinantes() {
         servicios de recolección de basuras e internet
         tenían en 2018 una cobertura del 99,1% y del 72%,
         respectivamente.
+        </p>
 
           <Chart
             options={CoberturaServicios.options}
             series={CoberturaServicios.series}
             type="bar"
             width="100%"
-            height="350"
+            height="500px"
           />
 
     </div>

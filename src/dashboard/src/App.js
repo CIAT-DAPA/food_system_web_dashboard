@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
 // Importando componentes
-import Navbar   from "./components/navbar/Navbar";
+//import Navbar   from "./components/navbar/Navbar";
 import Topbar   from "./components/topbar/Topbar";
 //import Compartir from "./components/compartir/Compartir";
 
@@ -16,8 +16,10 @@ import Entorno       from './pages/entorno/entorno';
 import Consumidor    from './pages/consumidor/consumidor';
 import Dietas        from './pages/dietas/dietas';
 import Resultados    from './pages/resultados/resultados';
+import About         from './pages/about/about';
 
 // CSS
+//import './App.module.css';
 import './App.css';
 
 // NOTAS:
@@ -34,22 +36,21 @@ class App extends Component {
       <>
         <Topbar />
         <div className="container-fluid">
-          <div className="row">
-            <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-              <Navbar />
-              <HashRouter>
-                <Routes>
-                  <Route exact path='/' element={<Introduccion />} />
-                  <Route path='/determinantes' element={<Determinantes />} />
-                  <Route path='/ssa' element={<SSA />} />
-                  <Route path='/entorno' element={<Entorno />} />
-                  <Route path='/consumidor' element={<Consumidor />} />
-                  <Route path='/dietas' element={<Dietas />} />
-                  <Route path='/resultados' element={<Resultados />} />
-                </Routes>
-              </HashRouter>
-            </main>
-          </div>
+          <main className="ms-sm-auto px-md-4 py-md-3">
+            <HashRouter>
+              <Routes>
+                <Route exact path='/' element={<Introduccion />} />
+                <Route path='/about' element={<About />} />
+                <Route exact path='/close' element={<Introduccion />} />
+                <Route path='/determinantes' element={<Determinantes />} />
+                <Route path='/ssa' element={<SSA />} />
+                <Route path='/entorno' element={<Entorno />} />
+                <Route path='/consumidor' element={<Consumidor />} />
+                <Route path='/dietas' element={<Dietas />} />
+                <Route path='/resultados' element={<Resultados />} />
+              </Routes>
+            </HashRouter>
+          </main>
         </div>
       </>
     );
@@ -57,3 +58,5 @@ class App extends Component {
 }
 
 export default App;
+
+//<main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">

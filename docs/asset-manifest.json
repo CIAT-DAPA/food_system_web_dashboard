@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "./static/css/main.99f5dc50.css",
-    "main.js": "./static/js/main.d64f4679.js",
+    "main.css": "./static/css/main.9d54a5e7.css",
+    "main.js": "./static/js/main.07f082e7.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/mapa_centrales_plazas.png": "./static/media/mapa_centrales_plazas.c747806ead8da05537b0.png",
+    "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
     "static/media/infografia_ssa.png": "./static/media/infografia_ssa.59a8e12bfb60920681de.png",
     "static/media/infografia_consumidor.png": "./static/media/infografia_consumidor.4f5a40b613d4cd890798.png",
+    "static/media/Placeholder2.png": "./static/media/Placeholder2.66815feb3bfbd40eef65.png",
     "static/media/infografia_determinantes.png": "./static/media/infografia_determinantes.c659dde56616f43cbb33.png",
+    "static/media/Placeholder3.png": "./static/media/Placeholder3.a8b9fe496c099aa24952.png",
     "static/media/infografia_entorno.png": "./static/media/infografia_entorno.e6ab1f6f62b104c73b41.png",
     "static/media/mapas_procedencia.png": "./static/media/mapas_procedencia.6eaa26be9f54328a88b6.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
-    "static/media/infografia_tablero.png": "./static/media/infografia_tablero.ed921c9c158add6db543.png",
     "index.html": "./index.html",
-    "main.99f5dc50.css.map": "./static/css/main.99f5dc50.css.map",
-    "main.d64f4679.js.map": "./static/js/main.d64f4679.js.map",
+    "main.9d54a5e7.css.map": "./static/css/main.9d54a5e7.css.map",
+    "main.07f082e7.js.map": "./static/js/main.07f082e7.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.99f5dc50.css",
-    "static/js/main.d64f4679.js"
+    "static/css/main.9d54a5e7.css",
+    "static/js/main.07f082e7.js"
   ]
 }
