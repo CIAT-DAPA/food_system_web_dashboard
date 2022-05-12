@@ -32,6 +32,12 @@ function Topbar() {
           </div>
 
           <div className="nav-item px-2">
+            <a className="nav-link active" aria-current="page" href='#/entorno'>
+            Entorno Alimentario
+            </a>
+          </div>
+
+          <div className="nav-item px-2">
             <a className="nav-link active" aria-current="page" href='#/consumidor'>
             Consumidor
             </a>
@@ -40,12 +46,6 @@ function Topbar() {
           <div className="nav-item px-2">
             <a className="nav-link active" aria-current="page" href='#/dietas'>
             Dietas
-            </a>
-          </div>
-
-          <div className="nav-item px-2">
-            <a className="nav-link active" aria-current="page" href='#/entorno'>
-            Entorno Alimentario
             </a>
           </div>
 

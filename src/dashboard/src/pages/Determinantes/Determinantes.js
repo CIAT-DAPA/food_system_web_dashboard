@@ -326,35 +326,59 @@ function determinantes() {
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
 
-      La migracion nacional y extranjera hacia Cali aumenta el numero
-      de consumidores vulnerables y determina habitos de consumo<br />
+      El termino 'determinantes' es un acercamiento a la palabra en ingles de "Drivers."
+      Se entienden como impulsores o conductores en sistemas alimentarios.
+      <div className="d-flex flex-row">
+        <div className="p-2">
 
-      147.908 personas desplazadas internamente entraran a Cali
-        62.414 migrantes venezolanos en 2019
-        71% dedicados al comerico informal<br />
+          <ul>
+            <li>La migracion nacional y extranjera hacia Cali aumenta el numero
+            de consumidores vulnerables y determina habitos de consumo</li>
 
-      En 2019, 37% de las personas desplazadas eran ninos y jovenes
-      Viven en las zonas con mayor densidad de poblacion (estratos 1-3)<br />
+            <li>147.908 personas desplazadas internamente entraran a Cali</li>
+            <ul>
+              <li>62.414 migrantes venezolanos en 2019</li>
+              <li>71% dedicados al comerico informal</li>
+            </ul>
 
-      Ciudad multicultural con diversa demanda de alimentos y habitos de consumo<br />
+              <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
+              <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
+
+              <li>Ciudad multicultural con diversa demanda de alimentos y 
+                habitos de consumo</li>
+            
+              <li>Composicion Etnica en Cali</li>
+              <ul>
+                <li>0.5% indigenas</li>
+                <li>26% afrodescendientes</li>
+                <li>73% mestizos</li>
+              </ul>
+          </ul>
+
+        </div>
+        <div className="p-2">
+          <ul>
+            <li>Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
+            compra de alimentos (Cifras aumentaron en 2020 debido a COVID-19)</li>
+            <ul>
+              <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
+              <li>21.9% incidencia de pobreza monetaria en 2019</li>
+              <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
+            </ul>
+
+            <li>Cali es sede regional de gremios, actores publicos, bancos, universidades,
+            una unidad de planeacion estrategica inter-departamental y centros de
+            investigacion y desarrollo relacionados con actividades productivas.</li>
+            <ul>
+              <li>7 clusteres productivos especializados</li>
+              <li>2 de la indsutria de alimentos</li>
+            </ul>
+          </ul>
       
-      Composicion Etnica en Cali
-        0.5% indigenas
-        26% afrodescendientes
-        73% mestizos<br />
+        </div>
+      </div>
 
-      Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
-      compra de alimentos (cifras aumentaron en 2020 debido a COVID-19)
-        45.8% Tasa de informalidad laboral (febrero-abril 2019)
-        21.9% incidencia de pobreza monetaria en 2019
-        12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)<br />
-
-      Cali es sede regional de gremios, actores publicos, bancos, universidades,
-      una unidad de planeacion estrategica inter-departamental y centros de
-      investigacion y desarrollo relacionados con actividades productivas.
-        7 clusteres productivos especializados
-        2 de la indsutria de alimentos<br />
-
+      <p align="justify">
       Fuentes: Migración nacional 
       (Unidad para la Atención y la Reparación Integral a las Víctimas, 2019); 
       Migrantes venezolanos (Ministerio de Relaciones Exteriores, 2020); 
@@ -363,6 +387,7 @@ function determinantes() {
       Pobreza monetaria (Cámara de Comercio de Cali, 2020a); 
       Desempleo (Cámara de Comercio de Cali, 2019b); 
       Definición de factores determinantes (HLPE, 2017).
+      </p>
 
 
 

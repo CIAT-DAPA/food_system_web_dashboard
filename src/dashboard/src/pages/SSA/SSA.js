@@ -29,48 +29,71 @@ function ssa() {
                 <img src={Image3} alt="Infografia Resumen SSA"/>
             </div>
 
-            Cali no es un municipio productor de alimentos,
-            pero es un polo de consumo para el sistema alimentario del
-            suroccidente del pais.<br />
+            <ul>
+                <li>Cali no es un municipio productor de alimentos,
+                pero es un polo de consumo para el sistema alimentario del
+                suroccidente del pais.</li>
 
-            Procedencia de los alimentos<br />
-            80% de los granos secos que se comercializan en la ciudad
-            son importados<br />
+                <li>Ademas de constituir el mercado mas grande en el Suroccidente,
+                Cali cumple la funcion de redistribuir alimentos y establecer
+                precios de referencia.</li>
 
-            1317 productores a pequena escala en la zona periurbana<br />
+                <li>Mas de 2.5 millones de personas, incluyendo, principalmente, 
+                a la poblacion de 7 municipios vecinos, 
+                se abastecen de este sistema.</li>
+            </ul>
 
-            65% de los productos provienen de los departamentos de
-            Cauca y Narino<br />
+            <div className="d-flex flex-row">
 
-            Ademas de constituir el mercado mas grande en el Suroccidente,
-            Cali cumple la funcion de redistribuir alimentos y establecer
-            precios de referencia.<br />
+                <div className="p-2">
+                    <ul>
+                        <li>Procedencia de los alimentos</li>
+                        <ul>
+                            <li>80% de los granos secos que se comercializan en la ciudad
+                            son importados</li>
 
-            Principales Mayoristas<br />
-            Santa Elena, 18-22 mil t/mes<br />
-            CAVASA, 30 mil t/mes<br />
+                            <li>1317 productores a pequena escala en la zona periurbana</li>
 
-            Reciben el 41% de los productos alimenticios del Valle del Cauca<br />
-            Cubren el 54% de la demanda de alimentos en la ciudad<br />
+                            <li>65% de los productos provienen de los departamentos de
+                            Cauca y Narino</li>
+                        </ul>
+                        <li>Industria Manufacturera de productos alimenticios</li>
+                        <ul>
+                            <li>984 Empresas de productos alimenticios</li>
+                            <li>195 Empresas de macrosnacks</li>
+                            <li>Crecimiento promedio anual en ventas de macrosnacks de
+                            8.2% entre 2014 y 2019</li>
+                        </ul>
+                    </ul>
+                </div>
 
-            Otros puntos de venta de alimentos<br />
-            Plazas de Mercado<br />
-            Supermercados<br />
-            Restaurantes<br />
-            Mercados campesinos<br />
-            Mercados moviles<br />
-            Tiendas de barrio<br />
+                <div className="p-2">
+                    <ul>
+                        <li>Principales Mayoristas</li>
+                        <ul>
+                            <li>Reciben el 41% de los productos alimenticios 
+                                del Valle del Cauca</li>
+                            <li>Cubren el 54% de la demanda de alimentos 
+                                en la ciudad</li>
+                            <li>Santa Elena, 18-22 mil t/mes</li>
+                            <li>CAVASA, 30 mil t/mes</li>
+                        </ul>
 
-            Mas de 2.5 millones de personas, incluyendo, principalmente, a la poblacion
-            de 7 municipios vecinoes, se abastecen de este sistema.<br />
+                        <li>Otros puntos de venta de alimentos</li>
+                        <ul>
+                            <li>Plazas de Mercado</li>
+                            <li>Supermercados</li>
+                            <li>Restaurantes</li>
+                            <li>Mercados campesinos</li>
+                            <li>Mercados moviles</li>
+                            <li>Tiendas de barrio</li>
+                        </ul>
+                    </ul>
+                </div>
+                
+            </div>
 
-            Industria Manufacturera de productos alimenticios<br />
-            984 Empresas de productos alimenticios<br />
-            195 Empresas de macrosnacks<br />
-
-            Crecimiento promedio anual en ventas de macrosnacks<br />
-            8.2% entre 2014 y 2019
-
+            <p align="justify">
             Fuentes: Principales departamentos abastecedores (DANE, 2020); 
             Número de productores (DANE, 2014); 
             Volumen comercializado en Santa Elena, 
@@ -83,6 +106,7 @@ function ssa() {
             (CAVASA, 2021); 
             Empresas de productos alimenticios (DANE, 2018a); 
             Empresas de macrosnacks (Cámara de Comercio de Cali, 2021).
+            </p>
 
 
 
