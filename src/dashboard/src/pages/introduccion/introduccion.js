@@ -33,38 +33,6 @@ function introduccion() {
                 <img src={Image2} alt="Introduccion Perfil"/>
             </div>
 
-            <hr className="featurette-divider" />
-            
-            Este tablero muestra datos clave del Sistema Alimentario en Cali
-            de acuerdo a un Marco de Analisis.
-
-            A continuacion puedes encontrar un mapa de Cali:
-
-            <MapContainer 
-            center={ubicacion_cali} 
-            zoom={5} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
-            >
-                <TileLayer
-                    attribution={attr}
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker 
-                position={ubicacion_cali}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
-                >
-                    <Popup>
-                        <span>Valle del Cauca,<br />Santiago de Cali
-                        </span>
-                    </Popup>
-                </Marker>
-            </MapContainer>
-
             <div className="container marketing">
                 <hr className="featurette-divider" />
 
@@ -75,7 +43,9 @@ function introduccion() {
                             <span className="text-muted"> Emfasis 1.</span>
                         </h2>
                         <p className="lead">
-                            Texto placeholder aqui por el momento.
+                        Este tablero muestra datos clave del Sistema Alimentario en Cali
+            de acuerdo a un Marco de Analisis.
+            Texto placeholder...
                         </p>
                     </div>
 
@@ -125,6 +95,33 @@ function introduccion() {
 
                 <hr className="featurette-divider" />
             </div>
+
+            A continuacion puedes encontrar un mapa de Cali:
+
+            <MapContainer 
+            center={ubicacion_cali} 
+            zoom={5} 
+            style={{ height: '40vh', width: '20wh' }}
+            scrollWheelZoom={false}
+            >
+                <TileLayer
+                    attribution={attr}
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker 
+                position={ubicacion_cali}
+                icon={new Icon({
+                    iconUrl: markerIconPng, 
+                    iconSize: [25, 41], 
+                    iconAnchor: [12, 41]
+                })}
+                >
+                    <Popup>
+                        <span>Valle del Cauca,<br />Santiago de Cali
+                        </span>
+                    </Popup>
+                </Marker>
+            </MapContainer>
             
         </div>
     );

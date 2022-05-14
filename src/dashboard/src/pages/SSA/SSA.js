@@ -24,7 +24,7 @@ var ubicacion_cali = [3.359889, -76.638565]; // Latitud y Longitud
 function ssa() {
     return (
         <div>
-            <h2>Resumen</h2>
+            <h2>Sistema de Suministro de Alimentos</h2>
             <div className="landscape">
                 <img src={Image3} alt="Infografia Resumen SSA"/>
             </div>
@@ -48,46 +48,48 @@ function ssa() {
                 <div className="p-2">
                     <ul>
                         <li>Procedencia de los alimentos</li>
-                        <ul>
-                            <li>80% de los granos secos que se comercializan en la ciudad
-                            son importados</li>
+                            <ul>
+                                <li>80% de los granos secos que se comercializan en 
+                                    la ciudad son importados</li>
 
-                            <li>1317 productores a pequena escala en la zona periurbana</li>
+                                <li>1317 productores a pequena escala en la zona 
+                                    periurbana</li>
 
-                            <li>65% de los productos provienen de los departamentos de
-                            Cauca y Narino</li>
-                        </ul>
-                        <li>Industria Manufacturera de productos alimenticios</li>
-                        <ul>
-                            <li>984 Empresas de productos alimenticios</li>
-                            <li>195 Empresas de macrosnacks</li>
-                            <li>Crecimiento promedio anual en ventas de macrosnacks de
-                            8.2% entre 2014 y 2019</li>
-                        </ul>
+                                <li>65% de los productos provienen de los 
+                                    departamentos de Cauca y Narino</li>
+                            </ul>
+                        <li>Industria Manufacturera de productos 
+                            alimenticios</li>
+                            <ul>
+                                <li>984 Empresas de productos alimenticios</li>
+                                <li>195 Empresas de macrosnacks</li>
+                                <li>Crecimiento promedio anual en ventas de macrosnacks de
+                                8.2% entre 2014 y 2019</li>
+                            </ul>
                     </ul>
                 </div>
 
                 <div className="p-2">
                     <ul>
                         <li>Principales Mayoristas</li>
-                        <ul>
-                            <li>Reciben el 41% de los productos alimenticios 
-                                del Valle del Cauca</li>
-                            <li>Cubren el 54% de la demanda de alimentos 
-                                en la ciudad</li>
-                            <li>Santa Elena, 18-22 mil t/mes</li>
-                            <li>CAVASA, 30 mil t/mes</li>
-                        </ul>
+                            <ul>
+                                <li>Reciben el 41% de los productos alimenticios 
+                                    del Valle del Cauca</li>
+                                <li>Cubren el 54% de la demanda de alimentos 
+                                    en la ciudad</li>
+                                <li>Santa Elena, 18-22 mil t/mes</li>
+                                <li>CAVASA, 30 mil t/mes</li>
+                            </ul>
 
                         <li>Otros puntos de venta de alimentos</li>
-                        <ul>
-                            <li>Plazas de Mercado</li>
-                            <li>Supermercados</li>
-                            <li>Restaurantes</li>
-                            <li>Mercados campesinos</li>
-                            <li>Mercados moviles</li>
-                            <li>Tiendas de barrio</li>
-                        </ul>
+                            <ul>
+                                <li>Plazas de Mercado</li>
+                                <li>Supermercados</li>
+                                <li>Restaurantes</li>
+                                <li>Mercados campesinos</li>
+                                <li>Mercados moviles</li>
+                                <li>Tiendas de barrio</li>
+                            </ul>
                     </ul>
                 </div>
                 

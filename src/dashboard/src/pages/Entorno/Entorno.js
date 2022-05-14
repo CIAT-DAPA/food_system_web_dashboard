@@ -21,7 +21,7 @@ var ubicacion_ciat = [3.5025954,-76.35724]; // Latitud y Longitud
 function entorno() {
     return (
         <div>
-            <h2>Resumen</h2>
+            <h2>Entorno alimentario de la ciudad</h2>
             <div>
                 <img src={Image3} alt="Infografia del Entorno Alimentario"/>
             </div>
@@ -35,44 +35,44 @@ function entorno() {
                         <li>Las tiendas estan disminuyendo mientras ganan
                             presencia los formatos emergentes.
                         </li>
-                        <ul>
-                            <li>Tiendas de barrio</li>
                             <ul>
-                                <li>96% de las compras en estratos 1-4</li>
-                                <li>Existen alrededor de 14 mil</li>
-                                <li>Abiertas de 6 a.m. a 10 p.m.</li>
+                                <li>Tiendas de barrio</li>
+                                <ul>
+                                    <li>96% de las compras en estratos 1-4</li>
+                                    <li>Existen alrededor de 14 mil</li>
+                                    <li>Abiertas de 6 a.m. a 10 p.m.</li>
+                                </ul>
+                                <li>Formatos Emergentes</li>
+                                <ul>
+                                    <li>Supermercados de descuento</li>
+                                    <li>Cercanos a zona residencial</li>
+                                </ul>
                             </ul>
-                            <li>Formatos Emergentes</li>
-                            <ul>
-                                <li>Supermercados de descuento</li>
-                                <li>Cercanos a zona residencial</li>
-                            </ul>
-                        </ul>
                         <li>3.666 Supermercados (Micro, pequenos y grandes)</li>
                         <li>Facil acceso a puntos de venta en el casco urbano 
                             (5 minuntos caminando)</li>
                         <li>41 Mercados Moviles, Una vez por semana</li>
                         <li>Comedores Comunitarios</li>
-                        <ul>
-                            <li>48.600 beneficiarios</li>
-                            <li>1 racion diraria caliente 
-                                (40% del valor calorico minimo vital)</li>
-                        </ul>
+                            <ul>
+                                <li>48.600 beneficiarios</li>
+                                <li>1 racion diraria caliente 
+                                    (40% del valor calorico minimo vital)</li>
+                            </ul>
                         <li>2.681 Restaurantes</li>
                         <li>5-15% Ventas por Internet 
                             (COVID-19 acelero el comerico electronico)</li>
                         <li>Programa de Alimentacion Escola (PEA)</li>
-                        <ul>
-                            <li>Cubre 163.575 ninos y adolescentes con enfasis en
-                                estratos 1-3 y, recientemente, el 4.
-                            </li>
-                            <li>Atiende al 100% de las instituciones
-                                educativas publicas
-                            </li>
-                            <li>Tiendas escolares con oferta diverda de alimentos,
-                                con tendencia a saludables.
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>Cubre 163.575 ninos y adolescentes con enfasis en
+                                    estratos 1-3 y, recientemente, el 4.
+                                </li>
+                                <li>Atiende al 100% de las instituciones
+                                    educativas publicas
+                                </li>
+                                <li>Tiendas escolares con oferta diverda de alimentos,
+                                    con tendencia a saludables.
+                                </li>
+                            </ul>
                     </ul>
                 </div>
 
@@ -82,34 +82,34 @@ function entorno() {
                             dificulta la identificacion de riesgos para la salud
                             en alimentos procesados y ultraprocesados.
                         </li>
-                        <ul>
-                            <li>Fuerte publicidad de alimentos altos en sal,
-                                grasas y azucar.
-                            </li>
-                            <li>56% de la publicidad de alimentos en Colombia
-                                es dirigida a ninos.
-                            </li>
-                            <li>Tablas nutricionales no comprensibles para
-                                la mayoria de la poblacion.
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>Fuerte publicidad de alimentos altos en sal,
+                                    grasas y azucar.
+                                </li>
+                                <li>56% de la publicidad de alimentos en Colombia
+                                    es dirigida a ninos.
+                                </li>
+                                <li>Tablas nutricionales no comprensibles para
+                                    la mayoria de la poblacion.
+                                </li>
+                            </ul>
                         <li>Cali enfrenta todavia grandes retos respecto al
                             manejo de perdidas y desperdicios de alimentos.
                         </li>
-                        <ul>
-                            <li>1.800 Toneladas diarias de residuos solidos</li>
                             <ul>
-                                <li>70% Completamente Aprovechable
-                                    (1.260 Toneladas)
-                                </li>
-                                <li>59% Generado en las viviendas
-                                    (59.4% son residuos de alimentos)
+                                <li>1.800 Toneladas diarias de residuos solidos</li>
+                                <ul>
+                                    <li>70% Completamente Aprovechable
+                                        (1.260 Toneladas)
+                                    </li>
+                                    <li>59% Generado en las viviendas
+                                        (59.4% son residuos de alimentos)
+                                    </li>
+                                </ul>
+                                <li>1.671 Grandes Generadores de Residuos
+                                    (mas de 1 metro cubico de residuos por mes)
                                 </li>
                             </ul>
-                            <li>1.671 Grandes Generadores de Residuos
-                                (mas de 1 metro cubico de residuos por mes)
-                            </li>
-                        </ul>
                     </ul>
                 </div>
             </div>

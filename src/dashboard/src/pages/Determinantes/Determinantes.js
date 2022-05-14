@@ -321,38 +321,42 @@ function determinantes() {
   return (
     <div>
 
-      <h2>Resumen</h2>
+      <h2>Factores determinantes para el sistema alimentario</h2>
+      El termino 'determinantes' es un acercamiento a la palabra en ingles de "Drivers."
+      Se entienden como impulsores o conductores en sistemas alimentarios.
       <div className="landscape">
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
 
-      El termino 'determinantes' es un acercamiento a la palabra en ingles de "Drivers."
-      Se entienden como impulsores o conductores en sistemas alimentarios.
       <div className="d-flex flex-row">
         <div className="p-2">
 
           <ul>
+
             <li>La migracion nacional y extranjera hacia Cali aumenta el numero
             de consumidores vulnerables y determina habitos de consumo</li>
-
-            <li>147.908 personas desplazadas internamente entraran a Cali</li>
-            <ul>
-              <li>62.414 migrantes venezolanos en 2019</li>
-              <li>71% dedicados al comerico informal</li>
-            </ul>
-
-              <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
-              <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
-
-              <li>Ciudad multicultural con diversa demanda de alimentos y 
-                habitos de consumo</li>
-            
-              <li>Composicion Etnica en Cali</li>
               <ul>
-                <li>0.5% indigenas</li>
-                <li>26% afrodescendientes</li>
-                <li>73% mestizos</li>
+                <li>147.908 personas desplazadas internamente entraran a Cali</li>
+                  <ul>
+                    <li>62.414 migrantes venezolanos en 2019</li>
+                    <li>71% dedicados al comerico informal</li>
+                  </ul>
+
+                <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
+                <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
               </ul>
+
+            <li>Ciudad multicultural con diversa demanda de alimentos y 
+            habitos de consumo</li>
+              <ul>
+                <li>Composicion Etnica en Cali</li>
+                  <ul>
+                    <li>0.5% indigenas</li>
+                    <li>26% afrodescendientes</li>
+                    <li>73% mestizos</li>
+                  </ul>
+              </ul>
+
           </ul>
 
         </div>
@@ -360,19 +364,19 @@ function determinantes() {
           <ul>
             <li>Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
             compra de alimentos (Cifras aumentaron en 2020 debido a COVID-19)</li>
-            <ul>
-              <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
-              <li>21.9% incidencia de pobreza monetaria en 2019</li>
-              <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
-            </ul>
+              <ul>
+                <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
+                <li>21.9% incidencia de pobreza monetaria en 2019</li>
+                <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
+              </ul>
 
             <li>Cali es sede regional de gremios, actores publicos, bancos, universidades,
             una unidad de planeacion estrategica inter-departamental y centros de
             investigacion y desarrollo relacionados con actividades productivas.</li>
-            <ul>
-              <li>7 clusteres productivos especializados</li>
-              <li>2 de la indsutria de alimentos</li>
-            </ul>
+              <ul>
+                <li>7 clusteres productivos especializados</li>
+                <li>2 de la indsutria de alimentos</li>
+              </ul>
           </ul>
       
         </div>
