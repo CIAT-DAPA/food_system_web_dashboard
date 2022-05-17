@@ -7,6 +7,7 @@ import "./about.module.css";
 // Importando Imagenes
 //import Image1 from '../../final_assets/images/infografia_tablero.png';
 //import Image2 from '../../final_assets/images/perfil_intro.png';
+//import Place1 from '../../final_assets/images/Placeholder1.png';
 
 // Marcador para Mapas
 import markerIconPng from "leaflet/dist/images/marker-icon.png";
@@ -26,6 +27,11 @@ function about() {
         <div>
 
             <div className="container marketing">
+
+                <h2>Acerca de Nosotros</h2>
+                Narrativa de texto...
+                <hr className="featurette-divider" />
+
                 <div className="row">
 
                     <div className="col-lg-4">
