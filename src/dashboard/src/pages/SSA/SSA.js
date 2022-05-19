@@ -126,6 +126,8 @@ function ssa() {
             provenientes en el 83% de los casos, de unidades de
             menos de 5 ha.
             </p>
+            A continuacion, podemos observar los 6 municipios con mayor
+            y menor participacion en cada tipo de alimento.
 
             <MapContainer 
             center={ubicacion_cali} 

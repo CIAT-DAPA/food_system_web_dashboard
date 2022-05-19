@@ -1,5 +1,7 @@
 import React from 'react';
-//import './determinantes.css';
+
+// CSS
+import './determinantes.module.css';
 
 // Graficas
 //import {Bar, Pie} from 'react-chartjs-2';
@@ -7,6 +9,11 @@ import Chart from "react-apexcharts";
 
 // Importando Imagenes
 import Image1 from '../../final_assets/images/infografia_determinantes.png';
+// Iconos
+//import icon1 from '../../final_assets/icons/driver_2.png';
+//import icon2 from '../../final_assets/icons/driver_3.png';
+//import icon3 from '../../final_assets/icons/driver_4.png';
+//import icon4 from '../../final_assets/icons/driver_5.png';
 
 
 
@@ -331,10 +338,12 @@ function determinantes() {
       <div className="d-flex flex-row">
         <div className="p-2">
 
-          <ul>
+          <ul className="custom-list">
 
-            <li>La migracion nacional y extranjera hacia Cali aumenta el numero
-            de consumidores vulnerables y determina habitos de consumo</li>
+            <li> 
+              La migracion nacional y extranjera hacia Cali aumenta el numero
+              de consumidores vulnerables y determina habitos de consumo
+            </li>
               <ul>
                 <li>147.908 personas desplazadas internamente entraran a Cali</li>
                   <ul>
@@ -346,8 +355,10 @@ function determinantes() {
                 <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
               </ul>
 
-            <li>Ciudad multicultural con diversa demanda de alimentos y 
-            habitos de consumo</li>
+            <li>
+              Ciudad multicultural con diversa demanda de alimentos y 
+              habitos de consumo
+            </li>
               <ul>
                 <li>Composicion Etnica en Cali</li>
                   <ul>
@@ -370,12 +381,13 @@ function determinantes() {
                 <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
               </ul>
 
-            <li>Cali es sede regional de gremios, actores publicos, bancos, universidades,
+            <li>Cali es sede regional de gremios, actores publicos, bancos, 
+            universidades,
             una unidad de planeacion estrategica inter-departamental y centros de
             investigacion y desarrollo relacionados con actividades productivas.</li>
               <ul>
                 <li>7 clusteres productivos especializados</li>
-                <li>2 de la indsutria de alimentos</li>
+                <li>2 de la industria de alimentos</li>
               </ul>
           </ul>
       

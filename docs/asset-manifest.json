@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.9d54a5e7.css",
-    "main.js": "./static/js/main.190e956b.js",
+    "main.css": "./static/css/main.1652fa6b.css",
+    "main.js": "./static/js/main.bd39db46.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/mapa_centrales_plazas.png": "./static/media/mapa_centrales_plazas.c747806ead8da05537b0.png",
     "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
@@ -15,13 +15,14 @@
     "static/media/mapas_procedencia.png": "./static/media/mapas_procedencia.6eaa26be9f54328a88b6.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
+    "static/media/driver_2.png": "./static/media/driver_2.38b82462f948c3dacd39.png",
     "index.html": "./index.html",
-    "main.9d54a5e7.css.map": "./static/css/main.9d54a5e7.css.map",
-    "main.190e956b.js.map": "./static/js/main.190e956b.js.map",
+    "main.1652fa6b.css.map": "./static/css/main.1652fa6b.css.map",
+    "main.bd39db46.js.map": "./static/js/main.bd39db46.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9d54a5e7.css",
-    "static/js/main.190e956b.js"
+    "static/css/main.1652fa6b.css",
+    "static/js/main.bd39db46.js"
   ]
 }

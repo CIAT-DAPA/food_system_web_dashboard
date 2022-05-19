@@ -4,63 +4,45 @@ img {
     max-height: 100%;
 }
 
-.portrait {
-    height: auto;
-    width: 30px;
-}
+    .portrait {
+        height: auto;
+        width: 30px;
+    }
 
-.landscape {
-    height: 30px;
-    width: auto;
-}
+    .landscape {
+        height: 30px;
+        width: auto;
+    }
 
-.square {
-    height: 75px;
-    width: 75px;
-}
+    .square {
+        height: 75px;
+        width: 75px;
+    }
 
-
-
-/* Estableciendo matriz para graficas e imagenes */
-
-.gallery {
-    /* 
-    height: 90vh;
-    margin: 2rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    */
-    display: grid;
-    justify-content: space-evenly;
-    justify-items: center;
-}
-
-.cell {
-    color: white;
-    text-align: center;
-    padding: 4rem;
-    min-width: 0;
-}
-
-.chartrow {
-    display: flex;
-}
-  
-.chartcolumn {
-    padding: 10px;
-    flex: 50%;
-}
 
 
 /*
-.flex-container {
-    display: flex;
-    background-color: DodgerBlue;
+Imagenes en listas
+*/
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
 }
 
-.flex-container > div {
-    background-color: #f1f1f1;
-    margin: 10px;
-    padding: 20px;
-}
-*/
+    .custom-list li {
+        position: relative;
+        padding-left: 20px;
+    }
+    .custom-list li:before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        background-image: url('../../final_assets/icons/driver_2.png');
+        background-size: cover;
+        background-position: center;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
