@@ -4,26 +4,77 @@ import React from 'react';
 import "./ssa.module.css";
 
 // Importando Imagenes
-import Image1 from '../../final_assets/images/mapa_centrales_plazas.png';
-import Image2 from '../../final_assets/images/mapas_procedencia.png';
+//import Image1 from '../../final_assets/images/mapa_centrales_plazas.png';
+//import Image2 from '../../final_assets/images/mapas_procedencia.png';
 import Image3 from '../../final_assets/images/infografia_ssa.png';
 
 // Marcador para Mapas
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
+//import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import {Icon} from 'leaflet';
 
 // Importando Mapas
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
+// Importando informacion para mapas
+import mapa1 from '../../final_assets/map_info/municipios_alimentos.json';
+import mapa2 from '../../final_assets/map_info/sitios_mercados.json';
+
+
+
+// Manejando informacion de mapas
+// Mapa 1
+var municipios = [], departamentos = [], rings = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    municipios.push(mapa1.features[i].attributes.MPIO_CNMBR);
+    departamentos.push(mapa1.features[i].attributes.DPTO_CNMBR);
+    rings.push(mapa1.features[i].geometry.rings);
+}
+console.log('mapa1',mapa1);
+console.log('municipios',municipios);
+console.log('departamentos',departamentos);
+console.log('rings',rings);
+
+// Mapa 2
+var ubicaciones = [], names = [], tipos = [];
+for (let i = 0; i < mapa2.features.length; i++) {
+    ubicaciones.push([mapa2.features[i].geometry.y, mapa2.features[i].geometry.x]);
+    names.push(mapa2.features[i].attributes.Name);
+    tipos.push(mapa2.features[i].attributes.Tipo);
+}
+
+
+
+// Para Leaflet
 var attr=
 'Colaboradores de &copy;' +
 '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-var ubicacion_cali = [3.359889, -76.638565]; // Latitud y Longitud
+var ubicacion_colombia = [4.570868, -74.297333]; // Latitud y Longitud
+// Iconos
+// https://github.com/pointhi/leaflet-color-markers
+var githublink = 
+'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/';
+var greenIcon  = githublink + 'marker-icon-2x-green.png';
+var blueIcon   = githublink + 'marker-icon-2x-blue.png';
+var greenShade = githublink + 'marker-icon-green.png';
+var blueShade  = githublink + 'marker-icon-blue.png';
 
-function ssa() {
+
+
+function SSA() {
+
+    const mapRef = React.useRef(null);
+
+    // event listener to handle marker click
+    const handleClick = () => {
+        mapRef.current._popup._closeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+        })
+    };
+
     return (
         <div>
+
             <h2>Sistema de Suministro de Alimentos</h2>
             <div className="landscape">
                 <img src={Image3} alt="Infografia Resumen SSA"/>
@@ -126,37 +177,57 @@ function ssa() {
             provenientes en el 83% de los casos, de unidades de
             menos de 5 ha.
             </p>
+            <p align="justify">
             A continuacion, podemos observar los 6 municipios con mayor
             y menor participacion en cada tipo de alimento.
+            </p>
+
+            <div class="d-flex justify-content-center">
+                <div className="flex-fill btn-group btn-group-toggle" 
+                data-toggle="buttons">
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" checked />
+                        Carnes
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" checked />
+                        Frutas
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" checked />
+                        Granos y Cereales
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option4" checked />
+                        Lacteos y Huevos
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option5" checked />
+                        Pescados
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option6" checked />
+                        Tuberculos, raices y platanos
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option7" checked />
+                        Verduras y hortalizas
+                    </label>
+                </div>
+            </div>
 
             <MapContainer 
-            center={ubicacion_cali} 
-            zoom={5} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
+                center={ubicacion_colombia}
+                zoom={6}
+                style={{ height: '80vh', width: '20wh' }}
+                scrollWheelZoom={false}
+                ref={mapRef}
             >
                 <TileLayer
                     attribution={attr}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker 
-                position={ubicacion_cali}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
-                >
-                    <Popup>
-                        <span>Valle del Cauca,<br />Santiago de Cali
-                        </span>
-                    </Popup>
-                </Marker>
             </MapContainer>
-
-            <div className="portrait">
-                <img src={Image2} alt="Mapa de Procedencia de Alimentos por Municipio"/>
-            </div>
 
 
 
@@ -183,35 +254,194 @@ function ssa() {
             </p>
 
             <MapContainer 
-            center={ubicacion_cali} 
-            zoom={5} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
+                center={ubicaciones[4]} 
+                zoom={12} 
+                style={{ height: '40vh', width: '20wh' }}
+                scrollWheelZoom={false}
+                ref={mapRef}
             >
+
                 <TileLayer
                     attribution={attr}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+
                 <Marker 
-                position={ubicacion_cali}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
+                    position={ubicaciones[0]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: blueIcon,
+                        shadowUrl: blueShade,  
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
                 >
                     <Popup>
-                        <span>Valle del Cauca,<br />Santiago de Cali
+                        <span>
+                            {names[0]},<br />{tipos[0]}
                         </span>
                     </Popup>
                 </Marker>
+
+                <Marker 
+                    position={ubicaciones[1]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: greenIcon,
+                        shadowUrl: greenShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[1]},<br />{tipos[1]}
+                        </span>
+                    </Popup>
+                </Marker>
+
+                <Marker 
+                    position={ubicaciones[2]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: greenIcon,
+                        shadowUrl: greenShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[2]},<br />{tipos[2]}
+                        </span>
+                    </Popup>
+                </Marker>
+
+                <Marker 
+                    position={ubicaciones[3]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: blueIcon,
+                        shadowUrl: blueShade,  
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[3]},<br />{tipos[3]}
+                        </span>
+                    </Popup>
+                </Marker>
+
+                <Marker 
+                    position={ubicaciones[4]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: greenIcon,
+                        shadowUrl: greenShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[4]},<br />{tipos[4]}
+                        </span>
+                    </Popup>
+                </Marker>
+
+                <Marker 
+                    position={ubicaciones[5]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: greenIcon,
+                        shadowUrl: greenShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[5]},<br />{tipos[5]}
+                        </span>
+                    </Popup>
+                </Marker>
+
+                <Marker 
+                    position={ubicaciones[6]}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: greenIcon,
+                        shadowUrl: greenShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
+                >
+                    <Popup>
+                        <span>
+                            {names[6]},<br />{tipos[6]}
+                        </span>
+                    </Popup>
+                </Marker>
+
             </MapContainer>
 
-            <div className="landscape">
-                <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
-            </div>
         </div>
     );
 }
 
-export default ssa;
+export default SSA;
+
+/*
+// Santa Elena
+var ubicacion_elena    = [mapa2.features[0].geometry.y, mapa2.features[0].geometry.x];
+var name_elena         = mapa2.features[0].attributes.Name;
+var tipo_elena         = mapa2.features[0].attributes.Tipo;
+//console.log('mapa2 features 0 geometry y x', ubicacion_elena);
+//console.log('mapa2 features 0 attributes Name', name_elena);
+// Alameda
+var ubicacion_alameda  = [mapa2.features[1].geometry.y, mapa2.features[1].geometry.x];
+var name_alameda       = mapa2.features[1].attributes.Name;
+var tipo_alameda       = mapa2.features[1].attributes.Tipo;
+// El Porvenir
+var ubicacion_porvenir = [mapa2.features[2].geometry.y, mapa2.features[2].geometry.x];
+var name_porvenir      = mapa2.features[2].attributes.Name;
+var tipo_porvenir      = mapa2.features[2].attributes.Tipo;
+// CAVASA
+var ubicacion_cavasa   = [mapa2.features[3].geometry.y, mapa2.features[3].geometry.x];
+var name_cavasa        = mapa2.features[3].attributes.Name;
+var tipo_cavasa        = mapa2.features[3].attributes.Tipo;
+// La Floresta
+var ubicacion_floresta = [mapa2.features[4].geometry.y, mapa2.features[4].geometry.x];
+var name_floresta      = mapa2.features[4].attributes.Name;
+var tipo_floresta      = mapa2.features[4].attributes.Tipo;
+// Siloe
+var ubicacion_siloe    = [mapa2.features[5].geometry.y, mapa2.features[5].geometry.x];
+var name_siloe         = mapa2.features[5].attributes.Name;
+var tipo_siloe         = mapa2.features[5].attributes.Tipo;
+// Alfonso Lopez
+var ubicacion_lopez    = [mapa2.features[6].geometry.y, mapa2.features[6].geometry.x];
+var name_lopez         = mapa2.features[6].attributes.Name;
+var tipo_lopez         = mapa2.features[6].attributes.Tipo;
+
+
+
+            <div className="landscape">
+                <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+            </div>
+*/

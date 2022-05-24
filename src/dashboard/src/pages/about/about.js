@@ -10,19 +10,42 @@ import "./about.module.css";
 //import Place1 from '../../final_assets/images/Placeholder1.png';
 
 // Marcador para Mapas
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
+//import markerIconPng from "leaflet/dist/images/marker-icon.png";
 import {Icon} from 'leaflet';
 
 // Importando Mapas
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
+
+
+// Para Leaflet
 var attr=
 'Colaboradores de &copy;' +
 '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
 var ubicacion_ciat = [3.5025954,-76.35724]; // Latitud y Longitud
+// Iconos
+// https://github.com/pointhi/leaflet-color-markers
+var githublink = 
+'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/';
+//var greenIcon  = githublink + 'marker-icon-2x-green.png';
+var blueIcon   = githublink + 'marker-icon-2x-blue.png';
+//var greenShade = githublink + 'marker-icon-green.png';
+var blueShade  = githublink + 'marker-icon-blue.png';
 
-function about() {
+
+
+function About() {
+
+    const mapRef = React.useRef(null);
+
+    // event listener to handle marker click
+    const handleClick = () => {
+        mapRef.current._popup._closeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+        })
+    };
+
     return (
         <div>
 
@@ -106,25 +129,31 @@ function about() {
             Aqui, podriamos poner un mapa con la ubicacion del edificio CIAT.
 
             <MapContainer 
-            center={ubicacion_ciat} 
-            zoom={12} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
+                center={ubicacion_ciat} 
+                zoom={12} 
+                style={{ height: '40vh', width: '20wh' }}
+                scrollWheelZoom={false}
+                ref={mapRef}
             >
                 <TileLayer
                     attribution={attr}
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker 
-                position={ubicacion_ciat}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
+                    position={ubicacion_ciat}
+                    eventHandlers={{
+                        click: (e) => handleClick(),
+                      }}
+                    icon={new Icon({
+                        iconUrl: blueIcon,
+                        shadowUrl: blueShade,
+                        iconSize: [25, 41], 
+                        iconAnchor: [12, 41]
+                    })}
                 >
                     <Popup>
-                        <span>Centro Internacional de<br />Agricultura Tropical
+                        <span>
+                            Centro Internacional de<br />Agricultura Tropical
                         </span>
                     </Popup>
                 </Marker>
@@ -134,7 +163,7 @@ function about() {
     );
 }
 
-export default about;
+export default About;
 
 /*
             <div className="landscape">

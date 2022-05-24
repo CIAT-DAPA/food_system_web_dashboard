@@ -10,10 +10,10 @@ import Chart from "react-apexcharts";
 // Importando Imagenes
 import Image1 from '../../final_assets/images/infografia_determinantes.png';
 // Iconos
-//import icon1 from '../../final_assets/icons/driver_2.png';
-//import icon2 from '../../final_assets/icons/driver_3.png';
-//import icon3 from '../../final_assets/icons/driver_4.png';
-//import icon4 from '../../final_assets/icons/driver_5.png';
+import Icon1 from '../../final_assets/icons/driver_2.png';
+import Icon2 from '../../final_assets/icons/driver_3.png';
+import Icon3 from '../../final_assets/icons/driver_4.png';
+import Icon4 from '../../final_assets/icons/driver_5.png';
 
 
 
@@ -56,10 +56,12 @@ for (let i = 0; i < porcentajes.length; i++) {
 // Definiendo colores para facilitar su uso en Apex Charts
 // que requiere codigos de color hexadecimales
 const blue  = "#6495ED";
-const pink  = "#EB69A6";
-const green = "#008000";
-const gray  = "#808080";
-const teal  = "#008080";
+//const pink  = "#EB69A6";
+const green = "#74c365";
+const gray  = "#c0c0c0";
+const lblue = "#00bfff";
+const cyan  = "#87cefa";
+//const teal  = "#008080";
 //const lime  = "#00FF00";
 
 
@@ -168,7 +170,7 @@ const AreasProtegidas = {
     legend: {
       show: false
     },
-    colors: [teal, green],
+    colors: [lblue, green],
     title: {
       display: true,
       text: "Areas Protegidas"
@@ -222,7 +224,7 @@ const PoblacionGenero = {
     legend: {
       show: false
     },
-    colors: [blue, pink],
+    colors: [blue, cyan],
     title: {
       display: true,
       text: "Genero de la Poblacion"
@@ -338,58 +340,61 @@ function determinantes() {
       <div className="d-flex flex-row">
         <div className="p-2">
 
-          <ul className="custom-list">
+          <img src={Icon1}
+          alt="Icono Determinantes 1" width="30" height="30"/>&nbsp;
+          La migracion nacional y extranjera hacia Cali aumenta el numero
+          de consumidores vulnerables y determina habitos de consumo
 
-            <li> 
-              La migracion nacional y extranjera hacia Cali aumenta el numero
-              de consumidores vulnerables y determina habitos de consumo
-            </li>
+          <ul>
+            <li>147.908 personas desplazadas internamente entraran a Cali</li>
               <ul>
-                <li>147.908 personas desplazadas internamente entraran a Cali</li>
-                  <ul>
-                    <li>62.414 migrantes venezolanos en 2019</li>
-                    <li>71% dedicados al comerico informal</li>
-                  </ul>
-
-                <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
-                <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
+                <li>62.414 migrantes venezolanos en 2019</li>
+                <li>71% dedicados al comerico informal</li>
               </ul>
 
-            <li>
-              Ciudad multicultural con diversa demanda de alimentos y 
-              habitos de consumo
-            </li>
-              <ul>
-                <li>Composicion Etnica en Cali</li>
-                  <ul>
-                    <li>0.5% indigenas</li>
-                    <li>26% afrodescendientes</li>
-                    <li>73% mestizos</li>
-                  </ul>
-              </ul>
-
+            <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
+            <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
           </ul>
+
+          <img src={Icon4}
+          alt="Icono Determinantes 2" width="30" height="30"/>&nbsp;
+          Ciudad multicultural con diversa demanda de alimentos y 
+          habitos de consumo
+            
+            <ul>
+              <li>Composicion Etnica en Cali</li>
+                <ul>
+                  <li>0.5% indigenas</li>
+                  <li>26% afrodescendientes</li>
+                  <li>73% mestizos</li>
+                </ul>
+            </ul>
 
         </div>
-        <div className="p-2">
-          <ul>
-            <li>Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
-            compra de alimentos (Cifras aumentaron en 2020 debido a COVID-19)</li>
-              <ul>
-                <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
-                <li>21.9% incidencia de pobreza monetaria en 2019</li>
-                <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
-              </ul>
 
-            <li>Cali es sede regional de gremios, actores publicos, bancos, 
-            universidades,
-            una unidad de planeacion estrategica inter-departamental y centros de
-            investigacion y desarrollo relacionados con actividades productivas.</li>
-              <ul>
-                <li>7 clusteres productivos especializados</li>
-                <li>2 de la industria de alimentos</li>
-              </ul>
-          </ul>
+        <div className="p-2">
+
+          <img src={Icon3}
+          alt="Icono Determinantes 3" width="30" height="30"/>&nbsp;
+          Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
+          compra de alimentos (Cifras aumentaron en 2020 debido a COVID-19)
+            <ul>
+              <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
+              <li>21.9% incidencia de pobreza monetaria en 2019</li>
+              <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
+            </ul>
+
+          <img src={Icon2}
+          alt="Icono Determinantes 2" width="30" height="30"/>&nbsp;
+          Cali es sede regional de gremios, actores publicos, bancos, 
+          universidades,
+          una unidad de planeacion estrategica inter-departamental y centros de
+          investigacion y desarrollo relacionados con actividades productivas.
+            <ul>
+              <li>7 clusteres productivos especializados</li>
+              <li>2 de la industria de alimentos</li>
+            </ul>
+
       
         </div>
       </div>

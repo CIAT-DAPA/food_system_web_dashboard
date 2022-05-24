@@ -5,18 +5,24 @@ import Image1 from '../../final_assets/images/mapa_habha.png';
 import Image2 from '../../final_assets/images/mapa_demanda.png';
 import Image3 from '../../final_assets/images/infografia_entorno.png';
 
+// Importando Iconos
+import Icon1 from '../../final_assets/icons/2-disponibilidad.png';
+import Icon2 from '../../final_assets/icons/2-asequibilidad.png';
+import Icon3 from '../../final_assets/icons/2-promocion.png';
+import Icon4 from '../../final_assets/icons/2-perdidas.png';
+
 // Marcador para Mapas
-import markerIconPng from "leaflet/dist/images/marker-icon.png";
-import {Icon} from 'leaflet';
+//import markerIconPng from "leaflet/dist/images/marker-icon.png";
+//import {Icon} from 'leaflet';
 
 // Importando Mapas
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
+//import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+//import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
-var attr=
-'Colaboradores de &copy;' +
-'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
-var ubicacion_ciat = [3.5025954,-76.35724]; // Latitud y Longitud
+//var attr=
+//'Colaboradores de &copy;' +
+//'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+//var ubicacion_ciat = [3.5025954,-76.35724]; // Latitud y Longitud
 
 function entorno() {
     return (
@@ -28,6 +34,10 @@ function entorno() {
 
             <div className="d-flex flex-row">
                 <div className="p-2">
+                    <img src={Icon1}
+                    alt="Icono Entorno 1" width="30" height="30"/>&nbsp;
+                    <img src={Icon2}
+                    alt="Icono Entorno 2" width="30" height="30"/>&nbsp;
                     Aunque existe disponibilidad de alimentos,
                     el mayor reto esta en la capacidad de compra de
                     la poblacion mas vulnerable.
@@ -77,40 +87,43 @@ function entorno() {
                 </div>
 
                 <div className="p-2">
+
+                    <img src={Icon3}
+                    alt="Icono Entorno 3" width="30" height="30"/>&nbsp;
+                    Publicidad y falta de normatividad en etiquetado
+                    dificulta la identificacion de riesgos para la salud
+                    en alimentos procesados y ultraprocesados.
                     <ul>
-                        <li>Publicidad y falta de normatividad en etiquetado
-                            dificulta la identificacion de riesgos para la salud
-                            en alimentos procesados y ultraprocesados.
+                        <li>Fuerte publicidad de alimentos altos en sal,
+                            grasas y azucar.
                         </li>
-                            <ul>
-                                <li>Fuerte publicidad de alimentos altos en sal,
-                                    grasas y azucar.
-                                </li>
-                                <li>56% de la publicidad de alimentos en Colombia
-                                    es dirigida a ninos.
-                                </li>
-                                <li>Tablas nutricionales no comprensibles para
-                                    la mayoria de la poblacion.
-                                </li>
-                            </ul>
-                        <li>Cali enfrenta todavia grandes retos respecto al
-                            manejo de perdidas y desperdicios de alimentos.
+                        <li>56% de la publicidad de alimentos en Colombia
+                             es dirigida a ninos.
+                         </li>
+                         <li>Tablas nutricionales no comprensibles para
+                            la mayoria de la poblacion.
                         </li>
-                            <ul>
-                                <li>1.800 Toneladas diarias de residuos solidos</li>
-                                <ul>
-                                    <li>70% Completamente Aprovechable
-                                        (1.260 Toneladas)
-                                    </li>
-                                    <li>59% Generado en las viviendas
-                                        (59.4% son residuos de alimentos)
-                                    </li>
-                                </ul>
-                                <li>1.671 Grandes Generadores de Residuos
-                                    (mas de 1 metro cubico de residuos por mes)
-                                </li>
-                            </ul>
                     </ul>
+
+                    <img src={Icon4}
+                    alt="Icono Entorno 4" width="30" height="30"/>&nbsp;
+                    Cali enfrenta todavia grandes retos respecto al
+                    manejo de perdidas y desperdicios de alimentos.
+                    <ul>
+                        <li>1.800 Toneladas diarias de residuos solidos</li>
+                        <ul>
+                            <li>70% Completamente Aprovechable
+                                (1.260 Toneladas)
+                            </li>
+                            <li>59% Generado en las viviendas
+                                (59.4% son residuos de alimentos)
+                            </li>
+                        </ul>
+                        <li>1.671 Grandes Generadores de Residuos
+                            (mas de 1 metro cubico de residuos por mes)
+                        </li>
+                    </ul>
+                    
                 </div>
             </div>
 
@@ -141,62 +154,51 @@ function entorno() {
 
 
             <h2>Disponibilidad de Alimentos</h2>
-            <div>
-                <img src={Image1} alt="Mapa de Densidad Hab/Ha"/>
+            <div className="d-flex flex-row">
+
+                <div className="p-2">
+                    <div>
+                        <img src={Image1} alt="Mapa de Densidad Hab/Ha"/>
+                    </div>
+                </div>
+
+                <div className="p-2">
+                    <div>
+                        <img src={Image2} alt="Mapa de Localizacion de Demanda"/>
+                    </div>
+                </div>
+                
             </div>
-            <MapContainer 
-            center={ubicacion_ciat} 
-            zoom={12} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
-            >
-                <TileLayer
-                    attribution={attr}
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker 
-                position={ubicacion_ciat}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
-                >
-                    <Popup>
-                        <span>Centro Internacional de<br />Agricultura Tropical
-                        </span>
-                    </Popup>
-                </Marker>
-            </MapContainer>
-            <div>
-                <img src={Image2} alt="Mapa de Localizacion de Demanda"/>
-            </div>
-            <MapContainer 
-            center={ubicacion_ciat} 
-            zoom={12} 
-            style={{ height: '40vh', width: '20wh' }}
-            scrollWheelZoom={false}
-            >
-                <TileLayer
-                    attribution={attr}
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker 
-                position={ubicacion_ciat}
-                icon={new Icon({
-                    iconUrl: markerIconPng, 
-                    iconSize: [25, 41], 
-                    iconAnchor: [12, 41]
-                })}
-                >
-                    <Popup>
-                        <span>Centro Internacional de<br />Agricultura Tropical
-                        </span>
-                    </Popup>
-                </Marker>
-            </MapContainer>
+
         </div>
     );
 }
 
 export default entorno;
+
+/* 
+            <MapContainer 
+            center={ubicacion_ciat} 
+            zoom={12} 
+            style={{ height: '40vh', width: '20wh' }}
+            scrollWheelZoom={false}
+            >
+                <TileLayer
+                    attribution={attr}
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker 
+                position={ubicacion_ciat}
+                icon={new Icon({
+                    iconUrl: markerIconPng, 
+                    iconSize: [25, 41], 
+                    iconAnchor: [12, 41]
+                })}
+                >
+                    <Popup>
+                        <span>Centro Internacional de<br />Agricultura Tropical
+                        </span>
+                    </Popup>
+                </Marker>
+            </MapContainer>
+*/

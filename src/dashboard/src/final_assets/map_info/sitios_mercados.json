@@ -1,1 +1,131 @@
-{"displayFieldName":"","fieldAliases":{"OID":"OID","Name":"Name","Tipo":"Tipo"},"geometryType":"esriGeometryPoint","spatialReference":{"wkid":4326,"latestWkid":4326,"vcsWkid":5773,"latestVcsWkid":5773},"fields":[{"name":"OID","type":"esriFieldTypeOID","alias":"OID"},{"name":"Name","type":"esriFieldTypeString","alias":"Name","length":255},{"name":"Tipo","type":"esriFieldTypeString","alias":"Tipo","length":50}],"features":[{"attributes":{"OID":1,"Name":"Santa Elena","Tipo":"Central Mayorista"},"geometry":{"x":-76.520784118999984,"y":3.4273031870000636}},{"attributes":{"OID":2,"Name":"Alameda","Tipo":"Plazas de mercado"},"geometry":{"x":-76.535393017999979,"y":3.4341506820000518}},{"attributes":{"OID":3,"Name":"El Porvenir","Tipo":"Plazas de mercado"},"geometry":{"x":-76.51472939699994,"y":3.4579292660000647}},{"attributes":{"OID":4,"Name":"CAVASA","Tipo":"Central Mayorista"},"geometry":{"x":-76.414593009999976,"y":3.4132374620000405}},{"attributes":{"OID":5,"Name":"La Floresta","Tipo":"Plazas de mercado"},"geometry":{"x":-76.512657149999939,"y":3.4402939280000737}},{"attributes":{"OID":6,"Name":"Siloé","Tipo":"Plazas de mercado"},"geometry":{"x":-76.553755341999988,"y":3.4162530040000547}},{"attributes":{"OID":7,"Name":"Alfonso López","Tipo":"Plazas de mercado"},"geometry":{"x":-76.478933303999952,"y":3.4510790370000564}}]}
+{
+    "displayFieldName":"",
+    "fieldAliases":
+    {
+        "OID":"OID",
+        "Name":"Name",
+        "Tipo":"Tipo"
+    },
+    "geometryType":"esriGeometryPoint",
+    "spatialReference":
+    {
+        "wkid":4326,
+        "latestWkid":4326,
+        "vcsWkid":5773,
+        "latestVcsWkid":5773
+    },
+    "fields":
+    [
+        {
+            "name":"OID",
+            "type":"esriFieldTypeOID",
+            "alias":"OID"
+        },
+        {
+            "name":"Name",
+            "type":"esriFieldTypeString",
+            "alias":"Name",
+            "length":255
+        },
+        {
+            "name":"Tipo",
+            "type":"esriFieldTypeString",
+            "alias":"Tipo",
+            "length":50
+        }
+    ],
+    "features":
+    [
+        {
+            "attributes":
+            {
+                "OID":1,
+                "Name":"Santa Elena",
+                "Tipo":"Central Mayorista"
+            },
+            "geometry":
+            {
+                "x":-76.520784118999984,
+                "y":3.4273031870000636
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":2,
+                "Name":"Alameda",
+                "Tipo":"Plazas de mercado"
+            },
+            "geometry":
+            {
+                "x":-76.535393017999979,
+                "y":3.4341506820000518
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":3,
+                "Name":"El Porvenir",
+                "Tipo":"Plazas de mercado"
+            },
+            "geometry":
+            {
+                "x":-76.51472939699994,
+                "y":3.4579292660000647
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":4,
+                "Name":"CAVASA",
+                "Tipo":"Central Mayorista"
+            },
+            "geometry":
+            {
+                "x":-76.414593009999976,
+                "y":3.4132374620000405
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":5,
+                "Name":"La Floresta",
+                "Tipo":"Plazas de mercado"
+            },
+            "geometry":
+            {
+                "x":-76.512657149999939,
+                "y":3.4402939280000737
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":6,
+                "Name":"Siloé",
+                "Tipo":"Plazas de mercado"
+            },
+            "geometry":
+            {
+                "x":-76.553755341999988,
+                "y":3.4162530040000547
+            }
+        },
+        {
+            "attributes":
+            {
+                "OID":7,
+                "Name":"Alfonso López",
+                "Tipo":"Plazas de mercado"
+            },
+            "geometry":
+            {
+                "x":-76.478933303999952,
+                "y":3.4510790370000564
+            }
+        }
+    ]
+}
