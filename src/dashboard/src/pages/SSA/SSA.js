@@ -10,30 +10,198 @@ import Image3 from '../../final_assets/images/infografia_ssa.png';
 
 // Marcador para Mapas
 //import markerIconPng from "leaflet/dist/images/marker-icon.png";
-import {Icon} from 'leaflet';
+import { Icon } from 'leaflet';
 
 // Importando Mapas
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, LayersControl,
+LayerGroup, FeatureGroup, Polygon } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
 // Importando informacion para mapas
 import mapa1 from '../../final_assets/map_info/municipios_alimentos.json';
 import mapa2 from '../../final_assets/map_info/sitios_mercados.json';
 
+// MAPA 1
+// https://wiki.openstreetmap.org/wiki/Tile_servers
+// https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png
+
 
 
 // Manejando informacion de mapas
+// //////////////////////////////
+
 // Mapa 1
-var municipios = [], departamentos = [], rings = [];
+
+// Necesario para invertir coordenadas para React-Leaflet
+// Otra forma no existe a mi conocimiento en React especificamente,
+// la documentacion sobre soporte de GeoJSON es minima
+// https://stackoverflow.com/questions/19652840/
+// reverse-entries-in-multi-dimensional-array-in-javascript
+function reverseArray (array) {
+    var reversed = array.map(function reverse(item) {
+        return Array.isArray(item) && Array.isArray(item[0]) 
+                   ? item.map(reverse) 
+                   : item.reverse();
+    });
+    //console.log("reverse exitoso");
+    return reversed;
+};
+
+// Carnes
+var municipios_carnes = [];
 for (let i = 0; i < mapa1.features.length; i++) {
-    municipios.push(mapa1.features[i].attributes.MPIO_CNMBR);
-    departamentos.push(mapa1.features[i].attributes.DPTO_CNMBR);
-    rings.push(mapa1.features[i].geometry.rings);
+    if (mapa1.features[i].attributes.CARNES !== 0) {
+        municipios_carnes.push(mapa1.features[i]);
+    }
 }
-console.log('mapa1',mapa1);
-console.log('municipios',municipios);
-console.log('departamentos',departamentos);
-console.log('rings',rings);
+//console.log("municipios_carnes",municipios_carnes);
+var municipios_carnes_poligonos = [];
+var municipios_carnes_participa = [];
+for (let i = 0; i < municipios_carnes.length; i++) {
+    municipios_carnes_poligonos.push(
+        reverseArray(municipios_carnes[i].geometry.rings)
+    );
+    //console.log("variable i es",i);
+    municipios_carnes_participa.push(
+        municipios_carnes[i].attributes.CARNES
+    );
+}
+//console.log("municipios_carnes_poligonos",municipios_carnes_poligonos);
+console.log("municipios_carnes_participa",municipios_carnes_participa);
+
+// Frutas
+var municipios_frutas = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.FRUTAS !== 0) {
+        municipios_frutas.push(mapa1.features[i]);
+    }
+}
+var municipios_frutas_poligonos = [];
+var municipios_frutas_participa = [];
+for (let i = 0; i < municipios_frutas.length; i++) {
+    municipios_frutas_poligonos.push(
+        reverseArray(municipios_frutas[i].geometry.rings)
+    );
+    municipios_frutas_participa.push(
+        municipios_frutas[i].attributes.FRUTAS
+    );
+}
+console.log("municipios_frutas_participa",municipios_frutas_participa);
+
+// Granos y Cereales
+var municipios_granos = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.GRA_CER !== 0) {
+        municipios_granos.push(mapa1.features[i]);
+    }
+}
+var municipios_granos_poligonos = [];
+var municipios_granos_participa = [];
+for (let i = 0; i < municipios_granos.length; i++) {
+    municipios_granos_poligonos.push(
+        reverseArray(municipios_granos[i].geometry.rings)
+    );
+    municipios_granos_participa.push(
+        municipios_granos[i].attributes.GRA_CER
+    );
+}
+console.log("municipios_granos_participa",municipios_granos_participa);
+
+// Lacteos y Huevos
+var municipios_lacteos = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.LAC_HUE !== 0) {
+        municipios_lacteos.push(mapa1.features[i]);
+    }
+}
+var municipios_lacteos_poligonos = [];
+var municipios_lacteos_participa = [];
+for (let i = 0; i < municipios_lacteos.length; i++) {
+    municipios_lacteos_poligonos.push(
+        reverseArray(municipios_lacteos[i].geometry.rings)
+    );
+    municipios_lacteos_participa.push(
+        municipios_lacteos[i].attributes.LAC_HUE
+    );
+}
+console.log("municipios_lacteos_participa",municipios_lacteos_participa);
+
+// Pescados
+var municipios_pescados = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.PESCADOS !== 0) {
+        municipios_pescados.push(mapa1.features[i]);
+    }
+}
+var municipios_pescados_poligonos = [];
+var municipios_pescados_participa = [];
+for (let i = 0; i < municipios_pescados.length; i++) {
+    municipios_pescados_poligonos.push(
+        reverseArray(municipios_pescados[i].geometry.rings)
+    );
+    municipios_pescados_participa.push(
+        municipios_pescados[i].attributes.PESCADOS
+    );
+}
+console.log("municipios_pescados_participa",municipios_pescados_participa);
+
+// Tuberculos, raices y platanos
+var municipios_raices = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.TUBERCULOS !== 0) {
+        municipios_raices.push(mapa1.features[i]);
+    }
+}
+var municipios_raices_poligonos = [];
+var municipios_raices_participa = [];
+for (let i = 0; i < municipios_raices.length; i++) {
+    municipios_raices_poligonos.push(
+        reverseArray(municipios_raices[i].geometry.rings)
+    );
+    municipios_raices_participa.push(
+        municipios_raices[i].attributes.TUBERCULOS
+    );
+}
+console.log("municipios_raices_participa",municipios_raices_participa);
+
+// Verduras y Hortalizas
+var municipios_verduras = [];
+for (let i = 0; i < mapa1.features.length; i++) {
+    if (mapa1.features[i].attributes.VERD_HOR !== 0) {
+        municipios_verduras.push(mapa1.features[i]);
+    }
+}
+var municipios_verduras_poligonos = [];
+var municipios_verduras_participa = [];
+for (let i = 0; i < municipios_verduras.length; i++) {
+    municipios_verduras_poligonos.push(
+        reverseArray(municipios_verduras[i].geometry.rings)
+    );
+    municipios_verduras_participa.push(
+        municipios_verduras[i].attributes.VERD_HOR
+    );
+}
+console.log("municipios_verduras_participa",municipios_verduras_participa);
+
+// Colores
+// https://leafletjs.com/examples/choropleth/
+function getColor(d) {
+    /*
+    return d > 1    ? '#800026' :
+           d > 0.6  ? '#BD0026' :
+           d > 0.4  ? '#E31A1C' :
+           d > 0.2  ? '#FC4E2A' :
+           d < 0    ? '#FD8D3C' :
+           d < -1   ? '#FEB24C' :
+           d < -10  ? '#FED976' :
+                      '#FFEDA0';
+    */
+    return d > 0  ? '#800026' :
+           d < 0  ? '#FED976' :
+                    '#FFEDA0';
+}
+
+
 
 // Mapa 2
 var ubicaciones = [], names = [], tipos = [];
@@ -49,6 +217,9 @@ for (let i = 0; i < mapa2.features.length; i++) {
 var attr=
 'Colaboradores de &copy;' +
 '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+var attr2=
+'Colaboradores de &copy;' +
+'<a href="https://carto.com/">CARTO</a>';
 var ubicacion_colombia = [4.570868, -74.297333]; // Latitud y Longitud
 // Iconos
 // https://github.com/pointhi/leaflet-color-markers
@@ -58,6 +229,26 @@ var greenIcon  = githublink + 'marker-icon-2x-green.png';
 var blueIcon   = githublink + 'marker-icon-2x-blue.png';
 var greenShade = githublink + 'marker-icon-green.png';
 var blueShade  = githublink + 'marker-icon-blue.png';
+
+/*
+const center = [51.505, -0.09]
+const rectangle = [
+  [51.49, -0.08],
+  [51.5, -0.06],
+]
+const multiPolygon = [
+    [
+      [51.51, -0.12],
+      [51.51, -0.13],
+      [51.53, -0.13],
+    ],
+    [
+      [51.51, -0.05],
+      [51.51, -0.07],
+      [51.53, -0.07],
+    ],
+  ]
+*/
 
 
 
@@ -182,40 +373,6 @@ function SSA() {
             y menor participacion en cada tipo de alimento.
             </p>
 
-            <div class="d-flex justify-content-center">
-                <div className="flex-fill btn-group btn-group-toggle" 
-                data-toggle="buttons">
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option1" checked />
-                        Carnes
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option2" checked />
-                        Frutas
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option3" checked />
-                        Granos y Cereales
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option4" checked />
-                        Lacteos y Huevos
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option5" checked />
-                        Pescados
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option6" checked />
-                        Tuberculos, raices y platanos
-                    </label>
-                    <label className="btn btn-secondary">
-                        <input type="radio" name="options" id="option7" checked />
-                        Verduras y hortalizas
-                    </label>
-                </div>
-            </div>
-
             <MapContainer 
                 center={ubicacion_colombia}
                 zoom={6}
@@ -224,9 +381,461 @@ function SSA() {
                 ref={mapRef}
             >
                 <TileLayer
-                    attribution={attr}
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution={attr2}
+                url=
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
                 />
+
+                <LayersControl position="topright">
+
+                    <LayersControl.Overlay checked name="Carnes">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[0]}
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_carnes_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_carnes_participa[5]) }}
+                            />
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Frutas">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_frutas_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_frutas_participa[5]) }}
+                            />
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Granos y Cereales">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_granos_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_granos_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_granos_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_granos_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_granos_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_granos_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_granos_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_granos_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_granos_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_granos_participa[4]) }}
+                            />
+
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Lacteos y Huevos">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_lacteos_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_lacteos_participa[5]) }}
+                            />
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Pescados">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_pescados_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_pescados_participa[5]) }}
+                            />
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Tuberculos, raices y platanos">
+                        <LayerGroup>
+                            <Polygon 
+                            positions={municipios_raices_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_raices_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_raices_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_raices_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_raices_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_raices_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_raices_participa[5]) }}
+                            />
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Verduras y Hortalizas">
+                        <FeatureGroup>
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[0]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[0]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[1]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[1]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[2]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[2]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[3]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[3]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[4]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[4]) }}
+                            />
+                            <Polygon 
+                            positions={municipios_verduras_poligonos[5]} 
+                            pathOptions={{
+                                weight: 2,
+                                opacity: 1,
+                                color: 'white',
+                                dashArray: '3',
+                                fillOpacity: 0.7,
+                                fillColor: getColor(municipios_verduras_participa[5]) }}
+                            />
+                        </FeatureGroup>
+                    </LayersControl.Overlay>
+                    
+                </LayersControl>
+
             </MapContainer>
 
 
@@ -443,5 +1052,48 @@ var tipo_lopez         = mapa2.features[6].attributes.Tipo;
 
             <div className="landscape">
                 <img src={Image1} alt="Mapa de Centrales Mayoristas y Plazas"/>
+            </div>
+
+
+
+            <div className="d-flex justify-content-center">
+                <div className="flex-fill btn-group btn-group-toggle" 
+                data-toggle="buttons">
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option1" 
+                         />
+                        Carnes
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option2" 
+                         />
+                        Frutas
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option3" 
+                         />
+                        Granos y Cereales
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option4" 
+                         />
+                        Lacteos y Huevos
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option5" 
+                         />
+                        Pescados
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option6" 
+                         />
+                        Tuberculos, raices y platanos
+                    </label>
+                    <label className="btn btn-secondary">
+                        <input type="radio" name="options" id="option7" 
+                         />
+                        Verduras y hortalizas
+                    </label>
+                </div>
             </div>
 */
