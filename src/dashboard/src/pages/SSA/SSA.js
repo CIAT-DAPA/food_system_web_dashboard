@@ -14,7 +14,7 @@ import { Icon } from 'leaflet';
 
 // Importando Mapas
 import { MapContainer, TileLayer, Marker, Popup, LayersControl,
-LayerGroup, FeatureGroup, Polygon } from 'react-leaflet';
+LayerGroup, FeatureGroup, Polygon, Tooltip } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
 // Importando informacion para mapas
@@ -57,6 +57,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 //console.log("municipios_carnes",municipios_carnes);
 var municipios_carnes_poligonos = [];
 var municipios_carnes_participa = [];
+var municipios_carnes_info = [];
 for (let i = 0; i < municipios_carnes.length; i++) {
     municipios_carnes_poligonos.push(
         reverseArray(municipios_carnes[i].geometry.rings)
@@ -65,9 +66,14 @@ for (let i = 0; i < municipios_carnes.length; i++) {
     municipios_carnes_participa.push(
         municipios_carnes[i].attributes.CARNES
     );
+    municipios_carnes_info.push(
+        municipios_carnes[i].attributes.MPIO_CNMBR + ", " +
+        municipios_carnes[i].attributes.DPTO_CNMBR
+    );
 }
 //console.log("municipios_carnes_poligonos",municipios_carnes_poligonos);
-console.log("municipios_carnes_participa",municipios_carnes_participa);
+//console.log("municipios_carnes_participa",municipios_carnes_participa);
+//console.log("municipios_carnes_info",municipios_carnes_info);
 
 // Frutas
 var municipios_frutas = [];
@@ -78,6 +84,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_frutas_poligonos = [];
 var municipios_frutas_participa = [];
+var municipios_frutas_info = [];
 for (let i = 0; i < municipios_frutas.length; i++) {
     municipios_frutas_poligonos.push(
         reverseArray(municipios_frutas[i].geometry.rings)
@@ -85,8 +92,12 @@ for (let i = 0; i < municipios_frutas.length; i++) {
     municipios_frutas_participa.push(
         municipios_frutas[i].attributes.FRUTAS
     );
+    municipios_frutas_info.push(
+        municipios_frutas[i].attributes.MPIO_CNMBR + ", " +
+        municipios_frutas[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_frutas_participa",municipios_frutas_participa);
+//console.log("municipios_frutas_participa",municipios_frutas_participa);
 
 // Granos y Cereales
 var municipios_granos = [];
@@ -97,6 +108,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_granos_poligonos = [];
 var municipios_granos_participa = [];
+var municipios_granos_info = [];
 for (let i = 0; i < municipios_granos.length; i++) {
     municipios_granos_poligonos.push(
         reverseArray(municipios_granos[i].geometry.rings)
@@ -104,8 +116,12 @@ for (let i = 0; i < municipios_granos.length; i++) {
     municipios_granos_participa.push(
         municipios_granos[i].attributes.GRA_CER
     );
+    municipios_granos_info.push(
+        municipios_granos[i].attributes.MPIO_CNMBR + ", " +
+        municipios_granos[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_granos_participa",municipios_granos_participa);
+//console.log("municipios_granos_participa",municipios_granos_participa);
 
 // Lacteos y Huevos
 var municipios_lacteos = [];
@@ -116,6 +132,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_lacteos_poligonos = [];
 var municipios_lacteos_participa = [];
+var municipios_lacteos_info = [];
 for (let i = 0; i < municipios_lacteos.length; i++) {
     municipios_lacteos_poligonos.push(
         reverseArray(municipios_lacteos[i].geometry.rings)
@@ -123,8 +140,12 @@ for (let i = 0; i < municipios_lacteos.length; i++) {
     municipios_lacteos_participa.push(
         municipios_lacteos[i].attributes.LAC_HUE
     );
+    municipios_lacteos_info.push(
+        municipios_lacteos[i].attributes.MPIO_CNMBR + ", " +
+        municipios_lacteos[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_lacteos_participa",municipios_lacteos_participa);
+//console.log("municipios_lacteos_participa",municipios_lacteos_participa);
 
 // Pescados
 var municipios_pescados = [];
@@ -135,6 +156,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_pescados_poligonos = [];
 var municipios_pescados_participa = [];
+var municipios_pescados_info = [];
 for (let i = 0; i < municipios_pescados.length; i++) {
     municipios_pescados_poligonos.push(
         reverseArray(municipios_pescados[i].geometry.rings)
@@ -142,8 +164,12 @@ for (let i = 0; i < municipios_pescados.length; i++) {
     municipios_pescados_participa.push(
         municipios_pescados[i].attributes.PESCADOS
     );
+    municipios_pescados_info.push(
+        municipios_pescados[i].attributes.MPIO_CNMBR + ", " +
+        municipios_pescados[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_pescados_participa",municipios_pescados_participa);
+//console.log("municipios_pescados_participa",municipios_pescados_participa);
 
 // Tuberculos, raices y platanos
 var municipios_raices = [];
@@ -154,6 +180,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_raices_poligonos = [];
 var municipios_raices_participa = [];
+var municipios_raices_info = [];
 for (let i = 0; i < municipios_raices.length; i++) {
     municipios_raices_poligonos.push(
         reverseArray(municipios_raices[i].geometry.rings)
@@ -161,8 +188,12 @@ for (let i = 0; i < municipios_raices.length; i++) {
     municipios_raices_participa.push(
         municipios_raices[i].attributes.TUBERCULOS
     );
+    municipios_raices_info.push(
+        municipios_raices[i].attributes.MPIO_CNMBR + ", " +
+        municipios_raices[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_raices_participa",municipios_raices_participa);
+//console.log("municipios_raices_participa",municipios_raices_participa);
 
 // Verduras y Hortalizas
 var municipios_verduras = [];
@@ -173,6 +204,7 @@ for (let i = 0; i < mapa1.features.length; i++) {
 }
 var municipios_verduras_poligonos = [];
 var municipios_verduras_participa = [];
+var municipios_verduras_info = [];
 for (let i = 0; i < municipios_verduras.length; i++) {
     municipios_verduras_poligonos.push(
         reverseArray(municipios_verduras[i].geometry.rings)
@@ -180,8 +212,12 @@ for (let i = 0; i < municipios_verduras.length; i++) {
     municipios_verduras_participa.push(
         municipios_verduras[i].attributes.VERD_HOR
     );
+    municipios_verduras_info.push(
+        municipios_verduras[i].attributes.MPIO_CNMBR + ", " +
+        municipios_verduras[i].attributes.DPTO_CNMBR
+    );
 }
-console.log("municipios_verduras_participa",municipios_verduras_participa);
+//console.log("municipios_verduras_participa",municipios_verduras_participa);
 
 // Colores
 // https://leafletjs.com/examples/choropleth/
@@ -369,7 +405,7 @@ function SSA() {
             menos de 5 ha.
             </p>
             <p align="justify">
-            A continuacion, podemos observar los 6 municipios con mayor
+            A continuacion, podemos observar los municipios con mayor
             y menor participacion en cada tipo de alimento.
             </p>
 
@@ -390,6 +426,7 @@ function SSA() {
 
                     <LayersControl.Overlay checked name="Carnes">
                         <LayerGroup>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[0]}
                             pathOptions={{
@@ -398,8 +435,14 @@ function SSA() {
                                 color: 'white',
                                 dashArray: '3',
                                 fillOpacity: 0.7,
-                                fillColor: getColor(municipios_raices_participa[0]) }}
-                            />
+                                fillColor: getColor(municipios_carnes_participa[0]) }}
+                            >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[0]}, <br/>
+                                    Participacion {municipios_carnes_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[1]} 
                             pathOptions={{
@@ -408,8 +451,14 @@ function SSA() {
                                 color: 'white',
                                 dashArray: '3',
                                 fillOpacity: 0.7,
-                                fillColor: getColor(municipios_raices_participa[1]) }}
-                            />
+                                fillColor: getColor(municipios_carnes_participa[1]) }}
+                                >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[1]}, <br/>
+                                    Participacion {municipios_carnes_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[2]} 
                             pathOptions={{
@@ -418,8 +467,14 @@ function SSA() {
                                 color: 'white',
                                 dashArray: '3',
                                 fillOpacity: 0.7,
-                                fillColor: getColor(municipios_raices_participa[2]) }}
-                            />
+                                fillColor: getColor(municipios_carnes_participa[2]) }}
+                                >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[2]}, <br/>
+                                    Participacion {municipios_carnes_participa[2]}
+                                </Tooltip>
+                                </Polygon>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[3]} 
                             pathOptions={{
@@ -428,8 +483,14 @@ function SSA() {
                                 color: 'white',
                                 dashArray: '3',
                                 fillOpacity: 0.7,
-                                fillColor: getColor(municipios_raices_participa[3]) }}
-                            />
+                                fillColor: getColor(municipios_carnes_participa[3]) }}
+                                >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[3]}, <br/>
+                                    Participacion {municipios_carnes_participa[3]}
+                                </Tooltip>
+                                </Polygon>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[4]} 
                             pathOptions={{
@@ -438,8 +499,14 @@ function SSA() {
                                 color: 'white',
                                 dashArray: '3',
                                 fillOpacity: 0.7,
-                                fillColor: getColor(municipios_raices_participa[4]) }}
-                            />
+                                fillColor: getColor(municipios_carnes_participa[4]) }}
+                                >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[4]}, <br/>
+                                    Participacion {municipios_carnes_participa[4]}
+                                </Tooltip>
+                                </Polygon>
+
                             <Polygon 
                             positions={municipios_carnes_poligonos[5]} 
                             pathOptions={{
@@ -449,12 +516,19 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_carnes_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_carnes_info[5]}, <br/>
+                                    Participacion {municipios_carnes_participa[5]}
+                                </Tooltip>
+                                </Polygon>
+
                         </LayerGroup>
                     </LayersControl.Overlay>
 
                     <LayersControl.Overlay name="Frutas">
                         <LayerGroup>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[0]} 
                             pathOptions={{
@@ -464,7 +538,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[0]}, <br/>
+                                    Participacion {municipios_frutas_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[1]} 
                             pathOptions={{
@@ -474,7 +554,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[1]}, <br/>
+                                    Participacion {municipios_frutas_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[2]} 
                             pathOptions={{
@@ -484,7 +570,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[2]}, <br/>
+                                    Participacion {municipios_frutas_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[3]} 
                             pathOptions={{
@@ -494,7 +586,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[3]}, <br/>
+                                    Participacion {municipios_frutas_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[4]} 
                             pathOptions={{
@@ -504,7 +602,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[4]}, <br/>
+                                    Participacion {municipios_frutas_participa[4]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_frutas_poligonos[5]} 
                             pathOptions={{
@@ -514,12 +618,19 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_frutas_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_frutas_info[5]}, <br/>
+                                    Participacion {municipios_frutas_participa[5]}
+                                </Tooltip>
+                            </Polygon>
+
                         </LayerGroup>
                     </LayersControl.Overlay>
 
                     <LayersControl.Overlay name="Granos y Cereales">
                         <LayerGroup>
+
                             <Polygon 
                             positions={municipios_granos_poligonos[0]} 
                             pathOptions={{
@@ -529,7 +640,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_granos_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_granos_info[0]}, <br/>
+                                    Participacion {municipios_granos_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_granos_poligonos[1]} 
                             pathOptions={{
@@ -539,7 +656,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_granos_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_granos_info[1]}, <br/>
+                                    Participacion {municipios_granos_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_granos_poligonos[2]} 
                             pathOptions={{
@@ -549,7 +672,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_granos_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_granos_info[2]}, <br/>
+                                    Participacion {municipios_granos_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_granos_poligonos[3]} 
                             pathOptions={{
@@ -559,7 +688,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_granos_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_granos_info[3]}, <br/>
+                                    Participacion {municipios_granos_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_granos_poligonos[4]} 
                             pathOptions={{
@@ -569,7 +704,12 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_granos_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_granos_info[4]}, <br/>
+                                    Participacion {municipios_granos_participa[4]}
+                                </Tooltip>
+                            </Polygon>
 
                         </LayerGroup>
                     </LayersControl.Overlay>
@@ -585,7 +725,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[0]}, <br/>
+                                    Participacion {municipios_lacteos_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_lacteos_poligonos[1]} 
                             pathOptions={{
@@ -595,7 +741,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[1]}, <br/>
+                                    Participacion {municipios_lacteos_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_lacteos_poligonos[2]} 
                             pathOptions={{
@@ -605,7 +757,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[2]}, <br/>
+                                    Participacion {municipios_lacteos_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_lacteos_poligonos[3]} 
                             pathOptions={{
@@ -615,7 +773,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[3]}, <br/>
+                                    Participacion {municipios_lacteos_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_lacteos_poligonos[4]} 
                             pathOptions={{
@@ -625,7 +789,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[4]}, <br/>
+                                    Participacion {municipios_lacteos_participa[4]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_lacteos_poligonos[5]} 
                             pathOptions={{
@@ -635,7 +805,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_lacteos_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_lacteos_info[5]}, <br/>
+                                    Participacion {municipios_lacteos_participa[5]}
+                                </Tooltip>
+                            </Polygon>
+
                         </LayerGroup>
                     </LayersControl.Overlay>
 
@@ -650,7 +826,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[0]}, <br/>
+                                    Participacion {municipios_pescados_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+
                             <Polygon 
                             positions={municipios_pescados_poligonos[1]} 
                             pathOptions={{
@@ -660,7 +842,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[1]}, <br/>
+                                    Participacion {municipios_pescados_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_pescados_poligonos[2]} 
                             pathOptions={{
@@ -670,7 +858,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[2]}, <br/>
+                                    Participacion {municipios_pescados_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_pescados_poligonos[3]} 
                             pathOptions={{
@@ -680,7 +874,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[3]}, <br/>
+                                    Participacion {municipios_pescados_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_pescados_poligonos[4]} 
                             pathOptions={{
@@ -690,7 +890,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[4]}, <br/>
+                                    Participacion {municipios_pescados_participa[4]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_pescados_poligonos[5]} 
                             pathOptions={{
@@ -700,7 +906,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_pescados_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_pescados_info[5]}, <br/>
+                                    Participacion {municipios_pescados_participa[5]}
+                                </Tooltip>
+                            </Polygon>
+                            
                         </LayerGroup>
                     </LayersControl.Overlay>
 
@@ -715,7 +927,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[0]}, <br/>
+                                    Participacion {municipios_raices_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_raices_poligonos[1]} 
                             pathOptions={{
@@ -725,7 +943,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[1]}, <br/>
+                                    Participacion {municipios_raices_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_raices_poligonos[2]} 
                             pathOptions={{
@@ -735,7 +959,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[2]}, <br/>
+                                    Participacion {municipios_raices_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_raices_poligonos[3]} 
                             pathOptions={{
@@ -745,7 +975,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[3]}, <br/>
+                                    Participacion {municipios_raices_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_raices_poligonos[4]} 
                             pathOptions={{
@@ -755,7 +991,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[4]}, <br/>
+                                    Participacion {municipios_raices_participa[4]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_raices_poligonos[5]} 
                             pathOptions={{
@@ -765,7 +1007,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_raices_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_raices_info[5]}, <br/>
+                                    Participacion {municipios_raices_participa[5]}
+                                </Tooltip>
+                            </Polygon>
+                            
                         </LayerGroup>
                     </LayersControl.Overlay>
 
@@ -780,7 +1028,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[0]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[0]}, <br/>
+                                    Participacion {municipios_verduras_participa[0]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_verduras_poligonos[1]} 
                             pathOptions={{
@@ -790,7 +1044,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[1]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[1]}, <br/>
+                                    Participacion {municipios_verduras_participa[1]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_verduras_poligonos[2]} 
                             pathOptions={{
@@ -800,7 +1060,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[2]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[2]}, <br/>
+                                    Participacion {municipios_verduras_participa[2]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_verduras_poligonos[3]} 
                             pathOptions={{
@@ -810,7 +1076,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[3]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[3]}, <br/>
+                                    Participacion {municipios_verduras_participa[3]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_verduras_poligonos[4]} 
                             pathOptions={{
@@ -820,7 +1092,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[4]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[4]}, <br/>
+                                    Participacion {municipios_verduras_participa[4]}
+                                </Tooltip>
+                            </Polygon>
+                            
                             <Polygon 
                             positions={municipios_verduras_poligonos[5]} 
                             pathOptions={{
@@ -830,7 +1108,13 @@ function SSA() {
                                 dashArray: '3',
                                 fillOpacity: 0.7,
                                 fillColor: getColor(municipios_verduras_participa[5]) }}
-                            />
+                                >
+                                <Tooltip sticky>
+                                    {municipios_verduras_info[5]}, <br/>
+                                    Participacion {municipios_verduras_participa[5]}
+                                </Tooltip>
+                            </Polygon>
+                            
                         </FeatureGroup>
                     </LayersControl.Overlay>
                     

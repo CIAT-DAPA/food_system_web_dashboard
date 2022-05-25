@@ -1,28 +1,40 @@
 {
   "files": {
     "main.css": "./static/css/main.1652fa6b.css",
-    "main.js": "./static/js/main.bd39db46.js",
+    "main.js": "./static/js/main.7b3a557c.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
-    "static/media/mapa_centrales_plazas.png": "./static/media/mapa_centrales_plazas.c747806ead8da05537b0.png",
     "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
     "static/media/infografia_ssa.png": "./static/media/infografia_ssa.59a8e12bfb60920681de.png",
+    "static/media/infografia_dietas.png": "./static/media/infografia_dietas.70e2c565874e25d2c8a6.png",
     "static/media/infografia_consumidor.png": "./static/media/infografia_consumidor.4f5a40b613d4cd890798.png",
     "static/media/Placeholder2.png": "./static/media/Placeholder2.66815feb3bfbd40eef65.png",
     "static/media/infografia_determinantes.png": "./static/media/infografia_determinantes.c659dde56616f43cbb33.png",
     "static/media/Placeholder3.png": "./static/media/Placeholder3.a8b9fe496c099aa24952.png",
     "static/media/infografia_entorno.png": "./static/media/infografia_entorno.e6ab1f6f62b104c73b41.png",
-    "static/media/mapas_procedencia.png": "./static/media/mapas_procedencia.6eaa26be9f54328a88b6.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
+    "static/media/2-disponibilidad.png": "./static/media/2-disponibilidad.293a52559ff958b44f1f.png",
+    "static/media/driver_3.png": "./static/media/driver_3.c797ef2027881ea1c649.png",
+    "static/media/driver_4.png": "./static/media/driver_4.735a30c626b6ed7cc937.png",
+    "static/media/driver_5.png": "./static/media/driver_5.f6fbaf6994d14b6cbbe6.png",
     "static/media/driver_2.png": "./static/media/driver_2.38b82462f948c3dacd39.png",
+    "static/media/2-asequibilidad.png": "./static/media/2-asequibilidad.4fb3d1bab43d810754fe.png",
+    "static/media/4-adecuacion.png": "./static/media/4-adecuacion.6429fb21ad3370896a7e.png",
+    "static/media/2-promocion.png": "./static/media/2-promocion.f4ce4293f7283b62dae7.png",
+    "static/media/3-variables_economicas.png": "./static/media/3-variables_economicas.4e34da71f1ab12ee2e86.png",
+    "static/media/3-tabues.png": "./static/media/3-tabues.fe932824ff365501b542.png",
+    "static/media/3-conveniencia.png": "./static/media/3-conveniencia.751810017d5eaa37d0c0.png",
+    "static/media/3-preferencias.png": "./static/media/3-preferencias.fce9f8471d18e81e6c93.png",
+    "static/media/2-perdidas.png": "./static/media/2-perdidas.7e336040d448038919e4.png",
+    "static/media/3-tiendas.png": "./static/media/3-tiendas.b7dd404484e7cd4e112a.png",
     "index.html": "./index.html",
     "main.1652fa6b.css.map": "./static/css/main.1652fa6b.css.map",
-    "main.bd39db46.js.map": "./static/js/main.bd39db46.js.map",
+    "main.7b3a557c.js.map": "./static/js/main.7b3a557c.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1652fa6b.css",
-    "static/js/main.bd39db46.js"
+    "static/js/main.7b3a557c.js"
   ]
 }
