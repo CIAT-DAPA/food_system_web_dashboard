@@ -64,13 +64,25 @@ function Introduccion() {
                 <div className="row featurette">
                     <div className="col-md-7">
                         <h2 className="featurette-heading">
-                            Primer Featurette.
-                            <span className="text-muted"> Emfasis 1.</span>
+                            El Tablero y
+                            <span className="text-muted"> sus Componentes.</span>
                         </h2>
                         <p className="lead">
-                        Este tablero muestra datos clave del Sistema Alimentario en Cali
-                        de acuerdo a un Marco de Analisis.
-                        Texto placeholder...
+                        Este tablero busca presentar todos los componentes del 
+                        sistema alimentario de Cali como ciudad-región, 
+                        para entender sus características, dinámicas y vulnerabilidades, 
+                        con el fin de identificar oportunidades de fortalecimiento y 
+                        acción desde diferentes perspectivas. 
+                        Si bien el ejercicio se enfoca en el municipio de Cali 
+                        como polo de consumo, busca también evidenciar su estrecha 
+                        relación tanto con zonas productoras como con otras 
+                        localidades “receptoras” que se abastecen del flujo de 
+                        alimentos que transita y se redistribuye por la ciudad. 
+                        Basado en la mejor evidencia disponible, este diagnóstico 
+                        buscó ser una herramienta para la toma de decisiones, 
+                        que ayude a los actores del sistema alimentario de Cali a 
+                        construir juntos una visión común y la hoja de ruta necesaria 
+                        para impulsar su transformación de modo sostenible. 
                         </p>
                     </div>
 
@@ -85,10 +97,23 @@ function Introduccion() {
                 <div className="row featurette">
 
                     <div className="col-md-7 order-md-2">
-                        <h2 className="featurette-heading">Segundo Featurette.
-                        <span className="text-muted"> Emfasis 2.</span></h2>
+                        <h2 className="featurette-heading">
+                            Consideraciones sobre los  
+                        <span className="text-muted"> sistemas alimentarios.</span></h2>
                         <p className="lead">
-                        Texto placeholder aqui por el momento.
+                        Un sistema alimentario describe todos los elementos y 
+                        actividades relacionados con la producción, la transformación, 
+                        el envasado, la distribución, la comercialización, el consumo 
+                        y la eliminación de los alimentos, así como todos los insumos 
+                        y productos asociados. Los sistemas alimentarios, si son 
+                        sostenibles, aportan beneficios a las personas, a las 
+                        comunidades, a la sociedad y al medio ambiente, ya que 
+                        proporcionan alimentos sanos y nutritivos, generan 
+                        oportunidades de negocio inclusivos y rentables para los 
+                        agentes de la cadena de suministro – desde los agricultores 
+                        familiares hasta los vendedores del mercado – y ayudan a 
+                        conservar el entorno natural y su 
+                        biodiversidad (HLPE, 2017).
                         </p>
                     </div>
 
@@ -104,11 +129,28 @@ function Introduccion() {
 
                     <div className="col-md-7">
                         <h2 className="featurette-heading">
-                            Tercer Featurette.
-                            <span className="text-muted"> Emfasis 3.</span>
+                            Marco de 
+                            <span className="text-muted"> Analisis.</span>
                         </h2>
                         <p className="lead">
-                        Texto placeholder aqui por el momento.
+                        El marco de análisis utilizado para caracterizar este sistema 
+                        (De Brauw et al., 2019, adaptado de HLPE, 2017) ya ha sido 
+                        aplicado para entender sistemas alimentarios de otras ciudades 
+                        y países de Asia, África y Latinoamérica. Este marco analítico 
+                        considera tres grandes bloques de información: <b>(a)</b> los 
+                        determinantes del sistema; <b>(b)</b> los componentes del 
+                        sistema, y <b>(c)</b> los resultados del sistema. 
+                        Reconoce cómo los determinantes ambientales, demográficos, 
+                        tecnológicos, políticos, económicos, sociales y culturales influencian 
+                        el sistema alimentario – desde la producción hasta el consumo –, 
+                        así como el funcionamiento de los componentes del sistema: 
+                        el suministro de alimentos, el entorno alimentario, el 
+                        comportamiento del consumidor y las dietas. 
+                        Además, considera las diversas interacciones que tienen 
+                        lugar entre estos componentes y cuáles son, finalmente, 
+                        sus resultados en los estados nutricionales y de salud, 
+                        en la seguridad alimentaria, y en las condiciones 
+                        ambientales y socioeconómicas de la población en general.  
                         </p>
                     </div>
 
@@ -121,7 +163,7 @@ function Introduccion() {
                 <hr className="featurette-divider" />
             </div>
 
-            A continuacion puedes encontrar un mapa de Cali:
+            <h2>Ubicacion de Cali</h2>
 
             <MapContainer 
                 center={ubicacion_cali} 

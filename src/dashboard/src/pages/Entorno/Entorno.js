@@ -38,49 +38,49 @@ function entorno() {
                     alt="Icono Entorno 1" width="30" height="30"/>&nbsp;
                     <img src={Icon2}
                     alt="Icono Entorno 2" width="30" height="30"/>&nbsp;
-                    Aunque existe disponibilidad de alimentos,
+                    <b>Aunque existe disponibilidad de alimentos,
                     el mayor reto esta en la capacidad de compra de
-                    la poblacion mas vulnerable.
+                    la poblacion mas vulnerable.</b>
                     <ul>
                         <li>Las tiendas estan disminuyendo mientras ganan
                             presencia los formatos emergentes.
                         </li>
                             <ul>
-                                <li>Tiendas de barrio</li>
+                                <li><b>Tiendas de barrio</b></li>
                                 <ul>
-                                    <li>96% de las compras en estratos 1-4</li>
+                                    <li><b>96%</b> de las compras en estratos 1-4</li>
                                     <li>Existen alrededor de 14 mil</li>
                                     <li>Abiertas de 6 a.m. a 10 p.m.</li>
                                 </ul>
-                                <li>Formatos Emergentes</li>
+                                <li><b>Formatos Emergentes</b></li>
                                 <ul>
                                     <li>Supermercados de descuento</li>
                                     <li>Cercanos a zona residencial</li>
                                 </ul>
                             </ul>
-                        <li>3.666 Supermercados (Micro, pequenos y grandes)</li>
+                        <li><b>3.666 Supermercados</b> (Micro, pequeños y grandes)</li>
                         <li>Facil acceso a puntos de venta en el casco urbano 
-                            (5 minuntos caminando)</li>
-                        <li>41 Mercados Moviles, Una vez por semana</li>
-                        <li>Comedores Comunitarios</li>
+                            <b> (5 minuntos caminando)</b></li>
+                        <li><b>41 Mercados Moviles</b>, Una vez por semana</li>
+                        <li><b>Comedores Comunitarios</b></li>
                             <ul>
-                                <li>48.600 beneficiarios</li>
+                                <li><b>48.600 beneficiarios</b></li>
                                 <li>1 racion diraria caliente 
                                     (40% del valor calorico minimo vital)</li>
                             </ul>
-                        <li>2.681 Restaurantes</li>
-                        <li>5-15% Ventas por Internet 
+                        <li><b>2.681 Restaurantes</b></li>
+                        <li><b>5-15% Ventas por Internet </b>
                             (COVID-19 acelero el comerico electronico)</li>
-                        <li>Programa de Alimentacion Escola (PEA)</li>
+                        <li><b>Programa de Alimentacion Escola (PEA)</b></li>
                             <ul>
-                                <li>Cubre 163.575 ninos y adolescentes con enfasis en
-                                    estratos 1-3 y, recientemente, el 4.
+                                <li>Cubre <b>163.575 niños y adolescentes</b> con 
+                                    enfasis en estratos 1-3 y, recientemente, el 4.
                                 </li>
-                                <li>Atiende al 100% de las instituciones
+                                <li>Atiende al <b>100%</b> de las instituciones
                                     educativas publicas
                                 </li>
-                                <li>Tiendas escolares con oferta diverda de alimentos,
-                                    con tendencia a saludables.
+                                <li><b>Tiendas escolares</b> con oferta diversa de 
+                                    alimentos, con tendencia a saludables.
                                 </li>
                             </ul>
                     </ul>
@@ -90,15 +90,15 @@ function entorno() {
 
                     <img src={Icon3}
                     alt="Icono Entorno 3" width="30" height="30"/>&nbsp;
-                    Publicidad y falta de normatividad en etiquetado
+                    <b>Publicidad y falta de normatividad en etiquetado
                     dificulta la identificacion de riesgos para la salud
-                    en alimentos procesados y ultraprocesados.
+                    en alimentos procesados y ultraprocesados.</b>
                     <ul>
                         <li>Fuerte publicidad de alimentos altos en sal,
                             grasas y azucar.
                         </li>
-                        <li>56% de la publicidad de alimentos en Colombia
-                             es dirigida a ninos.
+                        <li><b>56%</b> de la publicidad de alimentos en Colombia
+                            es dirigida a ninos.
                          </li>
                          <li>Tablas nutricionales no comprensibles para
                             la mayoria de la poblacion.
@@ -107,29 +107,33 @@ function entorno() {
 
                     <img src={Icon4}
                     alt="Icono Entorno 4" width="30" height="30"/>&nbsp;
-                    Cali enfrenta todavia grandes retos respecto al
-                    manejo de perdidas y desperdicios de alimentos.
+                    <b>Cali enfrenta todavia grandes retos respecto al
+                    manejo de perdidas y desperdicios de alimentos.</b>
                     <ul>
-                        <li>1.800 Toneladas diarias de residuos solidos</li>
+                        <li><b>1.800 Toneladas diarias de residuos solidos</b></li>
                         <ul>
-                            <li>70% Completamente Aprovechable
+                            <li><b>70%</b> Completamente Aprovechable
                                 (1.260 Toneladas)
                             </li>
-                            <li>59% Generado en las viviendas
-                                (59.4% son residuos de alimentos)
+                            <li><b>59%</b> Generado en las viviendas
                             </li>
+                            <ul>
+                                <li><b>59.4%</b> son residuos de alimentos</li>
+                            </ul>
+                            
                         </ul>
-                        <li>1.671 Grandes Generadores de Residuos
-                            (mas de 1 metro cubico de residuos por mes)
-                        </li>
+                        <li><b>1.671 Grandes Generadores de Residuos</b></li>
+                        <ul>
+                            <li>Aquellos que generan mas de 1 metro cubico 
+                            de residuos por mes</li>
+                        </ul>
                     </ul>
                     
                 </div>
             </div>
 
             <p align="justify">
-            Fuentes: 
-            Tiendas de barrio (Asotenderos, 2020); 
+            <b>Fuentes:</b> Tiendas de barrio (Asotenderos, 2020); 
             Número de supermercados (Cámara de Comercio de Cali, 2020b); 
             Acceso a puntos de venta 
             (Instituto de Prospectiva, Innovación y Gestión del Conocimiento 

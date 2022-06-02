@@ -126,7 +126,14 @@ function About() {
 
             <hr className="featurette-divider" />
             
-            Aqui, podriamos poner un mapa con la ubicacion del edificio CIAT.
+            <h2>Ubicacion del CIAT</h2>
+            <ul>
+                <li>Nota: #xxxx</li>
+
+                <li>Oficinas: #xxxx</li>
+
+                <li>Direcciones: #xxxx</li>
+            </ul>
 
             <MapContainer 
                 center={ubicacion_ciat} 

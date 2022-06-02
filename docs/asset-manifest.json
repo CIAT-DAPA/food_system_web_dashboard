@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.1652fa6b.css",
-    "main.js": "./static/js/main.7b3a557c.js",
+    "main.js": "./static/js/main.1b634f6e.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
@@ -11,12 +11,14 @@
     "static/media/Placeholder2.png": "./static/media/Placeholder2.66815feb3bfbd40eef65.png",
     "static/media/infografia_determinantes.png": "./static/media/infografia_determinantes.c659dde56616f43cbb33.png",
     "static/media/Placeholder3.png": "./static/media/Placeholder3.a8b9fe496c099aa24952.png",
+    "static/media/infografia_resultados.png": "./static/media/infografia_resultados.e8217375c8c511fc4de3.png",
     "static/media/infografia_entorno.png": "./static/media/infografia_entorno.e6ab1f6f62b104c73b41.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
     "static/media/2-disponibilidad.png": "./static/media/2-disponibilidad.293a52559ff958b44f1f.png",
     "static/media/driver_3.png": "./static/media/driver_3.c797ef2027881ea1c649.png",
     "static/media/driver_4.png": "./static/media/driver_4.735a30c626b6ed7cc937.png",
+    "static/media/resultados.png": "./static/media/resultados.09ac1062418b58262cc9.png",
     "static/media/driver_5.png": "./static/media/driver_5.f6fbaf6994d14b6cbbe6.png",
     "static/media/driver_2.png": "./static/media/driver_2.38b82462f948c3dacd39.png",
     "static/media/2-asequibilidad.png": "./static/media/2-asequibilidad.4fb3d1bab43d810754fe.png",
@@ -30,11 +32,11 @@
     "static/media/3-tiendas.png": "./static/media/3-tiendas.b7dd404484e7cd4e112a.png",
     "index.html": "./index.html",
     "main.1652fa6b.css.map": "./static/css/main.1652fa6b.css.map",
-    "main.7b3a557c.js.map": "./static/js/main.7b3a557c.js.map",
+    "main.1b634f6e.js.map": "./static/js/main.1b634f6e.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1652fa6b.css",
-    "static/js/main.7b3a557c.js"
+    "static/js/main.1b634f6e.js"
   ]
 }

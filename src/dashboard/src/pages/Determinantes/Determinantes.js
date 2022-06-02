@@ -286,6 +286,23 @@ const CoberturaServicios = {
   type: "bar",
   series: CSseries,
   options: {
+      tooltip: {
+        onDatasetHover: {
+            highlightDataSeries: true
+        },
+        y: {
+            title: {
+                formatter: function(value, { series, seriesIndex, dataPointIndex, w }) {
+                  var formatdata = 
+                  w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+                  var varstr = 
+                  "<b>Servicio:</b> " + formatdata.x + "</br>" +
+                  "<b>Porcentaje:</b>";
+                  return varstr;
+                }
+              }
+        }
+    },
     plotOptions: {
       bar: {
         // Permite teners barras de distintos colores
@@ -331,8 +348,11 @@ function determinantes() {
     <div>
 
       <h2>Factores determinantes para el sistema alimentario</h2>
-      El termino 'determinantes' es un acercamiento a la palabra en ingles de "Drivers."
-      Se entienden como impulsores o conductores en sistemas alimentarios.
+      El termino <b>determinantes</b> es un acercamiento en español a la 
+      palabra <b>drivers</b>, que procede del ingles y 
+      no tiene una traduccion literal.<br/>
+      Se entienden como impulsores o conductores en sistemas alimentarios que influyen
+      en las dietas y resultados nutricionales.
       <div className="landscape">
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
@@ -342,31 +362,32 @@ function determinantes() {
 
           <img src={Icon1}
           alt="Icono Determinantes 1" width="30" height="30"/>&nbsp;
-          La migracion nacional y extranjera hacia Cali aumenta el numero
-          de consumidores vulnerables y determina habitos de consumo
+          <b>La migracion nacional y extranjera hacia Cali aumenta el numero
+          de consumidores vulnerables y determina habitos de consumo</b>
 
           <ul>
-            <li>147.908 personas desplazadas internamente entraran a Cali</li>
+            <li><b>147.908</b> personas desplazadas internamente entraran a Cali</li>
               <ul>
-                <li>62.414 migrantes venezolanos en 2019</li>
-                <li>71% dedicados al comerico informal</li>
+                <li><b>62.414</b> migrantes venezolanos en 2019</li>
+                <li><b>71%</b> dedicados al comerico informal</li>
               </ul>
 
-            <li>En 2019, 37% de las personas desplazadas eran ninos y jovenes</li>
-            <li>Viven en las zonas con mayor densidad de poblacion (estratos 1-3)</li>
+            <li>En 2019, <b>37%</b> de las personas desplazadas eran niños y jovenes.
+            Viven en las zonas con mayor densidad de poblacion (estratos 1-3)
+            </li>
           </ul>
 
           <img src={Icon4}
           alt="Icono Determinantes 2" width="30" height="30"/>&nbsp;
-          Ciudad multicultural con diversa demanda de alimentos y 
-          habitos de consumo
+          <b>Ciudad multicultural con diversa demanda de alimentos y 
+          habitos de consumo</b>
             
             <ul>
-              <li>Composicion Etnica en Cali</li>
+              <li><b>Composicion Etnica en Cali</b></li>
                 <ul>
-                  <li>0.5% indigenas</li>
-                  <li>26% afrodescendientes</li>
-                  <li>73% mestizos</li>
+                  <li><b>0.5%</b> indigenas</li>
+                  <li><b>26%</b> afrodescendientes</li>
+                  <li><b>73%</b> mestizos</li>
                 </ul>
             </ul>
 
@@ -376,23 +397,23 @@ function determinantes() {
 
           <img src={Icon3}
           alt="Icono Determinantes 3" width="30" height="30"/>&nbsp;
-          Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
-          compra de alimentos (Cifras aumentaron en 2020 debido a COVID-19)
+          <b>Alta informalidad laboral y pobreza monetaria disminuyen la capacidad de
+          compra de alimentos</b> (Estas cifras aumentaron en 2020 debido a COVID-19)
             <ul>
-              <li>45.8% Tasa de informalidad laboral (febrero-abril 2019)</li>
-              <li>21.9% incidencia de pobreza monetaria en 2019</li>
-              <li>12.1% Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
+              <li><b>45.8%</b> Tasa de informalidad laboral (febrero-abril 2019)</li>
+              <li><b>21.9%</b> incidencia de pobreza monetaria en 2019</li>
+              <li><b>12.1%</b> Tasa de desempleo (entre septiembre y noviembre de 2019)</li>
             </ul>
 
           <img src={Icon2}
           alt="Icono Determinantes 2" width="30" height="30"/>&nbsp;
-          Cali es sede regional de gremios, actores publicos, bancos, 
-          universidades,
-          una unidad de planeacion estrategica inter-departamental y centros de
-          investigacion y desarrollo relacionados con actividades productivas.
+          <b>Cali es sede regional de gremios, actores publicos, bancos, 
+          universidades, una unidad de planeacion estrategica inter-departamental y 
+          centros de investigacion y desarrollo relacionados con actividades 
+          productivas.</b>
             <ul>
-              <li>7 clusteres productivos especializados</li>
-              <li>2 de la industria de alimentos</li>
+              <li><b>7</b> clusteres productivos especializados</li>
+              <li><b>2</b> de la industria de alimentos</li>
             </ul>
 
       
@@ -400,7 +421,7 @@ function determinantes() {
       </div>
 
       <p align="justify">
-      Fuentes: Migración nacional 
+      <b>Fuentes:</b> Migración nacional 
       (Unidad para la Atención y la Reparación Integral a las Víctimas, 2019); 
       Migrantes venezolanos (Ministerio de Relaciones Exteriores, 2020); 
       Composición étnica (Duque et al., 2019); 
@@ -515,6 +536,24 @@ function determinantes() {
             width="100%"
             height="500px"
           />
+
+      <hr className="featurette-divider" />
+
+      <h2>Determinantes Politicos</h2>
+      <b>NOTA: </b>
+      <b>SAN</b> es un acronimo para <b>Seguridad Alimentaria y Nutricional</b>
+      <ul>
+        <li><b>2008:</b> Politica Nacional de SAN</li>
+        <li><b>2009:</b> Ley nacional de obesidad</li>
+        <li><b>2018:</b> Politica Departamental de Soberania y SAN</li>
+        <li><b>2019:</b> Decreto departamental de alimentos saludables
+          en tiendas escolares
+        </li>
+        <li><b>2019:</b> Ley nacional contra el desperdicio de alimentos</li>
+        <li><b>2019:</b> Politica Publica Municipal de Seguridad y Soberania
+          Alimentaria y Nutricional
+        </li>
+      </ul>
 
     </div>
   );

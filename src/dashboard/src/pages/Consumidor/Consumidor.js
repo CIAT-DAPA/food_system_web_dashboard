@@ -28,8 +28,8 @@ function consumidor() {
 
                     <img src={Icon1}
                     alt="Icono Consumidor 1" width="30" height="30"/>&nbsp;
-                    La mayoria de los alimentos mas consumidos por los habitantes
-                    de la ciudad son de bajo valor nutricional.
+                    <b>La mayoria de los alimentos mas consumidos por los habitantes
+                    de la ciudad son de bajo valor nutricional.</b>
                         <ul>
                             <li>
                                 Arroz,
@@ -55,26 +55,28 @@ function consumidor() {
                         
                         <img src={Icon2}
                         alt="Icono Consumidor 2" width="30" height="30"/>&nbsp;
-                        Practicas sociales y culturales asociadas al consumo
-                        de alimentos
+                        <b>Practicas sociales y culturales asociadas al consumo
+                        de alimentos</b>
                         <ul>
-                            <li>46.4% Consume alimentos fuera de casa</li>
-                            <li>71.9% Come mientras ve una pantalla</li>
-                            <li>13.3% Usa salero en la mesa</li>
-                            <li>20.1% Prepara comida en casa para consumir afuera</li>
+                            <li><b>46.4%</b> Consume alimentos fuera de casa</li>
+                            <li><b>71.9%</b> Come mientras ve una pantalla</li>
+                            <li><b>13.3%</b> Usa salero en la mesa</li>
+                            <li><b>20.1%</b> Prepara comida en casa para 
+                            consumir afuera</li>
                             <ul>
                                 <li>La preparacion de alimentos en casa ha
                                     perdido relevancia en todos los estratos
                                 </li>
                             </ul>
 
-                            <li>Estrategias de afrontamiento a la inseguridad
-                            alimentaria:
+                            <li><b>Estrategias de afrontamiento a la inseguridad
+                            alimentaria:</b>
                             </li>
                             <ul>
-                                <li>27% Disminnuye la porcion</li>
-                                <li>29% Pide dinero prestado</li>
-                                <li>42% Come alimentos mas baratos a menor calidad</li>
+                                <li><b>27%</b> Disminuye la porcion</li>
+                                <li><b>29%</b> Pide dinero prestado</li>
+                                <li><b>42%</b> Come alimentos mas baratos a 
+                                menor calidad</li>
                             </ul>
                         </ul>
 
@@ -84,8 +86,8 @@ function consumidor() {
 
                     <img src={Icon3}
                     alt="Icono Consumidor 3" width="30" height="30"/>&nbsp;
-                    Las tiendas minoristas desempenan un rol social,
-                    mas alla de lo comercial
+                    <b>Las tiendas minoristas desempeñan un rol social,
+                    mas alla de lo comercial</b>
                     <ul>
                         <li>Estratos 1 al 4</li>
                             <ul>
@@ -93,7 +95,7 @@ function consumidor() {
                                 <li>Presentaciones pequenas (sachets)
                                     a percios mayores por gramo o unidad
                                 </li>
-                                <li>74% compras a credito</li>
+                                <li><b>74%</b> compras a credito</li>
                                 <li>Punto de encuentro: guardan llaves a
                                     vecinos, venden minutos de celular,
                                     guardan recados y hacen domicilios.
@@ -113,8 +115,8 @@ function consumidor() {
                         
                     <img src={Icon4}
                     alt="Icono Consumidor 4" width="30" height="30"/>&nbsp; 
-                    Incursion de nuevos productos a la canasta familiar,
-                    relacionada con un mayor acceso economico.
+                    <b>Incursion de nuevos productos a la canasta familiar,
+                    relacionada con un mayor acceso economico.</b>
                         <ul>
                             <li>Mayor consumo de alimentos industrializados
                                 (altos en calorias)
@@ -128,12 +130,12 @@ function consumidor() {
 
                         <img src={Icon5}
                         alt="Icono Consumidor 5" width="30" height="30"/>&nbsp; 
-                        Variables economicas relacionadas con la eleccion
+                        <b>Variables economicas relacionadas con la eleccion</b>
                             <ul>
-                                <li>13.4% de los ingreos se destinan a alimentos
+                                <li><b>13.4%</b> de los ingreos se destinan a alimentos
                                     y bebidas
                                 </li>
-                                <li>37% Incremento del gasto en alimentos
+                                <li><b>37%</b> Incremento del gasto en alimentos
                                     consumidos fuera de casa entre 2013 y 2018
                                 </li>
                             </ul>
@@ -141,8 +143,7 @@ function consumidor() {
                 </div>
 
             </div>
-            Fuentes: 
-                Prácticas de alimentación (ICBF, 2015); 
+            <b>Fuentes:</b> Prácticas de alimentación (ICBF, 2015); 
                 Tiendas minoristas (Melchor M. y Lerma C.E, 2016); 
                 Ingresos destinados a alimentos y bebidas (DANE, 2017); 
                 Incremento del gasto en alimentos fuera de casa (DANE, 2018b).

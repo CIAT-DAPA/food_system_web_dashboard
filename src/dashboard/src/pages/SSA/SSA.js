@@ -308,15 +308,15 @@ function SSA() {
             </div>
 
             <ul>
-                <li>Cali no es un municipio productor de alimentos,
+                <li><b>Cali no es un municipio productor de alimentos,
                 pero es un polo de consumo para el sistema alimentario del
-                suroccidente del pais.</li>
+                suroccidente del pais.</b></li>
 
                 <li>Ademas de constituir el mercado mas grande en el Suroccidente,
                 Cali cumple la funcion de redistribuir alimentos y establecer
                 precios de referencia.</li>
 
-                <li>Mas de 2.5 millones de personas, incluyendo, principalmente, 
+                <li>Mas de <b>2.5 millones</b> de personas, incluyendo, principalmente, 
                 a la poblacion de 7 municipios vecinos, 
                 se abastecen de este sistema.</li>
             </ul>
@@ -325,41 +325,41 @@ function SSA() {
 
                 <div className="p-2">
                     <ul>
-                        <li>Procedencia de los alimentos</li>
+                        <li><b>Procedencia de los alimentos</b></li>
                             <ul>
-                                <li>80% de los granos secos que se comercializan en 
+                                <li><b>80%</b> de los granos secos que se comercializan en 
                                     la ciudad son importados</li>
 
-                                <li>1317 productores a pequena escala en la zona 
+                                <li><b>1.317</b> productores a pequeña escala en la zona 
                                     periurbana</li>
 
-                                <li>65% de los productos provienen de los 
+                                <li><b>65%</b> de los productos provienen de los 
                                     departamentos de Cauca y Narino</li>
                             </ul>
-                        <li>Industria Manufacturera de productos 
-                            alimenticios</li>
+                        <li><b>Industria Manufacturera de productos 
+                            alimenticios</b></li>
                             <ul>
-                                <li>984 Empresas de productos alimenticios</li>
-                                <li>195 Empresas de macrosnacks</li>
+                                <li><b>984</b> Empresas de productos alimenticios</li>
+                                <li><b>195</b> Empresas de macrosnacks</li>
                                 <li>Crecimiento promedio anual en ventas de macrosnacks de
-                                8.2% entre 2014 y 2019</li>
+                                <b> 8.2%</b> entre 2014 y 2019</li>
                             </ul>
                     </ul>
                 </div>
 
                 <div className="p-2">
                     <ul>
-                        <li>Principales Mayoristas</li>
+                        <li><b>Principales Mayoristas</b></li>
                             <ul>
-                                <li>Reciben el 41% de los productos alimenticios 
+                                <li>Reciben el <b>41%</b> de los productos alimenticios 
                                     del Valle del Cauca</li>
-                                <li>Cubren el 54% de la demanda de alimentos 
+                                <li>Cubren el <b>54%</b> de la demanda de alimentos 
                                     en la ciudad</li>
-                                <li>Santa Elena, 18-22 mil t/mes</li>
-                                <li>CAVASA, 30 mil t/mes</li>
+                                <li><b>Santa Elena</b>, 18-22 mil t/mes</li>
+                                <li><b>CAVASA</b>, 30 mil t/mes</li>
                             </ul>
 
-                        <li>Otros puntos de venta de alimentos</li>
+                        <li><b>Otros puntos de venta de alimentos</b></li>
                             <ul>
                                 <li>Plazas de Mercado</li>
                                 <li>Supermercados</li>
@@ -374,7 +374,7 @@ function SSA() {
             </div>
 
             <p align="justify">
-            Fuentes: Principales departamentos abastecedores (DANE, 2020); 
+            <b>Fuentes:</b> Principales departamentos abastecedores (DANE, 2020); 
             Número de productores (DANE, 2014); 
             Volumen comercializado en Santa Elena, 
             porcentaje de alimentos que reciben los principales mayoristas y 
