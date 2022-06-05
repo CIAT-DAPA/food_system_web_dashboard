@@ -54,7 +54,7 @@ function Introduccion() {
     return (
         <div>
 
-            <div className="landscape">
+            <div className="landscape" align='center'>
                 <img src={Image2} alt="Introduccion Perfil"/>
             </div>
 

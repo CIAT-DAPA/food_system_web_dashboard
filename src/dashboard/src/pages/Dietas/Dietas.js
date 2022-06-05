@@ -2,6 +2,7 @@ import React from 'react';
 
 // Imagenes
 import Image1 from '../../final_assets/images/infografia_dietas.png';
+import Image2 from '../../final_assets/images/dieta_tipica_cali.png';
 
 // Iconos
 import Icon1 from '../../final_assets/icons/4-adecuacion.png';
@@ -177,7 +178,7 @@ function dietas() {
     return (
         <div>
             <h2>Dietas</h2>
-            <div>
+            <div align='center'>
                 <img src={Image1} alt="Infografia de Dietas"/>
             </div>
 
@@ -385,6 +386,9 @@ function dietas() {
             <h2>Caracterización y calidad</h2>
 
             <b>Dieta tipica en Cali por comida:</b>
+            <div align='center'>
+                <img src={Image2} alt="Infografia de Dieta Tipica en Cali"/>
+            </div>
             <div className="d-flex flex-row">
 
                 <div className="p2">

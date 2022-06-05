@@ -303,7 +303,7 @@ function SSA() {
         <div>
 
             <h2>Sistema de Suministro de Alimentos</h2>
-            <div className="landscape">
+            <div className="landscape" align='center'>
                 <img src={Image3} alt="Infografia Resumen SSA"/>
             </div>
 

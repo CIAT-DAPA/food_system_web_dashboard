@@ -353,7 +353,7 @@ function determinantes() {
       no tiene una traduccion literal.<br/>
       Se entienden como impulsores o conductores en sistemas alimentarios que influyen
       en las dietas y resultados nutricionales.
-      <div className="landscape">
+      <div className="landscape" align='center'>
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
 

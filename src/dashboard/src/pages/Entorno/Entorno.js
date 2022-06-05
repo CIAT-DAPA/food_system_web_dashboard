@@ -28,7 +28,7 @@ function entorno() {
     return (
         <div>
             <h2>Entorno alimentario de la ciudad</h2>
-            <div>
+            <div align='center'>
                 <img src={Image3} alt="Infografia del Entorno Alimentario"/>
             </div>
 
@@ -161,13 +161,13 @@ function entorno() {
             <div className="d-flex flex-row">
 
                 <div className="p-2">
-                    <div>
+                    <div align='center'>
                         <img src={Image1} alt="Mapa de Densidad Hab/Ha"/>
                     </div>
                 </div>
 
                 <div className="p-2">
-                    <div>
+                    <div align='center'>
                         <img src={Image2} alt="Mapa de Localizacion de Demanda"/>
                     </div>
                 </div>

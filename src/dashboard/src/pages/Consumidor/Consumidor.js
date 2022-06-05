@@ -18,7 +18,7 @@ function consumidor() {
         <div>
 
             <h2>Comportamiento del consumidor</h2>
-            <div className="landscape">
+            <div className="landscape" align='center'>
                 <img src={Image1} alt="Infografia Resumen SSA"/>
             </div>
 
