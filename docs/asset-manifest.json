@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.1652fa6b.css",
-    "main.js": "./static/js/main.1b634f6e.js",
+    "main.js": "./static/js/main.2f6988d9.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
@@ -15,6 +15,8 @@
     "static/media/infografia_entorno.png": "./static/media/infografia_entorno.e6ab1f6f62b104c73b41.png",
     "static/media/mapa_habha.png": "./static/media/mapa_habha.7c616420a96091828aee.png",
     "static/media/perfil_intro.png": "./static/media/perfil_intro.fa13e05c5a932e21ed81.png",
+    "static/media/dieta_tipica_cali.png": "./static/media/dieta_tipica_cali.af070ac166c5106298f8.png",
+    "static/media/resultados_ambientales.png": "./static/media/resultados_ambientales.8b77f310fb709a78af1d.png",
     "static/media/2-disponibilidad.png": "./static/media/2-disponibilidad.293a52559ff958b44f1f.png",
     "static/media/driver_3.png": "./static/media/driver_3.c797ef2027881ea1c649.png",
     "static/media/driver_4.png": "./static/media/driver_4.735a30c626b6ed7cc937.png",
@@ -32,11 +34,11 @@
     "static/media/3-tiendas.png": "./static/media/3-tiendas.b7dd404484e7cd4e112a.png",
     "index.html": "./index.html",
     "main.1652fa6b.css.map": "./static/css/main.1652fa6b.css.map",
-    "main.1b634f6e.js.map": "./static/js/main.1b634f6e.js.map",
+    "main.2f6988d9.js.map": "./static/js/main.2f6988d9.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1652fa6b.css",
-    "static/js/main.1b634f6e.js"
+    "static/js/main.2f6988d9.js"
   ]
 }

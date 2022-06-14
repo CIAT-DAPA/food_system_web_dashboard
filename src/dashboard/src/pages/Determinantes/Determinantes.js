@@ -286,22 +286,27 @@ const CoberturaServicios = {
   type: "bar",
   series: CSseries,
   options: {
-      tooltip: {
-        onDatasetHover: {
-            highlightDataSeries: true
-        },
-        y: {
-            title: {
-                formatter: function(value, { series, seriesIndex, dataPointIndex, w }) {
-                  var formatdata = 
-                  w.globals.initialSeries[seriesIndex].data[dataPointIndex];
-                  var varstr = 
-                  "<b>Servicio:</b> " + formatdata.x + "</br>" +
-                  "<b>Porcentaje:</b>";
-                  return varstr;
-                }
-              }
+    tooltip: {
+      onDatasetHover: {
+        highlightDataSeries: true
+      },
+      y: {
+        title: {
+          formatter: function(value, { series, seriesIndex, dataPointIndex, w }) {
+            var formatdata = 
+            w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+            var varstr = 
+            "<b>Servicio:</b> " + formatdata.x + "</br>" +
+            "<b>Porcentaje:</b>";
+            return varstr;
+          }
         }
+      }
+    },
+    chart: {
+      toolbar: {
+        show: false
+      }
     },
     plotOptions: {
       bar: {
