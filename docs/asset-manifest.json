@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.1652fa6b.css",
-    "main.js": "./static/js/main.2f6988d9.js",
+    "main.css": "./static/css/main.91a9b227.css",
+    "main.js": "./static/js/main.721a3589.js",
     "static/js/787.545aecf5.chunk.js": "./static/js/787.545aecf5.chunk.js",
     "static/media/Placeholder1.png": "./static/media/Placeholder1.c996e381c567cae633d9.png",
     "static/media/mapa_demanda.png": "./static/media/mapa_demanda.f80fa035262305ef5b8e.png",
@@ -23,6 +23,7 @@
     "static/media/resultados.png": "./static/media/resultados.09ac1062418b58262cc9.png",
     "static/media/driver_5.png": "./static/media/driver_5.f6fbaf6994d14b6cbbe6.png",
     "static/media/driver_2.png": "./static/media/driver_2.38b82462f948c3dacd39.png",
+    "static/media/ciat_biodiversity.png": "./static/media/ciat_biodiversity.3128d6ca56ac47790018.png",
     "static/media/2-asequibilidad.png": "./static/media/2-asequibilidad.4fb3d1bab43d810754fe.png",
     "static/media/4-adecuacion.png": "./static/media/4-adecuacion.6429fb21ad3370896a7e.png",
     "static/media/2-promocion.png": "./static/media/2-promocion.f4ce4293f7283b62dae7.png",
@@ -33,12 +34,12 @@
     "static/media/2-perdidas.png": "./static/media/2-perdidas.7e336040d448038919e4.png",
     "static/media/3-tiendas.png": "./static/media/3-tiendas.b7dd404484e7cd4e112a.png",
     "index.html": "./index.html",
-    "main.1652fa6b.css.map": "./static/css/main.1652fa6b.css.map",
-    "main.2f6988d9.js.map": "./static/js/main.2f6988d9.js.map",
+    "main.91a9b227.css.map": "./static/css/main.91a9b227.css.map",
+    "main.721a3589.js.map": "./static/js/main.721a3589.js.map",
     "787.545aecf5.chunk.js.map": "./static/js/787.545aecf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1652fa6b.css",
-    "static/js/main.2f6988d9.js"
+    "static/css/main.91a9b227.css",
+    "static/js/main.721a3589.js"
   ]
 }
