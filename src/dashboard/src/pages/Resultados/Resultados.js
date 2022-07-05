@@ -23,6 +23,15 @@ const orange = "#ffa500";
 
 
 // Mortalidad en Menores
+// Estos son datos quemados porque fueron sacados de una
+// comunicacion con la Secretaría de Salud Publica.
+// Cita:
+// Alcaldía de Santiago de Cali. 2020b. Comunicación
+// personal con Ruby Castellanos, referente
+// en seguridad alimentaria y nutricional de la
+// Secretaría de Salud Pública Municipal de
+// Santiago de Cali. 
+
 var mortalidad_ejex = 
 [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020];
 var mortalidad_ejey = 
@@ -84,6 +93,7 @@ const mortalidad_linea = {
 
 
 // Inseguridad Alimentaria
+// Datos de Base Datos ENSIN
 var inseguridad_ejex = 
 [2005, 2010, 2015];
 var inseguridad_ejey = 
@@ -147,6 +157,10 @@ const inseguridad_barra = {
 
 
 // Informalidad
+// Programa Cali Cómo Vamos. 2019. Informe anual de
+// calidad de vida. Disponible en:
+// https://bit.ly/3rpPAvX
+// Grafico 8, Pagina 7 del PDF
 var informalidad_ejex = 
 [2012, 2013, 2014, 2015, 2016, 2017, 2018];
 var informalidad_ejey = 

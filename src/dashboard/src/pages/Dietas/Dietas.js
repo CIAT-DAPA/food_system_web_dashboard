@@ -152,7 +152,12 @@ const CoberturaServicios = {
     },
     labels: fValues,
     legend: {
-      show: false
+      position: 'top',
+      horizontalAlign: 'left',
+      show: true,
+      formatter: function(seriesName, opts) {
+        return [seriesName, " - ", nombres_comida[opts.seriesIndex]]
+      }
     },
     colors: colores_comida,
     //theme: {

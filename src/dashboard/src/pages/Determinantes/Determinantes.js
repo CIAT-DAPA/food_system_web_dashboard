@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS
-import './determinantes.module.css';
+//import './determinantes.module.css';
 
 // Graficas
 //import {Bar, Pie} from 'react-chartjs-2';

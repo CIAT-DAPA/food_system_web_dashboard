@@ -1,7 +1,7 @@
 import React from 'react';
 
 // CSS
-import "./ssa.module.css";
+//import "./ssa.module.css";
 
 // Importando Imagenes
 //import Image1 from '../../final_assets/images/mapa_centrales_plazas.png';
@@ -47,6 +47,17 @@ function reverseArray (array) {
     return reversed;
 };
 
+/*
+function reverseArray2 (array) {
+    array.reverse();
+    for (let i = 0; i < array.length; i++) {
+        if ( Array.isArray(array[i]) ) {
+            reverseArray2(array[i]);
+        }
+    }
+}
+*/
+
 // Carnes
 var municipios_carnes = [];
 for (let i = 0; i < mapa1.features.length; i++) {
@@ -59,9 +70,11 @@ var municipios_carnes_poligonos = [];
 var municipios_carnes_participa = [];
 var municipios_carnes_info = [];
 for (let i = 0; i < municipios_carnes.length; i++) {
-    municipios_carnes_poligonos.push(
-        reverseArray(municipios_carnes[i].geometry.rings)
-    );
+//    if (i !== 2 || i !== 5) { 
+        municipios_carnes_poligonos.push(
+            reverseArray(municipios_carnes[i].geometry.rings)
+        );
+//    }
     //console.log("variable i es",i);
     municipios_carnes_participa.push(
         municipios_carnes[i].attributes.CARNES
@@ -439,7 +452,7 @@ function SSA() {
                             >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[0]}, <br/>
-                                    Participacion {municipios_carnes_participa[0]}
+                                    Participacion en Carne: {municipios_carnes_participa[0]}
                                 </Tooltip>
                             </Polygon>
 
@@ -455,7 +468,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[1]}, <br/>
-                                    Participacion {municipios_carnes_participa[1]}
+                                    Participacion en Carne: {municipios_carnes_participa[1]}
                                 </Tooltip>
                             </Polygon>
 
@@ -471,7 +484,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[2]}, <br/>
-                                    Participacion {municipios_carnes_participa[2]}
+                                    Participacion en Carne: {municipios_carnes_participa[2]}
                                 </Tooltip>
                                 </Polygon>
 
@@ -487,7 +500,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[3]}, <br/>
-                                    Participacion {municipios_carnes_participa[3]}
+                                    Participacion en Carne: {municipios_carnes_participa[3]}
                                 </Tooltip>
                                 </Polygon>
 
@@ -503,7 +516,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[4]}, <br/>
-                                    Participacion {municipios_carnes_participa[4]}
+                                    Participacion en Carne: {municipios_carnes_participa[4]}
                                 </Tooltip>
                                 </Polygon>
 
@@ -519,7 +532,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_carnes_info[5]}, <br/>
-                                    Participacion {municipios_carnes_participa[5]}
+                                    Participacion en Carne: {municipios_carnes_participa[5]}
                                 </Tooltip>
                                 </Polygon>
 
@@ -541,7 +554,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[0]}, <br/>
-                                    Participacion {municipios_frutas_participa[0]}
+                                    Participacion en Frutas: {municipios_frutas_participa[0]}
                                 </Tooltip>
                             </Polygon>
 
@@ -557,7 +570,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[1]}, <br/>
-                                    Participacion {municipios_frutas_participa[1]}
+                                    Participacion en Frutas: {municipios_frutas_participa[1]}
                                 </Tooltip>
                             </Polygon>
 
@@ -573,7 +586,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[2]}, <br/>
-                                    Participacion {municipios_frutas_participa[2]}
+                                    Participacion en Frutas: {municipios_frutas_participa[2]}
                                 </Tooltip>
                             </Polygon>
 
@@ -589,7 +602,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[3]}, <br/>
-                                    Participacion {municipios_frutas_participa[3]}
+                                    Participacion en Frutas: {municipios_frutas_participa[3]}
                                 </Tooltip>
                             </Polygon>
 
@@ -605,7 +618,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[4]}, <br/>
-                                    Participacion {municipios_frutas_participa[4]}
+                                    Participacion en Frutas: {municipios_frutas_participa[4]}
                                 </Tooltip>
                             </Polygon>
 
@@ -621,7 +634,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_frutas_info[5]}, <br/>
-                                    Participacion {municipios_frutas_participa[5]}
+                                    Participacion en Frutas: {municipios_frutas_participa[5]}
                                 </Tooltip>
                             </Polygon>
 
@@ -643,7 +656,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_granos_info[0]}, <br/>
-                                    Participacion {municipios_granos_participa[0]}
+                                    Participacion en Granos: {municipios_granos_participa[0]}
                                 </Tooltip>
                             </Polygon>
 
@@ -659,7 +672,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_granos_info[1]}, <br/>
-                                    Participacion {municipios_granos_participa[1]}
+                                    Participacion en Granos: {municipios_granos_participa[1]}
                                 </Tooltip>
                             </Polygon>
 
@@ -675,7 +688,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_granos_info[2]}, <br/>
-                                    Participacion {municipios_granos_participa[2]}
+                                    Participacion en Granos: {municipios_granos_participa[2]}
                                 </Tooltip>
                             </Polygon>
 
@@ -691,7 +704,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_granos_info[3]}, <br/>
-                                    Participacion {municipios_granos_participa[3]}
+                                    Participacion en Granos: {municipios_granos_participa[3]}
                                 </Tooltip>
                             </Polygon>
 
@@ -707,7 +720,7 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_granos_info[4]}, <br/>
-                                    Participacion {municipios_granos_participa[4]}
+                                    Participacion en Granos: {municipios_granos_participa[4]}
                                 </Tooltip>
                             </Polygon>
 
@@ -728,7 +741,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[0]}, <br/>
-                                    Participacion {municipios_lacteos_participa[0]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[0]}
                                 </Tooltip>
                             </Polygon>
 
@@ -744,7 +758,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[1]}, <br/>
-                                    Participacion {municipios_lacteos_participa[1]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[1]}
                                 </Tooltip>
                             </Polygon>
 
@@ -760,7 +775,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[2]}, <br/>
-                                    Participacion {municipios_lacteos_participa[2]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[2]}
                                 </Tooltip>
                             </Polygon>
 
@@ -776,7 +792,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[3]}, <br/>
-                                    Participacion {municipios_lacteos_participa[3]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[3]}
                                 </Tooltip>
                             </Polygon>
 
@@ -792,7 +809,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[4]}, <br/>
-                                    Participacion {municipios_lacteos_participa[4]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[4]}
                                 </Tooltip>
                             </Polygon>
 
@@ -808,7 +826,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_lacteos_info[5]}, <br/>
-                                    Participacion {municipios_lacteos_participa[5]}
+                                    Participacion en
+                                    Lacteos: {municipios_lacteos_participa[5]}
                                 </Tooltip>
                             </Polygon>
 
@@ -829,7 +848,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[0]}, <br/>
-                                    Participacion {municipios_pescados_participa[0]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[0]}
                                 </Tooltip>
                             </Polygon>
 
@@ -845,7 +865,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[1]}, <br/>
-                                    Participacion {municipios_pescados_participa[1]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[1]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -861,7 +882,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[2]}, <br/>
-                                    Participacion {municipios_pescados_participa[2]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[2]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -877,7 +899,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[3]}, <br/>
-                                    Participacion {municipios_pescados_participa[3]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[3]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -893,7 +916,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[4]}, <br/>
-                                    Participacion {municipios_pescados_participa[4]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[4]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -909,7 +933,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_pescados_info[5]}, <br/>
-                                    Participacion {municipios_pescados_participa[5]}
+                                    Participacion en
+                                    Pescados: {municipios_pescados_participa[5]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -930,7 +955,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[0]}, <br/>
-                                    Participacion {municipios_raices_participa[0]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[0]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -946,7 +972,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[1]}, <br/>
-                                    Participacion {municipios_raices_participa[1]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[1]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -962,7 +989,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[2]}, <br/>
-                                    Participacion {municipios_raices_participa[2]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[2]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -978,7 +1006,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[3]}, <br/>
-                                    Participacion {municipios_raices_participa[3]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[3]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -994,7 +1023,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[4]}, <br/>
-                                    Participacion {municipios_raices_participa[4]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[4]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1010,7 +1040,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_raices_info[5]}, <br/>
-                                    Participacion {municipios_raices_participa[5]}
+                                    Participacion en
+                                    Raices: {municipios_raices_participa[5]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1031,7 +1062,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[0]}, <br/>
-                                    Participacion {municipios_verduras_participa[0]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[0]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1047,7 +1079,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[1]}, <br/>
-                                    Participacion {municipios_verduras_participa[1]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[1]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1063,7 +1096,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[2]}, <br/>
-                                    Participacion {municipios_verduras_participa[2]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[2]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1079,7 +1113,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[3]}, <br/>
-                                    Participacion {municipios_verduras_participa[3]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[3]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1095,7 +1130,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[4]}, <br/>
-                                    Participacion {municipios_verduras_participa[4]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[4]}
                                 </Tooltip>
                             </Polygon>
                             
@@ -1111,7 +1147,8 @@ function SSA() {
                                 >
                                 <Tooltip sticky>
                                     {municipios_verduras_info[5]}, <br/>
-                                    Participacion {municipios_verduras_participa[5]}
+                                    Participacion en
+                                    Verduras: {municipios_verduras_participa[5]}
                                 </Tooltip>
                             </Polygon>
                             
