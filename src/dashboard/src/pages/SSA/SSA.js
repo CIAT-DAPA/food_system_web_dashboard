@@ -43,22 +43,19 @@ function reverseArray (array) {
                    ? item.map(reverse) 
                    : item.reverse();
     });
-    //console.log("reverse exitoso");
+    console.log("reverse exitoso");
     return reversed;
 };
 
-/*
-function reverseArray2 (array) {
-    array.reverse();
-    for (let i = 0; i < array.length; i++) {
-        if ( Array.isArray(array[i]) ) {
-            reverseArray2(array[i]);
-        }
-    }
+for (let i = 0; i < 32; i++) {
+    reverseArray(mapa1.features[i].geometry.rings);
 }
-*/
+
+
 
 // Carnes
+// const reversedMultiPolygons =
+// multiPolygons.map(polygon => polygon.map(v => [v[1], v[0]]))
 var municipios_carnes = [];
 for (let i = 0; i < mapa1.features.length; i++) {
     if (mapa1.features[i].attributes.CARNES !== 0) {
@@ -69,24 +66,34 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_carnes_poligonos = [];
 var municipios_carnes_participa = [];
 var municipios_carnes_info = [];
-for (let i = 0; i < municipios_carnes.length; i++) {
-//    if (i !== 2 || i !== 5) { 
-        municipios_carnes_poligonos.push(
-            reverseArray(municipios_carnes[i].geometry.rings)
+function carnes() {
+    for (let i = 0; i < municipios_carnes.length; i++) {
+    //    if (i === 2 || i === 5) { 
+    //        municipios_carnes_poligonos.push(
+    //            municipios_carnes[i].geometry.rings.reverse()
+    //        );
+    //    }
+    //    else {
+            municipios_carnes_poligonos.push(
+                //reverseArray(municipios_carnes[i].geometry.rings)
+                municipios_carnes[i].geometry.rings
+            );
+    //    }
+        //console.log("variable i es",i);
+        municipios_carnes_participa.push(
+            municipios_carnes[i].attributes.CARNES
         );
-//    }
-    //console.log("variable i es",i);
-    municipios_carnes_participa.push(
-        municipios_carnes[i].attributes.CARNES
-    );
-    municipios_carnes_info.push(
-        municipios_carnes[i].attributes.MPIO_CNMBR + ", " +
-        municipios_carnes[i].attributes.DPTO_CNMBR
-    );
+        municipios_carnes_info.push(
+            municipios_carnes[i].attributes.MPIO_CNMBR + ", " +
+            municipios_carnes[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_carnes_poligonos",municipios_carnes_poligonos);
+    //console.log("municipios_carnes_participa",municipios_carnes_participa);
+    //console.log("municipios_carnes_info",municipios_carnes_info);
 }
-//console.log("municipios_carnes_poligonos",municipios_carnes_poligonos);
-//console.log("municipios_carnes_participa",municipios_carnes_participa);
-//console.log("municipios_carnes_info",municipios_carnes_info);
+
+
 
 // Frutas
 var municipios_frutas = [];
@@ -98,19 +105,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_frutas_poligonos = [];
 var municipios_frutas_participa = [];
 var municipios_frutas_info = [];
-for (let i = 0; i < municipios_frutas.length; i++) {
-    municipios_frutas_poligonos.push(
-        reverseArray(municipios_frutas[i].geometry.rings)
-    );
-    municipios_frutas_participa.push(
-        municipios_frutas[i].attributes.FRUTAS
-    );
-    municipios_frutas_info.push(
-        municipios_frutas[i].attributes.MPIO_CNMBR + ", " +
-        municipios_frutas[i].attributes.DPTO_CNMBR
-    );
+function frutas() {
+    for (let i = 0; i < municipios_frutas.length; i++) {
+        municipios_frutas_poligonos.push(
+            //reverseArray(municipios_frutas[i].geometry.rings)
+            municipios_frutas[i].geometry.rings
+        );
+        municipios_frutas_participa.push(
+            municipios_frutas[i].attributes.FRUTAS
+        );
+        municipios_frutas_info.push(
+            municipios_frutas[i].attributes.MPIO_CNMBR + ", " +
+            municipios_frutas[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_frutas_participa",municipios_frutas_participa);
 }
-//console.log("municipios_frutas_participa",municipios_frutas_participa);
+
+
 
 // Granos y Cereales
 var municipios_granos = [];
@@ -122,19 +134,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_granos_poligonos = [];
 var municipios_granos_participa = [];
 var municipios_granos_info = [];
-for (let i = 0; i < municipios_granos.length; i++) {
-    municipios_granos_poligonos.push(
-        reverseArray(municipios_granos[i].geometry.rings)
-    );
-    municipios_granos_participa.push(
-        municipios_granos[i].attributes.GRA_CER
-    );
-    municipios_granos_info.push(
-        municipios_granos[i].attributes.MPIO_CNMBR + ", " +
-        municipios_granos[i].attributes.DPTO_CNMBR
-    );
+function granos() {
+    for (let i = 0; i < municipios_granos.length; i++) {
+        municipios_granos_poligonos.push(
+            //reverseArray(municipios_granos[i].geometry.rings)
+            municipios_granos[i].geometry.rings
+        );
+        municipios_granos_participa.push(
+            municipios_granos[i].attributes.GRA_CER
+        );
+        municipios_granos_info.push(
+            municipios_granos[i].attributes.MPIO_CNMBR + ", " +
+            municipios_granos[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_granos_participa",municipios_granos_participa);
 }
-//console.log("municipios_granos_participa",municipios_granos_participa);
+
+
 
 // Lacteos y Huevos
 var municipios_lacteos = [];
@@ -146,19 +163,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_lacteos_poligonos = [];
 var municipios_lacteos_participa = [];
 var municipios_lacteos_info = [];
-for (let i = 0; i < municipios_lacteos.length; i++) {
-    municipios_lacteos_poligonos.push(
-        reverseArray(municipios_lacteos[i].geometry.rings)
-    );
-    municipios_lacteos_participa.push(
-        municipios_lacteos[i].attributes.LAC_HUE
-    );
-    municipios_lacteos_info.push(
-        municipios_lacteos[i].attributes.MPIO_CNMBR + ", " +
-        municipios_lacteos[i].attributes.DPTO_CNMBR
-    );
+function lacteos() {
+    for (let i = 0; i < municipios_lacteos.length; i++) {
+        municipios_lacteos_poligonos.push(
+            //reverseArray(municipios_lacteos[i].geometry.rings)
+            municipios_lacteos[i].geometry.rings
+        );
+        municipios_lacteos_participa.push(
+            municipios_lacteos[i].attributes.LAC_HUE
+        );
+        municipios_lacteos_info.push(
+            municipios_lacteos[i].attributes.MPIO_CNMBR + ", " +
+            municipios_lacteos[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_lacteos_participa",municipios_lacteos_participa);
 }
-//console.log("municipios_lacteos_participa",municipios_lacteos_participa);
+
+
 
 // Pescados
 var municipios_pescados = [];
@@ -170,19 +192,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_pescados_poligonos = [];
 var municipios_pescados_participa = [];
 var municipios_pescados_info = [];
-for (let i = 0; i < municipios_pescados.length; i++) {
-    municipios_pescados_poligonos.push(
-        reverseArray(municipios_pescados[i].geometry.rings)
-    );
-    municipios_pescados_participa.push(
-        municipios_pescados[i].attributes.PESCADOS
-    );
-    municipios_pescados_info.push(
-        municipios_pescados[i].attributes.MPIO_CNMBR + ", " +
-        municipios_pescados[i].attributes.DPTO_CNMBR
-    );
+function pescados() {
+    for (let i = 0; i < municipios_pescados.length; i++) {
+        municipios_pescados_poligonos.push(
+            //reverseArray(municipios_pescados[i].geometry.rings)
+            municipios_pescados[i].geometry.rings
+        );
+        municipios_pescados_participa.push(
+            municipios_pescados[i].attributes.PESCADOS
+        );
+        municipios_pescados_info.push(
+            municipios_pescados[i].attributes.MPIO_CNMBR + ", " +
+            municipios_pescados[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_pescados_participa",municipios_pescados_participa);
 }
-//console.log("municipios_pescados_participa",municipios_pescados_participa);
+
+
 
 // Tuberculos, raices y platanos
 var municipios_raices = [];
@@ -194,19 +221,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_raices_poligonos = [];
 var municipios_raices_participa = [];
 var municipios_raices_info = [];
-for (let i = 0; i < municipios_raices.length; i++) {
-    municipios_raices_poligonos.push(
-        reverseArray(municipios_raices[i].geometry.rings)
-    );
-    municipios_raices_participa.push(
-        municipios_raices[i].attributes.TUBERCULOS
-    );
-    municipios_raices_info.push(
-        municipios_raices[i].attributes.MPIO_CNMBR + ", " +
-        municipios_raices[i].attributes.DPTO_CNMBR
-    );
+function raices() {
+    for (let i = 0; i < municipios_raices.length; i++) {
+        municipios_raices_poligonos.push(
+            //reverseArray(municipios_raices[i].geometry.rings)
+            municipios_raices[i].geometry.rings
+        );
+        municipios_raices_participa.push(
+            municipios_raices[i].attributes.TUBERCULOS
+        );
+        municipios_raices_info.push(
+            municipios_raices[i].attributes.MPIO_CNMBR + ", " +
+            municipios_raices[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_raices_participa",municipios_raices_participa);
 }
-//console.log("municipios_raices_participa",municipios_raices_participa);
+
+
 
 // Verduras y Hortalizas
 var municipios_verduras = [];
@@ -218,19 +250,24 @@ for (let i = 0; i < mapa1.features.length; i++) {
 var municipios_verduras_poligonos = [];
 var municipios_verduras_participa = [];
 var municipios_verduras_info = [];
-for (let i = 0; i < municipios_verduras.length; i++) {
-    municipios_verduras_poligonos.push(
-        reverseArray(municipios_verduras[i].geometry.rings)
-    );
-    municipios_verduras_participa.push(
-        municipios_verduras[i].attributes.VERD_HOR
-    );
-    municipios_verduras_info.push(
-        municipios_verduras[i].attributes.MPIO_CNMBR + ", " +
-        municipios_verduras[i].attributes.DPTO_CNMBR
-    );
+function verduras () {
+    for (let i = 0; i < municipios_verduras.length; i++) {
+        municipios_verduras_poligonos.push(
+            //reverseArray(municipios_verduras[i].geometry.rings)
+            municipios_verduras[i].geometry.rings
+        );
+        municipios_verduras_participa.push(
+            municipios_verduras[i].attributes.VERD_HOR
+        );
+        municipios_verduras_info.push(
+            municipios_verduras[i].attributes.MPIO_CNMBR + ", " +
+            municipios_verduras[i].attributes.DPTO_CNMBR
+        );
+    }
+    //console.log("municipios_verduras_participa",municipios_verduras_participa);
 }
-//console.log("municipios_verduras_participa",municipios_verduras_participa);
+
+
 
 // Colores
 // https://leafletjs.com/examples/choropleth/
@@ -252,6 +289,8 @@ function getColor(d) {
 
 
 
+
+
 // Mapa 2
 var ubicaciones = [], names = [], tipos = [];
 for (let i = 0; i < mapa2.features.length; i++) {
@@ -259,6 +298,8 @@ for (let i = 0; i < mapa2.features.length; i++) {
     names.push(mapa2.features[i].attributes.Name);
     tipos.push(mapa2.features[i].attributes.Tipo);
 }
+
+
 
 
 
@@ -299,13 +340,25 @@ const multiPolygon = [
   ]
 */
 
+// Ejecutando funciones para llenar arreglos de cada categoria
+carnes();
+frutas();
+granos();
+lacteos();
+pescados();
+raices();
+verduras();
+
+
+
 
 
 function SSA() {
 
     const mapRef = React.useRef(null);
 
-    // event listener to handle marker click
+    // Escuchando para eventos para clic en marcadores
+    // Necesario para arreglar un bug con el "X" en el Popup
     const handleClick = () => {
         mapRef.current._popup._closeButton.addEventListener('click', (event) => {
             event.preventDefault();
@@ -1333,7 +1386,7 @@ function SSA() {
 
         </div>
     );
-}
+};
 
 export default SSA;
 

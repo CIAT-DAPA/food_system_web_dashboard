@@ -23,9 +23,10 @@ import About         from './pages/about/about';
 import './App.css';
 
 // NOTAS:
-// - Grid necesario para separar la barra de navegacion Sidebar con el contenido
+// - Contenedor necesario para separar la barra de navegacion Sidebar con el contenido
 // - Paginas en minuscula, Componentes con Primera Letra En Mayuscula
 // - Graficas con Apex Charts es mas sencillo
+
 class App extends Component {
 //  constructor(props) {
 //    super(props);
