@@ -1,20 +1,23 @@
 import React from 'react';
 
 // CSS
-//import "./ssa.module.css";
+//import styles from "./ssa.module.css";
 
 // Importando Imagenes
 //import Image1 from '../../final_assets/images/mapa_centrales_plazas.png';
 //import Image2 from '../../final_assets/images/mapas_procedencia.png';
 import Image3 from '../../final_assets/images/infografia_ssa.png';
 
-// Marcador para Mapas
+// Marcador y Botones para Mapas
 //import markerIconPng from "leaflet/dist/images/marker-icon.png";
+//import { Icon, L } from 'leaflet';
 import { Icon } from 'leaflet';
+import 'leaflet-easyprint';
 
 // Importando Mapas
 import { MapContainer, TileLayer, Marker, Popup, LayersControl,
-LayerGroup, FeatureGroup, Polygon, Tooltip } from 'react-leaflet';
+    LayerGroup, FeatureGroup, Polygon, Tooltip } from 'react-leaflet';
+//LayerGroup, FeatureGroup, Polygon, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
 // Importando informacion para mapas
@@ -43,7 +46,7 @@ function reverseArray (array) {
                    ? item.map(reverse) 
                    : item.reverse();
     });
-    console.log("reverse exitoso");
+    //console.log("reverse exitoso");
     return reversed;
 };
 
@@ -340,20 +343,37 @@ const multiPolygon = [
   ]
 */
 
-// Ejecutando funciones para llenar arreglos de cada categoria
-carnes();
-frutas();
-granos();
-lacteos();
-pescados();
-raices();
-verduras();
+/*
+function DownloadButton () {
+    // Boton para imprimir mapas de Leaflet
+    const map = useMap();
+    const botonImprimir = L.easyPrint({
+        title: 'Imprimir mapa',
+        position: 'bottomright',
+        sizeModes: ['Current', 'A4Portrait', 'A4Landscape'],
+        filename: 'Mapa',
+        exportOnly: true,
+        hideControlContainer: true
+    }).addTo(map);
+
+    return null;
+}
+*/
 
 
 
 
 
 function SSA() {
+
+    // Ejecutando funciones para llenar arreglos de cada categoria
+    carnes();
+    frutas();
+    granos();
+    lacteos();
+    pescados();
+    raices();
+    verduras();
 
     const mapRef = React.useRef(null);
 
@@ -364,6 +384,8 @@ function SSA() {
             event.preventDefault();
         })
     };
+    
+
 
     return (
         <div>
@@ -485,7 +507,7 @@ function SSA() {
                 <TileLayer
                 attribution={attr2}
                 url=
-                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+            "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
                 />
 
                 <LayersControl position="topright">
@@ -1211,6 +1233,10 @@ function SSA() {
                 </LayersControl>
 
             </MapContainer>
+
+            <p>
+            <b>Fuente:</b> DANE, 2020.
+            </p>
 
 
 

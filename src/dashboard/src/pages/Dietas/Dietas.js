@@ -440,6 +440,10 @@ function dietas() {
 
             </div>
 
+            <p>
+            <b>Fuente:</b> ICBF, 2015.
+            </p>
+
             <hr className="featurette-divider" />
             <h2>Adecuación</h2>
 
@@ -474,6 +478,10 @@ function dietas() {
                 width="100%"
                 height="500px"
             />
+
+            <p>
+            <b>Fuente:</b> ICBF, 2015.
+            </p>
 
         </div>
     );

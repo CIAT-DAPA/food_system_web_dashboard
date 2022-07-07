@@ -367,6 +367,10 @@ function resultados() {
                 width="100%"
             />
 
+            <p>
+            <b>Fuente:</b> Secretaría de Salud Pública Municipal, 2020.
+            </p>
+
             <hr className="featurette-divider" />
             <h2>En Seguridad Alimentaria</h2>
 
@@ -378,6 +382,10 @@ function resultados() {
                 height="500"
             />
 
+            <p>
+            <b>Fuente:</b> ICBF, 2015.
+            </p>
+
             <hr className="featurette-divider" />
             <h2>Socio-económicos y Bienestar</h2>
 
@@ -388,6 +396,10 @@ function resultados() {
                 height="500"
                 width="100%"
             />
+
+            <p>
+            <b>Fuente:</b> Programa Cali Cómo Vamos, 2019.
+            </p>
 
             <hr className="featurette-divider" />
             <h2>Ambientales</h2>
@@ -445,6 +457,16 @@ function resultados() {
                 </div>
 
             </div>
+
+            <p align="justify">
+            <b>Fuente:</b> Toneladas de comida desperdiciada
+            en 2015 (UAO,2020), Alimentos con mayores
+            pérdidas y desperdicios en Colombia (DNP,
+            2016, como se citó en Naciones Unidas
+            Colombia, 2020), Volumen de desperdicios
+            relacionado con el estrato socioeconómico
+            (Parada V., 2019a).
+            </p>
 
         </div>
     );

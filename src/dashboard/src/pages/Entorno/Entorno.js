@@ -174,6 +174,12 @@ function entorno() {
                 
             </div>
 
+            <p align="justify">
+            <b>Fuente:</b> Instituto de Prospectiva, Innovación
+            y Gestión del Conocimiento y Alcaldía de
+            Santiago de Cali, 2018.
+            </p>
+
         </div>
     );
 }

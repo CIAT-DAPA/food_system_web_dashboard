@@ -470,6 +470,10 @@ function determinantes() {
         </div>
       </div>
 
+      <p>
+      <b>Fuente:</b> DAGMA, 2020.
+      </p>
+
 
 
       <hr className="featurette-divider" />
@@ -516,6 +520,10 @@ function determinantes() {
           </div>
         </div>
 
+        <p>
+        <b>Fuente:</b> DANE, 2021.
+        </p>
+
 
 
       <hr className="featurette-divider" />
@@ -541,6 +549,10 @@ function determinantes() {
             width="100%"
             height="500px"
           />
+
+        <p>
+        <b>Fuente:</b> DANE, 2019.
+        </p>
 
       <hr className="featurette-divider" />
 
