@@ -12,12 +12,13 @@ import Image3 from '../../final_assets/images/infografia_ssa.png';
 //import markerIconPng from "leaflet/dist/images/marker-icon.png";
 //import { Icon, L } from 'leaflet';
 import { Icon } from 'leaflet';
-import 'leaflet-easyprint';
+//import 'leaflet-easyprint';
+import {SimpleMapScreenshoter} from 'leaflet-simple-map-screenshoter'
 
 // Importando Mapas
 import { MapContainer, TileLayer, Marker, Popup, LayersControl,
-    LayerGroup, FeatureGroup, Polygon, Tooltip } from 'react-leaflet';
-//LayerGroup, FeatureGroup, Polygon, Tooltip, useMap } from 'react-leaflet';
+//    LayerGroup, FeatureGroup, Polygon, Tooltip } from 'react-leaflet';
+LayerGroup, FeatureGroup, Polygon, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // MUY importante, sin esto no funciona
 
 // Importando informacion para mapas
@@ -384,6 +385,70 @@ function SSA() {
             event.preventDefault();
         })
     };
+
+    // Para agregar boton de descarga
+    let pluginOptions = {
+        screenName: 'mapa',
+        hidden: false,
+        position: 'bottomleft'
+    }
+    /*
+    const DownloadMap = () => {
+        const map = useMap();
+        L.easyPrint({
+            title: "Imprimir Mapa",
+            filename: 'Mapa',
+            position: "bottomleft",
+            sizemodes: ['Current', 'A4Portrait', 'A4Landscape'],
+            exportOnly: true,
+            hideControlContainer: true
+        }).addToMap(map);
+    };
+    */
+
+    /*
+    const handleEventsMap = (map) => {
+        L.easyPrint({
+            title: "Imprimir Mapa",
+            filename: 'Mapa',
+            position: "bottomleft",
+            sizemodes: ['Current'],
+            exportOnly: true,
+            hideControlContainer: true
+        }).addTo(map.target);
+    };
+    */
+ 
+    /*
+    const HandleEventsMap = () => {
+        new SimpleMapScreenshoter(pluginOptions).addTo(useMap());
+        //L.simpleMapScreenshoter.addTo(map);
+        //new SimpleMapScreenshoter().addTo(map);
+    };
+    */
+    //<DownloadMap/>
+    ///*
+    //const getId = (item) => {
+    //    console.log(item.target.id);
+    //};
+    var buttonIds = [];
+    const DownloadMap = () => {
+        const currentmap = useMap();
+        if (buttonIds.length !== 0) {
+            console.log("Boton duplicado, continuando...");
+            buttonIds = [];
+        }
+        else {
+            //const map = useMap();
+            const button = new SimpleMapScreenshoter(pluginOptions);
+            button.addTo(currentmap);
+            //getId(button);
+            //console.log(button);
+            //console.log(button._leaflet_id);
+            buttonIds.push(button._leaflet_id);
+        }
+    };
+    
     
 
 
@@ -504,6 +569,7 @@ function SSA() {
                 scrollWheelZoom={false}
                 ref={mapRef}
             >
+                <DownloadMap/>
                 <TileLayer
                 attribution={attr2}
                 url=
@@ -1269,6 +1335,7 @@ function SSA() {
                 scrollWheelZoom={false}
                 ref={mapRef}
             >
+                <DownloadMap/>
 
                 <TileLayer
                     attribution={attr}

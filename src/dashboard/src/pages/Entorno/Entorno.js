@@ -32,8 +32,8 @@ function entorno() {
                 <img src={Image3} alt="Infografia del Entorno Alimentario"/>
             </div>
 
-            <div className="d-flex flex-row">
-                <div className="p-2">
+            <div className="row">
+                <div className="col">
                     <img src={Icon1}
                     alt="Icono Entorno 1" width="30" height="30"/>&nbsp;
                     <img src={Icon2}
@@ -86,7 +86,7 @@ function entorno() {
                     </ul>
                 </div>
 
-                <div className="p-2">
+                <div className="col">
 
                     <img src={Icon3}
                     alt="Icono Entorno 3" width="30" height="30"/>&nbsp;
@@ -158,15 +158,15 @@ function entorno() {
 
 
             <h2>Disponibilidad de Alimentos</h2>
-            <div className="d-flex flex-row">
+            <div className="row">
 
-                <div className="p-2">
+                <div className="col-lg-4">
                     <div align='center'>
                         <img src={Image1} alt="Mapa de Densidad Hab/Ha"/>
                     </div>
                 </div>
 
-                <div className="p-2">
+                <div className="col-lg-4">
                     <div align='center'>
                         <img src={Image2} alt="Mapa de Localizacion de Demanda"/>
                     </div>

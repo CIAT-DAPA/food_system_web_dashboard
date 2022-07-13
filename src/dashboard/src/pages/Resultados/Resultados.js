@@ -230,8 +230,8 @@ function resultados() {
                 <img src={Image1} alt="Infografia de Resultados"/>
             </div>
 
-            <div className="d-flex flex-row">
-                <div className="p-2">
+            <div className="row">
+                <div className="col">
                     <img src={Icon1}
                     alt="Icono Dietas" width="30" height="40"/>&nbsp;
                     <b>En la nutrición y la salud</b>
@@ -297,7 +297,7 @@ function resultados() {
 
                 </div>
 
-                <div className="p-2">
+                <div className="col">
                     <ul>
                         <img src={Icon1}
                         alt="Icono Dietas" width="30" height="40"/>&nbsp;
@@ -402,13 +402,16 @@ function resultados() {
             </p>
 
             <hr className="featurette-divider" />
-            <h2>Ambientales</h2>
-            <div className="d-flex flex-row">
-                <div className="p-2">
-                    <img src={Image2} alt="Infografia de Resultados Ambientales"/>
-                </div>
 
-                <div className="p-2">
+            <h2>Ambientales</h2>
+
+            <div className="col">
+                <img src={Image2} alt="Infografia de Resultados Ambientales"/>
+            </div>
+
+            <div className="row">
+
+                <div className="col">
                     <ul>
 
                         <li>Aproximadamente <b>10.219</b> toneladas de comida
@@ -458,6 +461,14 @@ function resultados() {
 
             </div>
 
+        </div>
+    );
+}
+
+export default resultados;
+
+/*
+
             <p align="justify">
             <b>Fuente:</b> Toneladas de comida desperdiciada
             en 2015 (UAO,2020), Alimentos con mayores
@@ -468,8 +479,4 @@ function resultados() {
             (Parada V., 2019a).
             </p>
 
-        </div>
-    );
-}
-
-export default resultados;
+*/

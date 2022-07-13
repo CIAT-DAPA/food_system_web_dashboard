@@ -11,7 +11,7 @@
     "apexcharts": "^3.35.0",
     "jquery-csv": "^1.0.21",
     "leaflet": "^1.8.0",
-    "leaflet-easyprint": "^2.1.9",
+    "leaflet-simple-map-screenshoter": "^0.4.5",
     "react": "^18.1.0",
     "react-apexcharts": "^1.4.0",
     "react-chartjs-2": "^4.1.0",

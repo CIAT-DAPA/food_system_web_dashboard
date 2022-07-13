@@ -362,8 +362,8 @@ function determinantes() {
         <img src={Image1} alt="Infografia de Determinantes"/>
       </div>
 
-      <div className="d-flex flex-row">
-        <div className="p-2">
+      <div className="row">
+        <div className="col">
 
           <img src={Icon1}
           alt="Icono Determinantes 1" width="30" height="30"/>&nbsp;
@@ -398,7 +398,7 @@ function determinantes() {
 
         </div>
 
-        <div className="p-2">
+        <div className="col">
 
           <img src={Icon3}
           alt="Icono Determinantes 3" width="30" height="30"/>&nbsp;
@@ -451,21 +451,21 @@ function determinantes() {
       forestal.
       </p>
 
-      <div className="d-flex flex-row">
-        <div className="p-2">
+      <div className="row">
+        <div className="col-lg-4">
           <Chart
             options={TerritorioMunicipal.options}
             series={TerritorioMunicipal.series}
             type="pie"
-            width="400"
+            width="380"
           />
         </div>
-        <div className="p-2">
+        <div className="col-lg-4">
           <Chart
             options={AreasProtegidas.options}
             series={AreasProtegidas.series}
             type="pie"
-            width="400"
+            width="380"
           />
         </div>
       </div>
@@ -501,21 +501,21 @@ function determinantes() {
         internos se sumó la llegada de población venezolana.
         </p>
 
-        <div className="d-flex flex-row">
-          <div className="p-2">
+        <div className="row">
+          <div className="col-lg-4">
             <Chart
               options={PoblacionMunicipal.options}
               series={PoblacionMunicipal.series}
               type="pie"
-              width="400"
+              width="380"
             />
           </div>
-          <div className="p-2">
+          <div className="col-lg-4">
             <Chart
               options={PoblacionGenero.options}
               series={PoblacionGenero.series}
               type="pie"
-              width="400"
+              width="380"
             />
           </div>
         </div>
